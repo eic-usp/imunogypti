@@ -34,3 +34,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Debug folders
+*[Dd]ebug/
+*[Dd]ebug.meta
