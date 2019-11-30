@@ -14,26 +14,26 @@ public class MainManager : MonoBehaviour
     
     void Start()
     {
-        //jogo comeca na onde de numero 0, com nenhum virus ativo
+        //jogo comeca na onda de numero 0, com nenhum virus ativo
         waveNumber = 0;
         activeViruses = 0;
     }
 
     void Update()
     {
-        //condicao de vitoria
-        if(wavesRemaning <= 0 and activeViruses <= 0)
+        // //condicao de vitoria
+        if(wavesRemaning <= 0 && activeViruses <= 0)
         {
             Win();
         }
         
         //verifica se esta na hora de mandar a proxima onda de inimigos
-        if(countdown <= 0f and wavesRemaning > 0)
+        if(countdown <= 0 && wavesRemaning > 0)
         {
-            StartCoroutine(SpawnWave(hordes[wave]));
+            StartCoroutine(SpawnWave(hordes[waveNumber]));
             wavesRemaning--;
             waveNumber++;
-            countdown = countdownBetweenEnemysSpawn;
+            countdown = timeBetweenWaves;
         }    
 
         countdown -= Time.deltaTime; //conta tempo para mandar proxima onda de inimigos
@@ -47,7 +47,7 @@ public class MainManager : MonoBehaviour
         //estancia os inimigos dessa onda
         foreach (Virus virus in horde)
         {
-            Instantiate(virus.Transform, Vector3.zero, Quaternion.identity);
+            Instantiate(virus.gameObject, Vector3.zero, Quaternion.identity);
             yield return new WaitForSeconds(0.3f); //tempo entre a instanciacao de cada inimigo
         }
     }
@@ -55,7 +55,7 @@ public class MainManager : MonoBehaviour
     //funcao de vitoria do jogador
     public void Win()
     {
-        Debug.Log("voce venceu, PARABAINS!!!")
+        Debug.Log("voce venceu, PARABAINS!!!");
     }
 }
 

@@ -43,6 +43,6 @@ public class BuildManager : MonoBehaviour
             return;
 
         gold -= tower.Cost;
-        Instantiate(tower.Transform, Vector3.zero, Quaternion.identity);
+        Instantiate(tower.gameObject, Vector3.zero, Quaternion.identity);
     }
 }
