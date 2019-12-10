@@ -5,9 +5,15 @@ using UnityEngine;
 //Classe que representa o basico de todas as torres
 public class Tower : MonoBehaviour
 {
-    [SerializeField] private float range; //alcance da torre, ex: do ataque
-    [SerializeField] private float attackSpeed; //velocidade de ataque da torre
-    [SerializeField] private float damage; //dano da torre
-    public int Cost { get; private set; } //valor que a torre custa
+    // [SerializeField] 
+    protected float range = 5f; //alcance da torre, ex: do ataque
+    // [SerializeField] 
+    protected float attackSpeed = 5f; //velocidade de ataque da torre
+    // [SerializeField] 
+    protected float damage = 5f; //dano da torre
 
+    // Tower()
+    // {
+    //     //this.gameObject.Instantiate(this.gameObject,new Vector3(0,0,0),Quaternion.Euler(new Vector3(0,0,0)));
+    // }
 }
