@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 1305249691804023283}
   - component: {fileID: 7681052716912959379}
   m_Layer: 0
-  m_Name: Neutrofilo 2
+  m_Name: Neutrofilo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

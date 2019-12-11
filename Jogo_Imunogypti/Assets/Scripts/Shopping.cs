@@ -40,7 +40,7 @@ public class Shopping : MonoBehaviour
     public bool ShellOut(int amount)
     {
         //jogador não pode gastar um dinheiro que ele nao tem
-        if(amount > gold);
+        if(amount > gold)
             return false;
 
         gold -= amount;

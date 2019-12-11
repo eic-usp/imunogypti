@@ -9,6 +9,7 @@ public class BuildManager : MonoBehaviour
 	[SerializeField] private Tower Neutrofilo;
     private int neutrofiloCost = 100;
     public Tower turretToBuild; //Torre a ser instanciada
+    private List<Color> StandardColors = new List<Color>();//Lista com cores padrão da torre
 
 
     public bool canDrag = false; //Booleano que indica quando a torre pode ser arrastada pelo mapa
@@ -39,7 +40,7 @@ public class BuildManager : MonoBehaviour
                 Debug.Log("Torre destruida");
                 canDrag = false;
                 Shopping.instance.EarnGold(neutrofiloCost); //Recupera o dinheiro por não ter posicionado a torre no mapa
-                Destroy(turretToBuild);
+                Destroy(turretToBuild.gameObject);
                 return;
             }
         }
@@ -48,13 +49,18 @@ public class BuildManager : MonoBehaviour
     //funcao seta a torre a ser instalada no mapa
     public void Install(Tower tower)
     {
-        //verifica se o jogador tem dinheiro o suficiente para fazer a compra
-        if(!Shopping.instance.ShellOut(neutrofiloCost))
-            return;
+        if(turretToBuild==null){
+            //verifica se o jogador tem dinheiro o suficiente para fazer a compra
+            if(!Shopping.instance.ShellOut(neutrofiloCost))
+               return;
 
-        //Instancia a torre em coordenadas quaisquer e habilita o canDrag
-        turretToBuild = Instantiate(tower,new Vector3(0,0,0),Quaternion.Euler(new Vector3(0,0,0)));
-        canDrag = true;
+            //Instancia a torre em coordenadas quaisquer e habilita o canDrag
+            turretToBuild = Instantiate(tower,new Vector3(0,0,0),Quaternion.Euler(new Vector3(0,0,0)));
+            //Para cada renderer de objeto filho da atual turretToBuild, grave sua cor na lista de cores padrão do prefab
+            foreach(Renderer r in turretToBuild.GetComponentsInChildren<Renderer>())
+                StandardColors.Add(r.material.color);
+            canDrag = true;
+        }
     }
 
     //Método que dá a posição do mouse com um z fixo para posicionar a torre junto ao mouse enquanto o player a arrastar
@@ -75,6 +81,23 @@ public class BuildManager : MonoBehaviour
             turretToBuild.transform.localPosition = new Vector3((d/Zo)*Xo,(d/Zo)*Yo,d);
             //Rotação de acordo com a rotação escolhida para o mapa
             turretToBuild.transform.rotation = Quaternion.Euler(-30,0,0);
+        }
+    }
+
+    //Função que troca a cor da torre para indicar a condição de posicionamento em um tile do mapa
+    public void changeTurretColor(Color clr){
+        //contador
+        int i=0;
+        //Para cada renderer de objetos filhos da atual turretToBuild
+        foreach(Renderer r in turretToBuild.GetComponentsInChildren<Renderer>()){
+            //Se a cor parametro for branco, retorne as cores originais do prefab
+            if(clr == Color.white){
+                r.material.color = StandardColors[i];
+                i++;
+            }
+            //Se a cor não for branco, insira essa cor como a nova cor da torre
+            else
+               r.material.color = clr;      
         }
     }
 }
