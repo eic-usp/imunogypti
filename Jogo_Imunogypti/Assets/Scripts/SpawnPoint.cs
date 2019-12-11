@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //classe que controla as principais funcoes do jogo
-public class MainManager : MonoBehaviour
+public class SpawnPoint : MonoBehaviour
 {
     [SerializeField] private int wavesRemaning = 1; //marca quanntas ondas de inimigos faltam para o jogador vencer
     [SerializeField] private int waveNumber = 0; //marca qual a onda que o jogador esta enfrentando atualmente
-    [SerializeField] private List<List<Virus> > hordes; //guarda os inimigos que serao liberados para enfrentar o jogador
+    // public List<List<Virus> > hordes; //guarda os inimigos que serao liberados para enfrentar o jogador
+    public List<Virus> horde; //guarda os inimigos que serao liberados para enfrentar o jogador
     [SerializeField] private float timeBetweenWaves = 5f; //tempo entre as ondas de inimigos
     [SerializeField] private float countdown = 2f; //marca tempo ate a proxima onda de ininmigos chegar
     public int activeViruses = 0; //marca quantos virus ainda estao ativos
@@ -30,7 +31,8 @@ public class MainManager : MonoBehaviour
         //verifica se esta na hora de mandar a proxima onda de inimigos
         if(countdown <= 0 && wavesRemaning > 0)
         {
-            StartCoroutine(SpawnWave(hordes[waveNumber]));
+            //StartCoroutine(SpawnWave(hordes[waveNumber]));
+            StartCoroutine(SpawnWave());
             wavesRemaning--;
             waveNumber++;
             countdown = timeBetweenWaves;
@@ -40,14 +42,15 @@ public class MainManager : MonoBehaviour
     }
 
     //funcao que libera uma onda de inimigos
-    IEnumerator SpawnWave(List<Virus> horde)
+    //IEnumerator SpawnWave(List<Virus> horde)
+    IEnumerator SpawnWave()
     {
         activeViruses += horde.Count; //coloca todos os inimigos que serao estanciados nessa onda como ativos
 
         //estancia os inimigos dessa onda
         foreach (Virus virus in horde)
         {
-            Instantiate(virus.gameObject, Vector3.zero, Quaternion.identity);
+            Instantiate(virus, gameObject.transform.position, Quaternion.identity);
             yield return new WaitForSeconds(0.3f); //tempo entre a instanciacao de cada inimigo
         }
     }

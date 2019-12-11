@@ -39,7 +39,7 @@ public class Virus : MonoBehaviour
     void GetNextWayPoint(){
     	//Se o virus está prestes a sair do ultimo target, destrua
     	if(wavePointIndex>=Waypoints.points.Length-1){
-    		Destroy(gameObject);
+    		NotDeath();
     	}
     	//Senão, acrescente 1 ao index e mude de target
     	else{
@@ -61,6 +61,7 @@ public class Virus : MonoBehaviour
     //funcao que mata o inimigo quando a (nao) vida chega a 0 (virus nao eh ser vivo, entao nao morre)
     public void NotDeath()
     {
+        
         Destroy(this.gameObject);
     }
 }
