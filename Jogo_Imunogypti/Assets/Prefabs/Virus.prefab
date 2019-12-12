@@ -106,5 +106,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notHP: 2
-  speed: 1
+  speed: 0.22
   damage: 0

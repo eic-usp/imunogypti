@@ -102,6 +102,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1305249691804023283}
+  - component: {fileID: -3508727008918180965}
+  - component: {fileID: 2840902290016210705}
   - component: {fileID: 7681052716912959379}
   m_Layer: 0
   m_Name: Neutrofilo
@@ -126,6 +128,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-3508727008918180965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871715741936248403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7d005a1f5911e48ab679375403e785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2840902290016210705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871715741936248403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81f01cd2387cbf48b49c96583179930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7681052716912959379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c94e15a9e11214cb561746f014c5d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTag: Enemy
   partToRotate: {fileID: 2486139859027172711}
 --- !u!1 &6230575112090481309
 GameObject:
