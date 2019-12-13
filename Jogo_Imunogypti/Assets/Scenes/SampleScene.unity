@@ -1870,7 +1870,7 @@ MonoBehaviour:
           m_MethodName: Install
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 7681052716912959379, guid: 286cc390adc177941bd519f7194fb0e7,
+            m_ObjectArgument: {fileID: 1895058169675526625, guid: 286cc390adc177941bd519f7194fb0e7,
               type: 3}
             m_ObjectArgumentAssemblyTypeName: Tower, Assembly-CSharp
             m_IntArgument: 0
@@ -5094,8 +5094,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 864e50551bebc6b4b9c60752c3b8c790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Neutrofilo: {fileID: 7681052716912959379, guid: 286cc390adc177941bd519f7194fb0e7,
-    type: 3}
   turretToBuild: {fileID: 0}
   canDrag: 0
 --- !u!4 &498840710

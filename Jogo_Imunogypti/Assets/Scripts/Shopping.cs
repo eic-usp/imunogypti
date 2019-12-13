@@ -44,7 +44,7 @@ public class Shopping : MonoBehaviour
             return false;
 
         gold -= amount;
-        Debug.Log("Dinehiro: " + gold);
+        Debug.Log("Dinheiro: " + gold);
         return true;
     }
 }

@@ -6,7 +6,6 @@ using UnityEngine;
 public class BuildManager : MonoBehaviour
 {
     //GameObjects com diferentes torres e um objeto turretToBuild que é a torre a ser construida
-	[SerializeField] private Tower Neutrofilo;
     private int neutrofiloCost = 100;
     public Tower turretToBuild; //Torre a ser instanciada
     private List<Color> StandardColors = new List<Color>();//Lista com cores padrão da torre

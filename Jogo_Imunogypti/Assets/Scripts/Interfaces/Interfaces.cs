@@ -4,13 +4,13 @@ using UnityEngine;
 
 public interface IAttack
 {
-    
+    void Shoot(GameObject bulletPrefab, Transform firePoint, float attackSpeed, GameObject target, float damage);
 }
 
 public interface ITarget
 {
     string Tag {get;}
-    Transform UpdateTarget(float range);
+    GameObject UpdateTarget(float range);
 }
 
 public interface IEffect
