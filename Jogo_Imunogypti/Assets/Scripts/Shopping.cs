@@ -8,6 +8,7 @@ public class Shopping : MonoBehaviour
 {
     private float price;
     [SerializeField] private int gold; //dinheiro do jogador
+    [SerializeField] private Text goldText; //mostrar pro jogador quanto dinheiro ele tem
     public static Shopping instance; //Classe estática
 
     void Awake()
@@ -24,6 +25,11 @@ public class Shopping : MonoBehaviour
     void Start()
     {
         gold = 400; //dinheiro inicial do jogador
+    }
+
+    void Update()
+    {
+        goldText.text = gold.ToString();
     }
 
     //funcao que adiciona dinheiro ao jogador

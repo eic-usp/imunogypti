@@ -5,9 +5,9 @@ using UnityEngine;
 //Classe que representa os inimigos que devem ser derrotados
 public class Virus : MonoBehaviour
 {
-    [SerializeField] private float notHP; //vida do inimigo(virus nao eh ser vivo, entao nao tem vida)
+    [SerializeField] private float hp; //vida do inimigo
     [SerializeField] private float speed; //velocidade com que o inimigo caminha pelo mapa
-    [SerializeField] private int damage; //dano que o inimigo da ao jogador quando chega ao fim do caminho
+    [SerializeField] public int Damage{get; private set;} //dano que o inimigo da ao jogador quando chega ao fim do caminho
     [SerializeField] private int goldValue; //dinheiro que o inimigo da ao jogador quando eh destruido
     //[SerializeField] private Color color; // cor/sprite do inimigo
     private Transform target; //Dita a direção do movimento do virus
@@ -15,6 +15,7 @@ public class Virus : MonoBehaviour
 
     void Start()
     {
+        Damage = 5;
         //Alvo inicial é o primeiro waypoint 
         target = Waypoints.points[0];
         //Se o waypoint for nulo
@@ -40,7 +41,7 @@ public class Virus : MonoBehaviour
     void GetNextWayPoint(){
     	//Se o virus está prestes a sair do ultimo target, destrua
     	if(wavePointIndex>=Waypoints.points.Length-1){
-    		NotDeath();
+    		Destroy(this.gameObject);
     	}
     	//Senão, acrescente 1 ao index e mude de target
     	else{
@@ -52,15 +53,15 @@ public class Virus : MonoBehaviour
     //funcao que da dano na (nao) vida do inimigo
     public void DealDamage(float damage)
     {
-        notHP -= damage;
+        hp -= damage;
         
         //mata o  inimigo quando a (nao) vida chega a 0
-        if(notHP <= 0)
-            NotDeath();
+        if(hp <= 0)
+            Killed();
     }
 
-    //funcao que mata o inimigo quando a (nao) vida chega a 0 (virus nao eh ser vivo, entao nao morre)
-    public void NotDeath()
+    //funcao de quando o inimigo eh morto
+    public void Killed()
     {
         Shopping.instance.EarnGold(goldValue);
         Destroy(this.gameObject);
