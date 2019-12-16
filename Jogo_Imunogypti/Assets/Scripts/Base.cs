@@ -25,10 +25,15 @@ public class Base : MonoBehaviour
         Debug.Log("PErDi");
     }
 
-    private void OnTriggerEnter(Collider other) {
-        Debug.Log("Entrou");
+    private void OnTriggerEnter(Collider other) 
+    {
         Virus virus = other.GetComponent<Virus>();
     
         TakeDamage(virus.Damage);
+    }
+
+    public void BaseLocate(Vector3 locate)
+    {
+        transform.position = locate;
     }
 }

@@ -5123,10 +5123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6273128d6945b0a4cb8cba76f4c75a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Money: 0
-  Life: 0
-  MoneyText: {fileID: 1197417146}
-  LifeText: {fileID: 410609227}
 --- !u!1001 &500040326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21931,6 +21927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8e10ad7f0d568348a9be5d38324b545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  b: {fileID: 1422420942}
 --- !u!4 &1814741220 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5742828843268607196, guid: bd4c839914041ab4f97657c51946b098,

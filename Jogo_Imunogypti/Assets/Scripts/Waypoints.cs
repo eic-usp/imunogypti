@@ -6,6 +6,7 @@ public class Waypoints : MonoBehaviour
 {
 	//Pontos que darão a trajetoria do virus, variável estática para ser acessada remotamente
     public static Transform[] points;
+	[SerializeField] private Base b;
 
     void Awake(){
     	//Seta pontos como os objetos filhos do objeto waypoints
@@ -14,5 +15,7 @@ public class Waypoints : MonoBehaviour
     	{
     		points[i] = transform.GetChild(i);
     	}
+
+		b.BaseLocate(points[points.Length-1].position);
     }
 }
