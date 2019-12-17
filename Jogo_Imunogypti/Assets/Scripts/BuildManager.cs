@@ -6,7 +6,6 @@ using UnityEngine;
 public class BuildManager : MonoBehaviour
 {
     //GameObjects com diferentes torres e um objeto turretToBuild que é a torre a ser construida
-    private int neutrofiloCost = 100;
     public Tower turretToBuild; //Torre a ser instanciada
     private List<Color> StandardColors = new List<Color>();//Lista com cores padrão da torre
 
@@ -38,7 +37,7 @@ public class BuildManager : MonoBehaviour
             {
                 Debug.Log("Torre destruida");
                 canDrag = false;
-                Shopping.instance.EarnGold(neutrofiloCost); //Recupera o dinheiro por não ter posicionado a torre no mapa
+                Shopping.instance.EarnGold(turretToBuild.cost); //Recupera o dinheiro por não ter posicionado a torre no mapa
                 Destroy(turretToBuild.gameObject);
                 return;
             }
@@ -50,7 +49,7 @@ public class BuildManager : MonoBehaviour
     {
         if(turretToBuild==null){
             //verifica se o jogador tem dinheiro o suficiente para fazer a compra
-            if(!Shopping.instance.ShellOut(neutrofiloCost))
+            if(!Shopping.instance.ShellOut(tower.cost))
                return;
 
             //Instancia a torre em coordenadas quaisquer e habilita o canDrag

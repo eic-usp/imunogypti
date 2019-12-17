@@ -66,4 +66,9 @@ public class Virus : MonoBehaviour
         Shopping.instance.EarnGold(goldValue);
         Destroy(this.gameObject);
     }
+
+    private void OnDestroy() 
+    {
+        SpawnPoint.instance.activeViruses--;    
+    }
 }

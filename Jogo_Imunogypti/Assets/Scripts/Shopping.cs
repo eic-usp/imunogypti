@@ -50,7 +50,6 @@ public class Shopping : MonoBehaviour
             return false;
 
         gold -= amount;
-        Debug.Log("Dinheiro: " + gold);
         return true;
     }
 }

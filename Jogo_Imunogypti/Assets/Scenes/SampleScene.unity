@@ -24296,15 +24296,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wavesRemaning: 1
   waveNumber: 0
-  horde:
-  - {fileID: 4644554986552411358, guid: acd1c5ae306764141a98c8cb8d27b328, type: 3}
-  - {fileID: 4644554986552411358, guid: acd1c5ae306764141a98c8cb8d27b328, type: 3}
-  - {fileID: 4644554986552411358, guid: acd1c5ae306764141a98c8cb8d27b328, type: 3}
-  - {fileID: 4644554986552411358, guid: acd1c5ae306764141a98c8cb8d27b328, type: 3}
-  - {fileID: 4644554986552411358, guid: acd1c5ae306764141a98c8cb8d27b328, type: 3}
   timeBetweenWaves: 5
   countdown: 2
   activeViruses: 0
+  virusPrefab: {fileID: 4644554986552411358, guid: acd1c5ae306764141a98c8cb8d27b328,
+    type: 3}
 --- !u!4 &2003263288
 Transform:
   m_ObjectHideFlags: 0

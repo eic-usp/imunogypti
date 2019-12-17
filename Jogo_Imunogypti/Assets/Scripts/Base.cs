@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Base : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class Base : MonoBehaviour
     public void Defeat()
     {
         Debug.Log("PErDi");
+         SceneManager.LoadScene("Lose");
     }
 
     private void OnTriggerEnter(Collider other) 

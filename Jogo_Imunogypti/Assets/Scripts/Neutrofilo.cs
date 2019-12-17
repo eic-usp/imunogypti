@@ -10,11 +10,9 @@ public class Neutrofilo : Tower
    	[SerializeField] private GameObject bulletPrefab;
    	private GameObject target;
 
-
    	private ITarget myTarget;
    	private IRotate myRotate;
    	private IAttack myAttack;
-       
 
 	void Awake()
     {
