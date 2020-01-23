@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetEnemys : MonoBehaviour, ITarget
+//Foca o inimigo mais forte(com mais vida)
+public class TargetStrogestEnemy : MonoBehaviour, ITarget
 {
     public string Tag {get; set;}   
 
@@ -15,24 +16,27 @@ public class TargetEnemys : MonoBehaviour, ITarget
    	{
    		//Os inimigos são todos com a tag de inimigos
     	GameObject[] enemies = GameObject.FindGameObjectsWithTag(Tag);
-    	//Distancia mais curta até um inimigo
-    	float shortestDistance = Mathf.Infinity;
-    	GameObject nearestEnemy = null;
+    	//Força do inimigo mais forte
+    	float strongest = 0;
+    	GameObject strongestEnemy = null;
 
-    	//Percorre todos os inimigos, tomando as ditancia da torre até eles e decidindo a menor distancia e portanto o inimigo mais proximo
+    	//Percorre todos os inimigos, tomando as ditancia da torre até eles e decidindo o inimigo mais forte
     	foreach(GameObject enemy in enemies)
 		{
     		float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-    		if(distanceToEnemy<shortestDistance)
+
+			Virus virus = enemy.GetComponent<Virus>();
+
+    		if(virus.hp > strongest && distanceToEnemy <= range)
 			{
-    			shortestDistance = distanceToEnemy;
-    			nearestEnemy = enemy;
+    			strongest = virus.hp;
+    			strongestEnemy = enemy;
     		}
     	}
 
     	//Se o inimigo mais proximo não for nulo e a distancia estiver no range da torre, ele será o alvo
-    	if(nearestEnemy !=null && shortestDistance<=range)
-			return nearestEnemy;
+    	if(strongestEnemy !=null)
+			return strongestEnemy;
     	else
 			return null;
     }

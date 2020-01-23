@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 645f062aa2c444844bfa547ea0870b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notHP: 2
+  hp: 10
   speed: 5
   goldValue: 100
 --- !u!54 &-750935353918732100

@@ -1870,7 +1870,7 @@ MonoBehaviour:
           m_MethodName: Install
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 1895058169675526625, guid: 286cc390adc177941bd519f7194fb0e7,
+            m_ObjectArgument: {fileID: 370501928982576500, guid: a5023d8325583fa4eab3c886239b6603,
               type: 3}
             m_ObjectArgumentAssemblyTypeName: Tower, Assembly-CSharp
             m_IntArgument: 0
@@ -15284,7 +15284,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: $300
+  m_Text: $200
 --- !u!222 &1260376735
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24294,7 +24294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cbd5fcd8be12f642965a1df832e132b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wavesRemaning: 1
+  wavesRemaning: 3
   waveNumber: 0
   timeBetweenWaves: 5
   countdown: 2

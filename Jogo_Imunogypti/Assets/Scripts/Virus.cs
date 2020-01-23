@@ -5,7 +5,7 @@ using UnityEngine;
 //Classe que representa os inimigos que devem ser derrotados
 public class Virus : MonoBehaviour
 {
-    [SerializeField] private float hp; //vida do inimigo
+    public float hp; //vida do inimigo
     [SerializeField] private float speed; //velocidade com que o inimigo caminha pelo mapa
     [SerializeField] public int Damage{get; private set;} //dano que o inimigo da ao jogador quando chega ao fim do caminho
     [SerializeField] private int goldValue; //dinheiro que o inimigo da ao jogador quando eh destruido
@@ -50,7 +50,7 @@ public class Virus : MonoBehaviour
     	}
     }
 
-    //funcao que da dano na (nao) vida do inimigo
+    //funcao que da dano na vida do inimigo
     public void DealDamage(float damage)
     {
         hp -= damage;

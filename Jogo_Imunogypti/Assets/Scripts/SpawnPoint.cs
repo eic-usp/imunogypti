@@ -20,7 +20,7 @@ public class SpawnPoint : MonoBehaviour
     {
         if(instance!=null)
         {
-            Debug.LogError("Mais de um Shopping");
+            Debug.LogError("Mais de um SpawnPoint");
             return;
         }
 
