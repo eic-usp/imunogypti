@@ -8,7 +8,7 @@ public class SingleTargetIncreaseContinuousDamage : MonoBehaviour, IAttack
     private GameObject previousTarget = null;
     private float multiplier = 1;
 
-    public void Shoot(GameObject bulletPrefab, Transform firePoint, float attackSpeed, GameObject target, float damage){
+    public void Shoot(Transform firePoint, float attackSpeed, GameObject target, float damage){
         if(previousTarget != target)
             multiplier = 1;
 

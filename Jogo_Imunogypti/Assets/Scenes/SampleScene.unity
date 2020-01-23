@@ -1870,7 +1870,7 @@ MonoBehaviour:
           m_MethodName: Install
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 370501928982576500, guid: a5023d8325583fa4eab3c886239b6603,
+            m_ObjectArgument: {fileID: 6591991958249012197, guid: a5023d8325583fa4eab3c886239b6603,
               type: 3}
             m_ObjectArgumentAssemblyTypeName: Tower, Assembly-CSharp
             m_IntArgument: 0

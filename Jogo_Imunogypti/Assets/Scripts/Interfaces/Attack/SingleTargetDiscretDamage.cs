@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class SingleTargetDiscretDamage : MonoBehaviour, IAttack
 {
-    float fireCountdown = 0f; 
+    [SerializeField] private GameObject bulletPrefab;
+    private float fireCountdown = 0f; 
 
-    public void Shoot(GameObject bulletPrefab, Transform firePoint, float attackSpeed, GameObject target, float damage){
-        if(fireCountdown <= 0)
+    public void Shoot(Transform firePoint, float attackSpeed, GameObject target, float damage){
+        if(target != null && fireCountdown <= 0)
         {
             GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation); 
             Bullet bullet = bulletGO.GetComponent<Bullet>();

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IAttack
 {
-    void Shoot(GameObject bulletPrefab, Transform firePoint, float attackSpeed, GameObject target, float damage);
+    void Shoot(Transform firePoint, float attackSpeed, GameObject target, float damage);
 }
 
 public interface ITarget

@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 4583102003752699369}
   - component: {fileID: 6321052807853105507}
   - component: {fileID: 6120603451175037665}
-  - component: {fileID: 1895058169675526625}
+  - component: {fileID: 5382534014338106279}
   m_Layer: 0
   m_Name: Neutrofilo
   m_TagString: Untagged
@@ -259,7 +259,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf45f96ad1f02bd45bab96fa5d26fc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1895058169675526625
+  bulletPrefab: {fileID: 7926088877875659735, guid: 70aa45e2fdd00c248a012f514fb55f49,
+    type: 3}
+--- !u!114 &5382534014338106279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,13 +270,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3697387375745992737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9c94e15a9e11214cb561746f014c5d6, type: 3}
+  m_Script: {fileID: 11500000, guid: b583a87d1bf5c8a46bc7a48135b96301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range: 5
+  attackSpeed: 5
+  damage: 5
+  cost: 200
   partToRotate: {fileID: 5932514609361744661}
   firepoint: {fileID: 6228393418587185622}
-  bulletPrefab: {fileID: 7926088877875659735, guid: 70aa45e2fdd00c248a012f514fb55f49,
-    type: 3}
 --- !u!1 &5718095240079147646
 GameObject:
   m_ObjectHideFlags: 0
