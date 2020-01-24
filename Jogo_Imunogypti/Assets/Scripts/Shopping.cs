@@ -24,7 +24,7 @@ public class Shopping : MonoBehaviour
 
     void Start()
     {
-        gold = 400; //dinheiro inicial do jogador
+        gold = 4000; //dinheiro inicial do jogador
     }
 
     void Update()

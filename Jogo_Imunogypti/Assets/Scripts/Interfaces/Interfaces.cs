@@ -2,20 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IAttack
-{
-    void Shoot(Transform firePoint, float attackSpeed, GameObject target, float damage);
-}
-
 public interface ITarget
 {
     string Tag {get;}
-    GameObject UpdateTarget(float range);
+    List<GameObject> UpdateTarget(float range);
 }
 
 public interface IEffect
 {
-
+    void Apply(Transform firePoint, float attackSpeed, List<GameObject> targets, float damage);
 }
 
 public interface IRotate

@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SingleTargetDiscretDamage : MonoBehaviour, IAttack
+public class SingleTargetDiscretDamage : MonoBehaviour, IEffect
 {
     [SerializeField] private GameObject bulletPrefab;
     private float fireCountdown = 0f; 
 
-    public void Shoot(Transform firePoint, float attackSpeed, GameObject target, float damage){
-        if(target != null && fireCountdown <= 0)
+    public void Apply(Transform firePoint, float attackSpeed, List<GameObject> targets, float damage){
+        if(targets.Count != 0 && fireCountdown <= 0)
         {
             GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation); 
             Bullet bullet = bulletGO.GetComponent<Bullet>();
             if(bullet != null)
             {
-                bullet.target = target;
+                bullet.target = targets[0];
                 bullet.damage = damage;
             }   
             

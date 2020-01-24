@@ -103,14 +103,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7941079387172320717}
-  - component: {fileID: 5840756382400856747}
+  - component: {fileID: 8253854197028023537}
   - component: {fileID: 4426207686400044365}
   - component: {fileID: 3789329221057308410}
   - component: {fileID: 6591991958249012197}
   - component: {fileID: 2165922076141081770}
+  - component: {fileID: 6996728204223065477}
   m_Layer: 0
   m_Name: LinfocitoTCD8
-  m_TagString: Untagged
+  m_TagString: LinfocitoTCD8
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,7 +132,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5840756382400856747
+--- !u!114 &8253854197028023537
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +141,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1358049652544556679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb7d005a1f5911e48ab679375403e785, type: 3}
+  m_Script: {fileID: 11500000, guid: a901056ebad150d4d952f02761f42dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &4426207686400044365
@@ -180,9 +181,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b583a87d1bf5c8a46bc7a48135b96301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
+  active: 0
+  range: 6
   attackSpeed: 0
-  damage: 0.1
+  damage: 0.3
   cost: 400
   partToRotate: {fileID: 4550423608108760570}
   firepoint: {fileID: 2915093151067518658}
@@ -282,6 +284,21 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &6996728204223065477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358049652544556679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1676859684921131297
 GameObject:
   m_ObjectHideFlags: 0

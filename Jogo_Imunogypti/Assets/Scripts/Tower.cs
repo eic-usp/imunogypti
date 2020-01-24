@@ -5,6 +5,7 @@ using UnityEngine;
 //Classe que representa o basico de todas as torres
 public class Tower : MonoBehaviour
 {
+    [SerializeField] protected bool active = false; //define se a torre esta ativa
     [SerializeField] protected float range = 5f; //alcance da torre, ex: do ataque
     [SerializeField] protected float attackSpeed = 5f; //velocidade de ataque da torre
     [SerializeField] protected float damage = 5f; //dano da torre
@@ -13,27 +14,35 @@ public class Tower : MonoBehaviour
     //Transforms relevantes 
    	[SerializeField] private Transform partToRotate;
    	[SerializeField] private Transform firepoint;
-   	private GameObject target;
+   	private List<GameObject> targets;
 
    	private ITarget myTarget;
    	private IRotate myRotate;
-   	private IAttack myAttack;
+   	private IEffect myEffect;
 
 	void Awake()
     {
         myTarget = GetComponent<ITarget>();
         myRotate = GetComponent<IRotate>();
-        myAttack = GetComponent<IAttack>();
+        myEffect = GetComponent<IEffect>();
     }
 
     void Update()
-    {
-		target = myTarget.UpdateTarget(range);
+    {   
+        if(active==false)
+            return;
+
+		targets = myTarget.UpdateTarget(range);
 
     	//Rotaciona torre para olhar na direção do inimigo
-        if(target!=null)
-            partToRotate.rotation = myRotate.LookAt(target.transform, transform);
+        if(targets.Count != 0)
+            partToRotate.rotation = myRotate.LookAt(targets[0].transform, transform);
 
-        myAttack.Shoot(firepoint, attackSpeed, target, damage);
+        myEffect.Apply(firepoint, attackSpeed, targets, damage);
+    }
+
+    public void Activate()
+    {
+        active = true;
     }
 }
