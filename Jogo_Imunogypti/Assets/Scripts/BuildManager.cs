@@ -8,9 +8,8 @@ public class BuildManager : MonoBehaviour
     //GameObjects com diferentes torres e um objeto turretToBuild que é a torre a ser construida
     public Tower turretToBuild; //Torre a ser instanciada
     private List<Color> StandardColors = new List<Color>();//Lista com cores padrão da torre
-
-
     public bool canDrag = false; //Booleano que indica quando a torre pode ser arrastada pelo mapa
+
 	public static BuildManager instance; //Classe estática
 
 	void Awake()
@@ -29,7 +28,6 @@ public class BuildManager : MonoBehaviour
         //Se o mouse estiver pressionado e o objeto turret não nulo puder ser arrastado
         if(Input.GetMouseButton(0) && canDrag==true && turretToBuild!=null)
             turretToBuild.transform.position = GetMouseWorldPos(); //Seta posição da instancia da torre como a posição do mouse
-
         //Caso em que a torre é solta em uma área não alocavel do mapa
         else
         { 

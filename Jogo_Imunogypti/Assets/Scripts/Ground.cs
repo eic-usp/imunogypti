@@ -41,7 +41,7 @@ public class Ground : MonoBehaviour
             //Chama método para posicionar torre de acordo com a camera
            	BuildManager.instance.SetTurretTransform(Xo,Yo,Zo,d);
              //Retorna a cor padrão da torre
-            BuildManager.instance.changeTurretColor(Color.white);
+            // BuildManager.instance.changeTurretColor(Color.white);
             //Torre posicionada, coloca torre a ser construida como null para fazer a torre parar de seguir o mouse
             BuildManager.instance.turretToBuild = null;
             //Existe uma torre neste tile
@@ -54,11 +54,11 @@ public class Ground : MonoBehaviour
             //Se o tile já tiver uma torre (Deixei separado do if de cima pois depois o if abaixo vai ter que ganhar outra cara pra comportar torres que usam mais espaço)
             if(hasTurret){
                     //Se há uma torre aqui, deixar torre vermelha
-                    BuildManager.instance.changeTurretColor(Color.red);
+                    // BuildManager.instance.changeTurretColor(Color.red);
             }
             else{
                 //Se não há torres aqui, deixar torre verde
-                BuildManager.instance.changeTurretColor(Color.green);
+                // BuildManager.instance.changeTurretColor(Color.green);
             }
         }
     }
@@ -69,7 +69,7 @@ public class Ground : MonoBehaviour
     	rend.material.color = defaultColor;
         if(BuildManager.instance.turretToBuild!=null){
                 //Volta a cor original da torre
-                BuildManager.instance.changeTurretColor(Color.white);
+                // BuildManager.instance.changeTurretColor(Color.white);
         }
     }
 
