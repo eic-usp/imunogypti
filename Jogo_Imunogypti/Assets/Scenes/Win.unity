@@ -288,7 +288,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: VOCe VenZeu, PARABAAINNSS!!!
+  m_Text: "Vit\xF3ria!!!"
 --- !u!222 &638065672
 CanvasRenderer:
   m_ObjectHideFlags: 0

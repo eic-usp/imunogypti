@@ -31,7 +31,7 @@ public class Base : MonoBehaviour
     {
         Virus virus = other.GetComponent<Virus>();
     
-        TakeDamage(virus.Damage);
+        TakeDamage(virus.damage);
     }
 
     public void BaseLocate(Vector3 locate)

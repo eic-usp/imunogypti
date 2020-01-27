@@ -6,8 +6,8 @@ using UnityEngine;
 public class Virus : MonoBehaviour
 {
     public float hp; //vida do inimigo
+    public int damage; //dano que o inimigo da ao jogador quando chega ao fim do caminho
     [SerializeField] private float speed; //velocidade com que o inimigo caminha pelo mapa
-    [SerializeField] public int Damage{get; private set;} //dano que o inimigo da ao jogador quando chega ao fim do caminho
     [SerializeField] private int goldValue; //dinheiro que o inimigo da ao jogador quando eh destruido
     //[SerializeField] private Color color; // cor/sprite do inimigo
     private Transform target; //Dita a direção do movimento do virus
@@ -15,7 +15,6 @@ public class Virus : MonoBehaviour
 
     void Start()
     {
-        Damage = 5;
         //Alvo inicial é o primeiro waypoint 
         target = Waypoints.points[0];
         //Se o waypoint for nulo

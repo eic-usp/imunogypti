@@ -182,9 +182,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
-  range: 6
+  range: 4
   attackSpeed: 0
-  damage: 0.3
+  damage: 0.1
   cost: 400
   partToRotate: {fileID: 4550423608108760570}
   firepoint: {fileID: 2915093151067518658}

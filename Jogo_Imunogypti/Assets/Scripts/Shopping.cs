@@ -21,12 +21,7 @@ public class Shopping : MonoBehaviour
 
         instance = this;
     }
-
-    void Start()
-    {
-        gold = 4000; //dinheiro inicial do jogador
-    }
-
+    
     void Update()
     {
         goldText.text = gold.ToString();

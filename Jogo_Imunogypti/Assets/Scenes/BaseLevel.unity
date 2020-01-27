@@ -5276,7 +5276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1feaf0c30a731764da1300f1e8c24bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 0
+  gold: 400
   goldText: {fileID: 1197417146}
 --- !u!114 &498840709
 MonoBehaviour:
@@ -17625,7 +17625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b617b522ce3b01499fcde2dcbe6f69e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 50000
+  hp: 5
   hpText: {fileID: 410609227}
 --- !u!65 &1422420943
 BoxCollider:
@@ -24838,13 +24838,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cbd5fcd8be12f642965a1df832e132b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wavesRemaning: 3
+  wavesRemaning: 5
   waveNumber: 0
   timeBetweenWaves: 5
-  countdown: 2
+  countdown: 5
   activeViruses: 0
-  virusPrefab: {fileID: 4644554986552411358, guid: acd1c5ae306764141a98c8cb8d27b328,
-    type: 3}
+  virusPrefab:
+  - {fileID: 4644554986552411358, guid: acd1c5ae306764141a98c8cb8d27b328, type: 3}
+  - {fileID: 2058871300217595997, guid: 388bb17fef205974293314d31f568207, type: 3}
 --- !u!4 &2003263288
 Transform:
   m_ObjectHideFlags: 0
