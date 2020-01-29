@@ -53,6 +53,7 @@ public class BuildManager : MonoBehaviour
             //Instancia a torre em coordenadas quaisquer e habilita o canDrag
             turretToBuild = Instantiate(tower,new Vector3(0,0,0),Quaternion.Euler(new Vector3(0,0,0)));
             //Para cada renderer de objeto filho da atual turretToBuild, grave sua cor na lista de cores padrão do prefab
+            StandardColors.Clear();
             foreach(Renderer r in turretToBuild.GetComponentsInChildren<Renderer>())
                 StandardColors.Add(r.material.color);
             canDrag = true;

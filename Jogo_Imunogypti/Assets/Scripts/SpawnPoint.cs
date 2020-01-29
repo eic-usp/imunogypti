@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using UnityEngine.UI;
 
 //classe que controla as principais funcoes do jogo
 public class SpawnPoint : MonoBehaviour
@@ -16,6 +17,8 @@ public class SpawnPoint : MonoBehaviour
     public int activeViruses = 0; //marca quantos virus ainda estao ativos
     [SerializeField] private Virus[] virusPrefab;
     public static SpawnPoint instance; //Classe estática
+    [SerializeField] private Text wavesRemaningText;
+    [SerializeField] private Text timeRemaningNextWaveText;
 
     void Awake()
     {
@@ -53,6 +56,9 @@ public class SpawnPoint : MonoBehaviour
 
     void Update()
     {
+        wavesRemaningText.text = wavesRemaning.ToString(); 
+        timeRemaningNextWaveText.text = Mathf.FloorToInt(countdown).ToString(); 
+
         //condicao de vitoria
         if(wavesRemaning <= 0 && activeViruses <= 0)
         {
@@ -70,7 +76,8 @@ public class SpawnPoint : MonoBehaviour
             waveNumber++;
         }    
 
-        countdown -= Time.deltaTime; //conta tempo para mandar proxima onda de inimigos
+        if(countdown > 0)
+            countdown -= Time.deltaTime; //conta tempo para mandar proxima onda de inimigos
     }
 
     //funcao que libera uma onda de inimigos
@@ -87,6 +94,11 @@ public class SpawnPoint : MonoBehaviour
             Instantiate(virus, gameObject.transform.position, rotation);
             yield return new WaitForSeconds(0.3f); //tempo entre a instanciacao de cada inimigo
         }
+    }
+
+    public void CallNextWave()
+    {
+        countdown = 0;
     }
 
     //funcao de vitoria do jogador
