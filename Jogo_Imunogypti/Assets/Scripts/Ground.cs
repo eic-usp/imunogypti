@@ -13,6 +13,7 @@ public class Ground : MonoBehaviour
     private float Xo,Yo,Zo;
     //True caso haja uma torre posicionada neste tile do mapa;
     private bool hasTurret = false;
+    private bool activeLinfocitos = false;
 
     void Start()
     {
@@ -80,5 +81,10 @@ public class Ground : MonoBehaviour
         {
            return;
         }
+    }
+
+    public void Activate()
+    {
+        activeLinfocitos = true;
     }
 }

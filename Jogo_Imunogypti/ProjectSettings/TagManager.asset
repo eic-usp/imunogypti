@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - LinfocitoTCD8
+  - Ground
   layers:
   - Default
   - TransparentFX
