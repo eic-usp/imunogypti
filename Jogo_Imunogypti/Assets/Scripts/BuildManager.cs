@@ -36,6 +36,7 @@ public class BuildManager : MonoBehaviour
                 Debug.Log("Torre destruida");
                 canDrag = false;
                 Shopping.instance.EarnGold(turretToBuild.cost); //Recupera o dinheiro por não ter posicionado a torre no mapa
+                Destroy(turretToBuild.Circle);
                 Destroy(turretToBuild.gameObject);
                 return;
             }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 //Classe que representa o basico de todas as torres
 public class Tower : MonoBehaviour
@@ -20,15 +21,24 @@ public class Tower : MonoBehaviour
    	private IRotate myRotate;
    	private IEffect myEffect;
 
+    //para desenhar o range
+   private GameObject rangeCircle;
+   public GameObject Circle;
+
 	void Awake()
     {
         myTarget = GetComponent<ITarget>();
         myRotate = GetComponent<IRotate>();
         myEffect = GetComponent<IEffect>();
+
+        rangeCircle = Instantiate(Circle, transform.position,transform.rotation);
+        rangeCircle.transform.localScale = new Vector3(range + 2f,range+2f,0);
+    
     }
 
     void Update()
-    {   
+    {  
+        rangeCircle.transform.position = transform.position;
         if(active==false)
             return;
 
@@ -45,4 +55,6 @@ public class Tower : MonoBehaviour
     {
         active = true;
     }
+
+   
 }

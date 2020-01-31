@@ -401,3 +401,4 @@ MonoBehaviour:
   cost: 250
   partToRotate: {fileID: 3503813427080932048}
   firepoint: {fileID: 3790693833263577107}
+  Circle: {fileID: 3495479800205446299, guid: 5ac262bf362adeb408aa5358282c4855, type: 3}
