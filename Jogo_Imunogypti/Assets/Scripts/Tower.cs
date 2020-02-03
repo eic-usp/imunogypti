@@ -16,6 +16,7 @@ public class Tower : MonoBehaviour
    	[SerializeField] private Transform firepoint;
    	private List<GameObject> targets;
 
+    //Interfaces
    	private ITarget myTarget;
    	private IRotate myRotate;
    	private IEffect myEffect;

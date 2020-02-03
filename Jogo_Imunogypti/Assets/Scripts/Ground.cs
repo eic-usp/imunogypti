@@ -12,8 +12,8 @@ public class Ground : MonoBehaviour
     private float d = 27.31f;
     private float Xo,Yo,Zo;
     //True caso haja uma torre posicionada neste tile do mapa;
-    private bool hasTurret = false;
-    private bool activeLinfocitos = false;
+    [SerializeField] private Tower tower = null;
+    [SerializeField] private bool activeLinfocitos = false;
 
     void Start()
     {
@@ -27,6 +27,12 @@ public class Ground : MonoBehaviour
      	Yo = cameraToPivot.y;
      	Zo = cameraToPivot.z;
     }
+
+    void Update() 
+    {
+        if(activeLinfocitos && tower != null)
+            tower.Activate();    
+    }
     
     void OnMouseOver()
     {
@@ -34,7 +40,7 @@ public class Ground : MonoBehaviour
     	rend.material.color = new Color(255,255,255);
         //Se o mouse não estiver pressionado (Torre não está sendo arrastada) e a torre a ser construida pelo buildManager for diferente de null 
         //(Alguma possivelmente torre foi instanciada recentemente)
-        if(BuildManager.instance.turretToBuild!=null && Input.GetMouseButton(0)==false && hasTurret==false)
+        if(BuildManager.instance.turretToBuild!=null && Input.GetMouseButton(0)==false && tower==null)
         {
             //Torre não pode mais ser arrastada (impede torre de ser destruida pelo shopping, que seria o caso em que canDrag == true e a torre não nula, mas o mouse
             //não é pressionado)
@@ -43,17 +49,17 @@ public class Ground : MonoBehaviour
            	BuildManager.instance.SetTurretTransform(Xo,Yo,Zo,d);
              //Retorna a cor padrão da torre
             BuildManager.instance.changeTurretColor(Color.white);
+            //Existe uma torre neste tile
+            tower = BuildManager.instance.turretToBuild;
             //Torre posicionada, coloca torre a ser construida como null para fazer a torre parar de seguir o mouse
             BuildManager.instance.turretToBuild = null;
-            //Existe uma torre neste tile
-           	hasTurret = true;
 
         }
 
         //A ser executado quando uma torre está sendo arrastada sobre esse tile
         if(BuildManager.instance.turretToBuild!=null && Input.GetMouseButton(0)){
             //Se o tile já tiver uma torre (Deixei separado do if de cima pois depois o if abaixo vai ter que ganhar outra cara pra comportar torres que usam mais espaço)
-            if(hasTurret){
+            if(tower != null){
                     //Se há uma torre aqui, deixar torre vermelha
                     BuildManager.instance.changeTurretColor(Color.red);
             }
@@ -86,5 +92,7 @@ public class Ground : MonoBehaviour
     public void Activate()
     {
         activeLinfocitos = true;
+        defaultColor = Color.yellow;
+        rend.material.color = defaultColor;
     }
 }

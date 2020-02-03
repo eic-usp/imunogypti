@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 1
-  range: 2
+  range: 4
   attackSpeed: 0
   damage: 0
   cost: 250

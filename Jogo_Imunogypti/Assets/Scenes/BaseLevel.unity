@@ -17912,7 +17912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b617b522ce3b01499fcde2dcbe6f69e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 5
+  hp: 50000
   hpText: {fileID: 410609227}
 --- !u!65 &1422420943
 BoxCollider:
@@ -25360,7 +25360,7 @@ MonoBehaviour:
   wavesRemaning: 5
   waveNumber: 0
   timeBetweenWaves: 5
-  countdown: 5
+  countdown: 0
   activeViruses: 0
   virusPrefab:
   - {fileID: 4644554986552411358, guid: acd1c5ae306764141a98c8cb8d27b328, type: 3}
