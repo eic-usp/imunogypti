@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SingleTargetIncreaseContinuousDamage : MonoBehaviour, IEffect
+public class IncreaseContinuousDamage : MonoBehaviour, IEffect
 {
+   	[SerializeField] private Transform firePoint;
     [SerializeField] private LineRenderer lineRenderer;
+    [SerializeField] protected float multiplierIncreaseRate; //velocidade de ataque da torre
+    [SerializeField] protected float initialDamage; //dano da torre
     private GameObject previousTarget = null;
     private float multiplier = 1;
 
-    public void Apply(Transform firePoint, float attackSpeed, List<GameObject> targets, float damage){
+    public void Apply(List<GameObject> targets){
         if(targets.Count == 0)
         {
             if(lineRenderer.enabled)
@@ -26,9 +29,9 @@ public class SingleTargetIncreaseContinuousDamage : MonoBehaviour, IEffect
             multiplier = 1;
 
         Virus enemy = targets[0].GetComponent<Virus>();
-        enemy.DealDamage(damage*multiplier);
+        enemy.DealDamage(initialDamage*multiplier);
 
-        multiplier += Time.deltaTime;
+        multiplier += Time.deltaTime*multiplierIncreaseRate;
 
         previousTarget = targets[0];
     }

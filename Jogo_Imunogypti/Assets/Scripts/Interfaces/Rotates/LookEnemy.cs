@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class LookEnemy : MonoBehaviour, IRotate
 {
-    public Quaternion LookAt(Transform target, Transform tower)
+   	[SerializeField] private Transform partToRotate;
+
+    public void LookAt(Transform target, Transform tower)
     {
         //A direção entre a torre e o inimigo
-    	Vector3 dir = target.position - tower.position;
+    	Vector3 dir = target.position - transform.position;
     	//Quaternion com rotação para fazer a torre olhar pro inimigo
     	Quaternion lookRotation = Quaternion.LookRotation(dir);
     	Vector3 rotation = lookRotation.eulerAngles;
 
-        return Quaternion.Euler(rotation.x,rotation.y,0f);
+        partToRotate.rotation = Quaternion.Euler(rotation.x,rotation.y,0f);
     }
 }

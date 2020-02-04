@@ -10,10 +10,10 @@ public interface ITarget
 
 public interface IEffect
 {
-    void Apply(Transform firePoint, float attackSpeed, List<GameObject> targets, float damage);
+    void Apply(List<GameObject> targets);
 }
 
 public interface IRotate
 {
-    Quaternion LookAt(Transform target, Transform tower);
+    void LookAt(Transform target, Transform tower);
 }

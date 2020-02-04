@@ -7,13 +7,8 @@ public class Tower : MonoBehaviour
 {
     [SerializeField] protected bool active = false; //define se a torre esta ativa
     [SerializeField] protected float range = 5f; //alcance da torre, ex: do ataque
-    [SerializeField] protected float attackSpeed = 5f; //velocidade de ataque da torre
-    [SerializeField] protected float damage = 5f; //dano da torre
     public int cost;
 
-    //Transforms relevantes 
-   	[SerializeField] private Transform partToRotate;
-   	[SerializeField] private Transform firepoint;
    	private List<GameObject> targets;
 
     //Interfaces
@@ -37,9 +32,9 @@ public class Tower : MonoBehaviour
 
     	//Rotaciona torre para olhar na direção do inimigo
         if(targets.Count != 0)
-            partToRotate.rotation = myRotate.LookAt(targets[0].transform, transform);
+            myRotate.LookAt(targets[0].transform, transform);
 
-        myEffect.Apply(firepoint, attackSpeed, targets, damage);
+        myEffect.Apply(targets);
     }
 
     public void Activate()

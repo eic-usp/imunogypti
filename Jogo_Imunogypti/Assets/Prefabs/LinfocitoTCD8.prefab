@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81f01cd2387cbf48b49c96583179930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partToRotate: {fileID: 4550423608108760570}
 --- !u!114 &3789329221057308410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +169,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f85d420c16e1084fa26fece48d04110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firePoint: {fileID: 2915093151067518658}
   lineRenderer: {fileID: 2165922076141081770}
+  multiplierIncreaseRate: 1
+  initialDamage: 0.3
 --- !u!114 &6591991958249012197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,11 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   range: 4
-  attackSpeed: 0
-  damage: 0.1
   cost: 400
-  partToRotate: {fileID: 4550423608108760570}
-  firepoint: {fileID: 2915093151067518658}
 --- !u!120 &2165922076141081770
 LineRenderer:
   m_ObjectHideFlags: 0
