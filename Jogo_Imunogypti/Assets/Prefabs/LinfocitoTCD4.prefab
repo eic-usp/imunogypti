@@ -89,7 +89,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2e3e97f07f4f8e8499baada50cd48a8b, type: 2}
+  - {fileID: 2100000, guid: dd5e01f5244e2f94c883b6afdbdf7254, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -181,7 +181,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2e3e97f07f4f8e8499baada50cd48a8b, type: 2}
+  - {fileID: 2100000, guid: dd5e01f5244e2f94c883b6afdbdf7254, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -227,10 +227,10 @@ GameObject:
   - component: {fileID: 17360280091397700}
   - component: {fileID: 5438658430606255703}
   - component: {fileID: 4084312700644361147}
-  - component: {fileID: 9044171758055850290}
+  - component: {fileID: 2036811032608585666}
   - component: {fileID: 2902032361193593442}
   m_Layer: 0
-  m_Name: CelulaDendritica
+  m_Name: LinfocitoTCD4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed441345e3b95a14eaa02ec6e07a229a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9044171758055850290
+--- !u!114 &2036811032608585666
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -285,9 +285,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5889387932479902180}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c5ac46490871034785487141cdac11e, type: 3}
+  m_Script: {fileID: 11500000, guid: 551cbaf299228b6489bff0f4d0510d4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffAttackSpeed: 0.5
+  buffDamage: 0.5
 --- !u!114 &2902032361193593442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,6 +302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b583a87d1bf5c8a46bc7a48135b96301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   range: 7
   cost: 250

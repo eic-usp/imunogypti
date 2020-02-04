@@ -14,6 +14,10 @@ public class Ground : MonoBehaviour
     //True caso haja uma torre posicionada neste tile do mapa;
     [SerializeField] private Tower tower = null;
     [SerializeField] private bool activeLinfocitos = false;
+    [SerializeField] private bool buffMacrofago = false;
+
+    private float buffDamage = 0;
+    private float buffAtackSpeed = 0;
 
     void Start()
     {
@@ -26,12 +30,6 @@ public class Ground : MonoBehaviour
      	Xo = cameraToPivot.x;
      	Yo = cameraToPivot.y;
      	Zo = cameraToPivot.z;
-    }
-
-    void Update() 
-    {
-        if(activeLinfocitos && tower != null)
-            tower.Activate();    
     }
     
     void OnMouseOver()
@@ -54,6 +52,15 @@ public class Ground : MonoBehaviour
             //Torre posicionada, coloca torre a ser construida como null para fazer a torre parar de seguir o mouse
             BuildManager.instance.turretToBuild = null;
 
+            //Verifica se precisa ativar algo na torre
+            if(activeLinfocitos)
+                tower.Activate();    
+            if(buffMacrofago)
+            {
+                DiscretDamage dD = tower.GetComponent<DiscretDamage>();
+                if(dD != null)
+                    dD.Buff(buffAtackSpeed, buffDamage);
+            }
         }
 
         //A ser executado quando uma torre está sendo arrastada sobre esse tile
@@ -75,8 +82,8 @@ public class Ground : MonoBehaviour
         //Volta a cor original
     	rend.material.color = defaultColor;
         if(BuildManager.instance.turretToBuild!=null){
-                //Volta a cor original da torre
-                BuildManager.instance.changeTurretColor(Color.white);
+            //Volta a cor original da torre
+            BuildManager.instance.changeTurretColor(Color.white);
         }
     }
 
@@ -93,6 +100,26 @@ public class Ground : MonoBehaviour
     {
         activeLinfocitos = true;
         defaultColor = Color.yellow;
+        rend.material.color = defaultColor;
+
+        if(tower != null)
+            tower.Activate();
+    }
+    
+    public void ActivateBuffMacrofago(float buffAS, float buffD)
+    {
+        buffAtackSpeed = Mathf.Max(buffAtackSpeed, buffAS);
+        buffDamage = Mathf.Max(buffDamage, buffD);
+
+        if(tower != null)
+        {
+            DiscretDamage dD = tower.GetComponent<DiscretDamage>();
+            if(dD != null)
+                dD.Buff(buffAtackSpeed, buffDamage);
+        }
+
+        buffMacrofago = true;
+        defaultColor = Color.magenta;
         rend.material.color = defaultColor;
     }
 }
