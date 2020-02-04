@@ -66,11 +66,17 @@ public class Ground : MonoBehaviour
         //A ser executado quando uma torre está sendo arrastada sobre esse tile
         if(BuildManager.instance.turretToBuild!=null && Input.GetMouseButton(0)){
             //Se o tile já tiver uma torre (Deixei separado do if de cima pois depois o if abaixo vai ter que ganhar outra cara pra comportar torres que usam mais espaço)
-            if(tower != null){
-                    //Se há uma torre aqui, deixar torre vermelha
-                    BuildManager.instance.changeTurretColor(Color.red);
+            if(tower != null)
+            {
+                //Se há uma torre aqui, deixar torre vermelha
+                BuildManager.instance.changeTurretColor(Color.red);
             }
-            else{
+            else if(BuildManager.instance.turretToBuild.active == false && activeLinfocitos == false)
+            {
+                BuildManager.instance.changeTurretColor(Color.yellow);
+            }
+            else
+            {
                 //Se não há torres aqui, deixar torre verde
                 BuildManager.instance.changeTurretColor(Color.green);
             }

@@ -5,8 +5,8 @@ using UnityEngine;
 //Classe que representa o basico de todas as torres
 public class Tower : MonoBehaviour
 {
-    [SerializeField] protected bool active = false; //define se a torre esta ativa
-    [SerializeField] protected float range = 5f; //alcance da torre, ex: do ataque
+    [SerializeField] public bool active = false; //define se a torre esta ativa
+    [SerializeField] private float range = 5f; //alcance da torre, ex: do ataque
     public int cost;
 
    	private List<GameObject> targets;
