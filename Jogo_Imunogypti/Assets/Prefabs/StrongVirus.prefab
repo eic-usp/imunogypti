@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 15
   damage: 2
-  speed: 5
+  speed: 4
   goldValue: 100
 --- !u!54 &2986580255443706943
 Rigidbody:
