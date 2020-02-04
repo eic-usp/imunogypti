@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class RhythmController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private float timeScale = 1;
+
+    public void ChangeRhythm()
     {
-        
+        Time.timeScale = timeScale = Time.timeScale%3 + 1;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ReturnRhythm()
     {
-        
-    }
-
-    public void ChangeRhythm(){
-    	Time.timeScale +=0.2f;
+        Time.timeScale = timeScale;
     }
 }

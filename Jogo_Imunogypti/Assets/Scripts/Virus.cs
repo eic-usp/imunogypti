@@ -24,16 +24,16 @@ public class Virus : MonoBehaviour
 
     void Update()
     {
+        //Se a distancia entre o virus e o target é muito pequena, chame o método pra mudar de target
+        if(Vector3.Distance(transform.position,target.position)<=0.25f)
+        	GetNextWayPoint();
+
     	// a Direção é o vetor que liga o virus ao target
         Vector3 dir = -this.transform.position + target.transform.position;
         //this.transform.LookAt(Camera.main.transform.position);
         //Move o virus na direção com uma velocidade 'speed' em relação ao World
         this.transform.Translate(dir.normalized * speed * Time.deltaTime,Space.World);
 
-        //Se a distancia entre o virus e o target é muito pequena, chame o método pra mudar de target
-        if(Vector3.Distance(transform.position,target.position)<=0.2f){
-        	GetNextWayPoint();
-        }
     }
 
     //funcao que pega o ponto para onde o virus deve ir
