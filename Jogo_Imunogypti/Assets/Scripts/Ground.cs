@@ -6,6 +6,7 @@ public class Ground : MonoBehaviour
 {
     //Variáveis Renderer e Color
 	[SerializeField] private SpriteRenderer rend;
+	[SerializeField] private Color originalColor;
 	[SerializeField] private Color defaultColor;
     //Variáveis para posicionar a torre de acordo com a câmera. O parâmetro d fala a posição do plano contendo as torres em relação a câmera
     private Vector3 cameraToPivot;
@@ -22,6 +23,7 @@ public class Ground : MonoBehaviour
     void Start()
     {
         //Cor padrão é a cor inicial do prefab
+        originalColor = rend.material.color;
         defaultColor = rend.material.color;
 
         //Cria o vetor entre o pivot do tile e a main Camera
@@ -106,6 +108,19 @@ public class Ground : MonoBehaviour
             tower.Activate();
     }
     
+    public void Deactivate()
+    {
+        activeLinfocitos = false;
+        if(buffMacrofago)
+            defaultColor = Color.magenta;
+        else
+            defaultColor = originalColor;
+        rend.material.color = defaultColor;
+
+        if(tower != null && tower.CompareTag("Linfocito"))
+            tower.Deactivate();
+    }
+    
     public void ActivateBuffMacrofago(float buffAS, float buffD)
     {
         buffAtackSpeed = Mathf.Max(buffAtackSpeed, buffAS);
@@ -121,5 +136,31 @@ public class Ground : MonoBehaviour
         buffMacrofago = true;
         defaultColor = Color.magenta;
         rend.material.color = defaultColor;
+    }
+
+    public void DeactivateBuffMacrofago()
+    {
+        if(tower != null)
+        {
+            DiscretDamage dD = tower.GetComponent<DiscretDamage>();
+            if(dD != null)
+                dD.Buff(-buffAtackSpeed, -buffDamage);
+        }
+
+        buffAtackSpeed = 0;
+        buffDamage = 0;
+
+        buffMacrofago = false;
+        if(activeLinfocitos)
+            defaultColor = Color.yellow;
+        else
+            defaultColor = originalColor;
+        rend.material.color = defaultColor;
+    }
+
+    public void Uninstall()
+    {  
+        tower.Uninstall();
+        tower = null;
     }
 }

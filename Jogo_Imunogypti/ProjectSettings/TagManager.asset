@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - LinfocitoTCD8
   - Ground
+  - Linfocito
   layers:
   - Default
   - TransparentFX

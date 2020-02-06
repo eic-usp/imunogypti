@@ -41,4 +41,16 @@ public class Tower : MonoBehaviour
     {
         active = true;
     }
+    
+    public void Deactivate()
+    {
+        active = false;
+    }
+
+    public void Uninstall()
+    {  
+        Shopping.instance.EarnGold((int)(cost*0.5f));
+        myEffect.Remove(targets);
+        Destroy(this.gameObject);
+    }
 }

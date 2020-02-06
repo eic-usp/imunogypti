@@ -11,6 +11,7 @@ public interface ITarget
 public interface IEffect
 {
     void Apply(List<GameObject> targets);
+    void Remove(List<GameObject> targets);
 }
 
 public interface IRotate

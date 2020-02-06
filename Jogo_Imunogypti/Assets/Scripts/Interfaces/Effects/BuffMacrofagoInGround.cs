@@ -14,4 +14,13 @@ public class BuffMacrofagoInGround : MonoBehaviour, IEffect
             activeGround.ActivateBuffMacrofago(buffAttackSpeed, buffDamage);
         }
     }
+
+    public void Remove(List<GameObject> targets)
+    {
+        foreach (GameObject ground in targets)
+        {
+            Ground activeGround = ground.GetComponent<Ground>();
+            activeGround.DeactivateBuffMacrofago();
+        }
+    }
 }

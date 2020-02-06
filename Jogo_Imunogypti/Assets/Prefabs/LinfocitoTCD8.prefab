@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 6996728204223065477}
   m_Layer: 0
   m_Name: LinfocitoTCD8
-  m_TagString: LinfocitoTCD8
+  m_TagString: Linfocito
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
