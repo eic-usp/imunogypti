@@ -32,6 +32,8 @@ public class DiscretDamage : MonoBehaviour, IEffect
         fireCountdown -= Time.deltaTime;
     }
 
+    public void Remove(List<GameObject> targets){}
+
     public void Buff(float buffAS, float buffD)
     {
         buffAttackSpeed += buffAS;

@@ -36,4 +36,5 @@ public class IncreaseContinuousDamage : MonoBehaviour, IEffect
         previousTarget = targets[0];
     }
 
+    public void Remove(List<GameObject> targets){}
 }

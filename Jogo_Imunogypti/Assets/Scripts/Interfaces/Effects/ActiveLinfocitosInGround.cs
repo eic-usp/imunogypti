@@ -11,4 +11,13 @@ public class ActiveLinfocitosInGround : MonoBehaviour, IEffect
             activeGround.Activate();
         }
     }
+
+    public void Remove(List<GameObject> targets)
+    {
+        foreach (GameObject ground in targets)
+        {
+            Ground activeGround = ground.GetComponent<Ground>();
+            activeGround.Deactivate();
+        }
+    }
 }
