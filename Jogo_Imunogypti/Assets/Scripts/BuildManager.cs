@@ -70,14 +70,13 @@ public class BuildManager : MonoBehaviour
     }
     
     //Posiciona torre com o referencial na camera em um plano paralelo à camera a uma distancia d. As coordenadadas Xo, Yo, Zo são os vetores entre a camera e o pivot do tile do mapa
-    public void SetTurretTransform(float Xo, float Yo, float Zo, float d)
+    public void SetTurretTransform(Transform t)
     {
         if(turretToBuild!=null)
         {
-            turretToBuild.transform.parent = Camera.main.transform;
-            turretToBuild.transform.localPosition = new Vector3((d/Zo)*Xo,(d/Zo)*Yo,d);
+            turretToBuild.transform.position = t.position;
             //Rotação de acordo com a rotação escolhida para o mapa
-            turretToBuild.transform.rotation = Quaternion.Euler(-30,0,0);
+            turretToBuild.transform.rotation = Quaternion.Euler(-90,0,0);
         }
     }
 

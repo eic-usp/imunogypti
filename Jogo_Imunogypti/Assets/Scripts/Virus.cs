@@ -34,6 +34,7 @@ public class Virus : MonoBehaviour
         //Move o virus na direção com uma velocidade 'speed' em relação ao World
         this.transform.Translate(dir.normalized * speed * Time.deltaTime,Space.World);
 
+
     }
 
     //funcao que pega o ponto para onde o virus deve ir
