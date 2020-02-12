@@ -13,6 +13,9 @@ public class Virus : MonoBehaviour
     private Transform target; //Dita a direção do movimento do virus
     private int wavePointIndex=0; //É adicionada de 1 a cada target alcançado
 
+    private Vector3 actualDirection; //Direção na qual o virus está se movendo
+    private Vector3 previousDirection; //direção anterior do virus
+
     void Start()
     {
         //Alvo inicial é o primeiro waypoint 
@@ -25,14 +28,17 @@ public class Virus : MonoBehaviour
     void Update()
     {
         //Se a distancia entre o virus e o target é muito pequena, chame o método pra mudar de target
-        if(Vector3.Distance(transform.position,target.position)<=0.25f)
+        if(Vector3.Distance(transform.position,target.position)<=0.25f){
         	GetNextWayPoint();
-
+            previousDirection = actualDirection;
+            actualDirection = -this.transform.position + target.transform.position;
+            Rotativ(previousDirection,actualDirection);
+        }
+        actualDirection = -this.transform.position + target.transform.position;
     	// a Direção é o vetor que liga o virus ao target
-        Vector3 dir = -this.transform.position + target.transform.position;
         //this.transform.LookAt(Camera.main.transform.position);
         //Move o virus na direção com uma velocidade 'speed' em relação ao World
-        this.transform.Translate(dir.normalized * speed * Time.deltaTime,Space.World);
+        this.transform.Translate(actualDirection.normalized * speed * Time.deltaTime,Space.World);
 
 
     }
@@ -70,5 +76,10 @@ public class Virus : MonoBehaviour
     private void OnDestroy() 
     {
         SpawnPoint.instance.activeViruses--;    
+    }
+
+    private void Rotativ(Vector3 prev, Vector3 actual){
+        float angle = Vector3.Angle(prev,actual);
+        transform.Rotate(0,0,0);
     }
 }

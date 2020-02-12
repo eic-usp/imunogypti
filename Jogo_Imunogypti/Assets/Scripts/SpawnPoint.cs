@@ -89,8 +89,7 @@ public class SpawnPoint : MonoBehaviour
         //estancia os inimigos dessa onda
         foreach (Virus virus in horde)
         {
-            Vector3 rotation = new Vector3(-30,5,0);
-            rotation.y += 0.4f;
+            Vector3 rotation = new Vector3(-90f,0.4f,0);
             Instantiate(virus, gameObject.transform.position, Quaternion.Euler(rotation));
             yield return new WaitForSeconds(0.3f); //tempo entre a instanciacao de cada inimigo
         }
