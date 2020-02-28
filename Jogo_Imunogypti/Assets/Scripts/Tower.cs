@@ -7,6 +7,7 @@ public class Tower : MonoBehaviour
 {
     [SerializeField] public bool active = false; //define se a torre esta ativa
     [SerializeField] private float range = 5f; //alcance da torre, ex: do ataque
+    public int upgradeCost;
     public int cost;
 
    	private List<GameObject> targets;
@@ -49,7 +50,6 @@ public class Tower : MonoBehaviour
 
     public void Uninstall()
     {  
-        Shopping.instance.EarnGold((int)(cost*0.5f));
         myEffect.Remove(targets);
         Destroy(this.gameObject);
     }

@@ -9,6 +9,7 @@ public class Shopping : MonoBehaviour
     private float price;
     [SerializeField] private int gold; //dinheiro do jogador
     [SerializeField] private Text goldText; //mostrar pro jogador quanto dinheiro ele tem
+    private float returnPercentageGold = 0.5f;
     public static Shopping instance; //Classe estática
 
     void Awake()
@@ -46,5 +47,16 @@ public class Shopping : MonoBehaviour
 
         gold -= amount;
         return true;
+    }
+
+    public int SalePrice(Tower tower)
+    {
+        return (int)(tower.cost*returnPercentageGold);
+    }
+
+    public void Sell()
+    {
+        EarnGold(SalePrice(TowerSelection.instance.selected.tower));
+        TowerSelection.instance.UninstallSelected();
     }
 }

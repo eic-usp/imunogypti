@@ -262,7 +262,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7926088877875659735, guid: 70aa45e2fdd00c248a012f514fb55f49,
     type: 3}
   attackSpeed: 1
-  damage: 3
+  damage: 1
 --- !u!114 &5382534014338106279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   range: 2
+  upgradeCost: 0
   cost: 300
 --- !u!1 &5718095240079147646
 GameObject:

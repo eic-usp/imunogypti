@@ -13,7 +13,7 @@ public class Ground : MonoBehaviour
     private float d = 27.31f;
     private float Xo,Yo,Zo;
     //True caso haja uma torre posicionada neste tile do mapa;
-    [SerializeField] private Tower tower = null;
+    public Tower tower = null;
     [SerializeField] private bool activeLinfocitos = false;
     [SerializeField] private bool buffMacrofago = false;
 
@@ -95,13 +95,13 @@ public class Ground : MonoBehaviour
         }
     }
 
-    //Nenhuma utilidade em particular
+    //Seleciona torre
     void OnMouseDown()
     {
-        if(BuildManager.instance.turretToBuild==null)
-        {
-           return;
-        }
+        if(tower == null)
+            TowerSelection.instance.Hide();
+        else
+            TowerSelection.instance.Select(this);
     }
 
     public void Activate()

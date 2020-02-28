@@ -53,4 +53,10 @@ public class Path : MonoBehaviour
                 BuildManager.instance.changeTurretColor(Color.white);
         }
     }
+
+    //Seleciona torre
+    void OnMouseDown()
+    {
+        TowerSelection.instance.Hide();
+    }
 }
