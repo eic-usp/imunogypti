@@ -59,4 +59,10 @@ public class Shopping : MonoBehaviour
         EarnGold(SalePrice(TowerSelection.instance.selected.tower));
         TowerSelection.instance.UninstallSelected();
     }
+
+    public void Upgrade()
+    {
+        if(ShellOut(TowerSelection.instance.selected.tower.upgradeCost))
+            TowerSelection.instance.selected.tower.Upgrade();
+    }
 }

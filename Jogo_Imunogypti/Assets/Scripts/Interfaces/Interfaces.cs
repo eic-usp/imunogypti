@@ -5,7 +5,10 @@ using UnityEngine;
 public interface ITarget
 {
     string Tag {get;}
-    List<GameObject> UpdateTarget(float range);
+    float Range {get;}
+    DynamicTable Table {get;}
+    void Upgrade(int level);
+    List<GameObject> UpdateTarget();
 }
 
 public interface IEffect

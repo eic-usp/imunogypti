@@ -5,8 +5,8 @@ using UnityEngine;
 //Classe que representa o basico de todas as torres
 public class Tower : MonoBehaviour
 {
-    [SerializeField] public bool active = false; //define se a torre esta ativa
-    [SerializeField] private float range = 5f; //alcance da torre, ex: do ataque
+    private int level = 1;
+    public bool active = false; //define se a torre esta ativa
     public int upgradeCost;
     public int cost;
 
@@ -29,7 +29,7 @@ public class Tower : MonoBehaviour
         if(active==false)
             return;
 
-		targets = myTarget.UpdateTarget(range);
+		targets = myTarget.UpdateTarget();
 
     	//Rotaciona torre para olhar na direção do inimigo
         if(targets.Count != 0)
@@ -52,5 +52,10 @@ public class Tower : MonoBehaviour
     {  
         myEffect.Remove(targets);
         Destroy(this.gameObject);
+    }
+
+    public void Upgrade()
+    {
+        myTarget.Upgrade(++level);
     }
 }

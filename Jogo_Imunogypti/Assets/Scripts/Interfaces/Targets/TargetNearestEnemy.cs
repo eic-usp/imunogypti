@@ -2,17 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetNearestEnemy : MonoBehaviour, ITarget
+public class TargetNearestEnemy : BaseTarget
 {
-    public string Tag {get; set;}   
-	List<GameObject> target = new List<GameObject>();
-
-    void Awake()
-    {
-        Tag = "Enemy";
-    }
-
-    public List<GameObject> UpdateTarget(float range)
+    public override List<GameObject> UpdateTarget()
    	{
    		//Os inimigos são todos com a tag de inimigos
     	GameObject[] enemies = GameObject.FindGameObjectsWithTag(Tag);
@@ -33,7 +25,7 @@ public class TargetNearestEnemy : MonoBehaviour, ITarget
     	}
 
     	//Se o inimigo mais proximo não for nulo e a distancia estiver no range da torre, ele será o alvo
-    	if(nearestEnemy!=null && shortestDistance<=range)
+    	if(nearestEnemy!=null && shortestDistance<=Range)
 			target.Add(nearestEnemy);
 			
 		return target;
