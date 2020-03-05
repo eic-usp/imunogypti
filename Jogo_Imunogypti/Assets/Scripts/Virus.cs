@@ -16,13 +16,20 @@ public class Virus : MonoBehaviour
     private Vector3 actualDirection; //Direção na qual o virus está se movendo
     private Vector3 previousDirection; //direção anterior do virus
 
+    public GameObject a ,b,c; //Teste para calcular normal
+    private Vector3 normal;
     void Start()
     {
         //Alvo inicial é o primeiro waypoint 
         target = Waypoints.points[0];
+        actualDirection = -this.transform.position + target.transform.position;
         //Se o waypoint for nulo
         if(target==null)
         		Debug.Log("Error: Target null");
+
+        Vector3 side1 = b.transform.position - a.transform.position;
+        Vector3 side2 = c.transform.position - a.transform.position;
+         normal = Vector3.Cross(side1,side2);
     }
 
     void Update()
@@ -32,15 +39,16 @@ public class Virus : MonoBehaviour
         	GetNextWayPoint();
             previousDirection = actualDirection;
             actualDirection = -this.transform.position + target.transform.position;
-            Rotativ(previousDirection,actualDirection);
+
         }
-        actualDirection = -this.transform.position + target.transform.position;
+                    Rotativ(previousDirection,actualDirection);
+        //actualDirection = -this.transform.position + target.transform.position;
     	// a Direção é o vetor que liga o virus ao target
         //this.transform.LookAt(Camera.main.transform.position);
         //Move o virus na direção com uma velocidade 'speed' em relação ao World
         this.transform.Translate(actualDirection.normalized * speed * Time.deltaTime,Space.World);
 
-
+        //TurnToNormal();
     }
 
     //funcao que pega o ponto para onde o virus deve ir
@@ -79,7 +87,27 @@ public class Virus : MonoBehaviour
     }
 
     private void Rotativ(Vector3 prev, Vector3 actual){
-        float angle = Vector3.Angle(prev,actual);
-        transform.Rotate(0,0,0);
+       //transform.LookAt(new Vector3(target.position.x,target.position.y,0));
+        Quaternion XLookRotation = Quaternion.LookRotation(actual, Vector3.right) * Quaternion.Euler(new Vector3(0,-90f,0));
+        Quaternion YLookRotation = Quaternion.LookRotation(normal,Vector3.up) * Quaternion.Euler(new Vector3(getSignal(prev)*90f,0f,0));
+
+        transform.rotation = XLookRotation * YLookRotation;
+        //transform.rotation = XLookRotation;
+        //transform.rotation = Quaternion.Euler( XLookRotation.eulerAngles.x,XLookRotation.eulerAngles.y,XLookRotation.eulerAngles.z);
+        
+
     }
+    private int getSignal(Vector3 prev){
+        Debug.Log(prev);
+        int signal = 0;
+       if(prev.y<0){
+           signal = -1;
+       }
+       if(prev.y>0 || prev.x<0){
+           signal = 1;
+       }
+       return signal;
+    }
+
+    
 }
