@@ -32073,7 +32073,7 @@ MonoBehaviour:
   countdown: 0
   activeViruses: 0
   virusPrefab:
-  - {fileID: 4644554986552411358, guid: acd1c5ae306764141a98c8cb8d27b328, type: 3}
+  - {fileID: 5350948601272602689, guid: ad7eb5ebf3251294bb571224f8417a14, type: 3}
   - {fileID: 2058871300217595997, guid: 388bb17fef205974293314d31f568207, type: 3}
   wavesRemaningText: {fileID: 1476833572}
   timeRemaningNextWaveText: {fileID: 1781908970}
