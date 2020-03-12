@@ -30,7 +30,6 @@ public class Base : MonoBehaviour
     private void OnTriggerEnter(Collider other) 
     {
         Virus virus = other.GetComponent<Virus>();
-        Debug.Log("TOMEI NO CU");
     
         TakeDamage(virus.damage);
     }

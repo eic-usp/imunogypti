@@ -8,6 +8,8 @@ public class Tower : MonoBehaviour
     [SerializeField] public bool active = false; //define se a torre esta ativa
     [SerializeField] private float range = 5f; //alcance da torre, ex: do ataque
     public int cost;
+    public GameObject rangeCircle;
+    public bool drawRange = false;
 
    	private List<GameObject> targets;
 
@@ -21,6 +23,8 @@ public class Tower : MonoBehaviour
         myTarget = GetComponent<ITarget>();
         myRotate = GetComponent<IRotate>();
         myEffect = GetComponent<IEffect>();
+        rangeCircle = this.gameObject.transform.GetChild(2).gameObject;
+        rangeCircle.transform.localScale *=range;
     }
 
     void Update()
@@ -35,8 +39,18 @@ public class Tower : MonoBehaviour
             myRotate.LookAt(targets[0].transform, transform);
 
         myEffect.Apply(targets);
-    }
 
+        if(drawRange == true){
+            rangeCircle.SetActive(true);
+        }
+        else{
+            rangeCircle.SetActive(false);
+        }
+    }
+    private void OnMouseDown() {
+        Debug.Log("This is sparta");
+        drawRange = !drawRange;
+    }
     public void Activate()
     {
         active = true;
