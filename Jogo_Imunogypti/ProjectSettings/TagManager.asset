@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Ground
   - Linfocito
+  - Neutrofilo
+  - Macrofago
+  - "C\xE9lula Dendr\xEDtica"
   layers:
   - Default
   - TransparentFX

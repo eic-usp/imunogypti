@@ -11,6 +11,10 @@ public class Tower : MonoBehaviour
     public GameObject rangeCircle;
     public bool drawRange = false;
 
+    private int ID;
+
+    public Tower[] towers;
+
    	private List<GameObject> targets;
 
     //Interfaces
@@ -24,7 +28,10 @@ public class Tower : MonoBehaviour
         myRotate = GetComponent<IRotate>();
         myEffect = GetComponent<IEffect>();
         rangeCircle = this.gameObject.transform.GetChild(2).gameObject;
-        rangeCircle.transform.localScale *=range;
+        rangeCircle.transform.localScale *=(range+2);
+        ID =GameObject.FindGameObjectsWithTag(this.gameObject.tag).Length;
+
+
     }
 
     void Update()
@@ -48,8 +55,15 @@ public class Tower : MonoBehaviour
         }
     }
     private void OnMouseDown() {
+        towers = FindObjectsOfType(typeof(Tower)) as Tower[];
+        foreach (Tower t in towers )
+        {
+            if(!t.Equals(this))
+                t.drawRange = false;
+        }
         Debug.Log("This is sparta");
         drawRange = !drawRange;
+        EvolvePanel.instance.showEvolvePanel(this,drawRange);
     }
     public void Activate()
     {
@@ -66,5 +80,13 @@ public class Tower : MonoBehaviour
         Shopping.instance.EarnGold((int)(cost*0.5f));
         myEffect.Remove(targets);
         Destroy(this.gameObject);
+    }
+
+    public float getRange(){
+        return range;
+    }
+    public int getID()
+    {
+        return ID;
     }
 }
