@@ -7,7 +7,7 @@ public class TargetNearestEnemy : BaseTarget
     public override List<GameObject> UpdateTarget()
    	{
    		//Os inimigos são todos com a tag de inimigos
-    	GameObject[] enemies = GameObject.FindGameObjectsWithTag(Tag);
+    	GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
     	//Distancia mais curta até um inimigo
     	float shortestDistance = Mathf.Infinity;
     	GameObject nearestEnemy = null;
@@ -25,7 +25,7 @@ public class TargetNearestEnemy : BaseTarget
     	}
 
     	//Se o inimigo mais proximo não for nulo e a distancia estiver no range da torre, ele será o alvo
-    	if(nearestEnemy!=null && shortestDistance<=Range)
+    	if(nearestEnemy!=null && shortestDistance<=range)
 			target.Add(nearestEnemy);
 			
 		return target;

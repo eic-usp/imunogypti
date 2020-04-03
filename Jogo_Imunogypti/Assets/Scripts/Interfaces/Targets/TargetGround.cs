@@ -8,7 +8,7 @@ public class TargetGround : BaseTarget
 
     public override List<GameObject> UpdateTarget()
    	{
-   		GameObject[] grounds = GameObject.FindGameObjectsWithTag(Tag);
+   		GameObject[] grounds = GameObject.FindGameObjectsWithTag(tag);
     	
     	List<GameObject> groundsInRange = new List<GameObject>();
 
@@ -17,7 +17,7 @@ public class TargetGround : BaseTarget
 		{
     		distanceToGround = Vector3.Distance(transform.position, ground.transform.position);
 
-    		if(distanceToGround <= Range)
+    		if(distanceToGround <= range)
 				groundsInRange.Add(ground);
     	}
 

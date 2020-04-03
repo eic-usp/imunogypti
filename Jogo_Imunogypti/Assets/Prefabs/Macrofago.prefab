@@ -234,6 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88fdb615c542ed0428f16aefc6f329ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: 
+  range: 0
   targetTable: {fileID: 4900000, guid: e4f6a84a1fc1e1e4194d9804dfd4f452, type: 3}
 --- !u!114 &9059465416033383582
 MonoBehaviour:

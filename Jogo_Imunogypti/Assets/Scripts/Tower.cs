@@ -30,12 +30,15 @@ public class Tower : MonoBehaviour
             return;
 
 		targets = myTarget.UpdateTarget();
+        // Debug.Log("tagets: " + targets.Count);
 
     	//Rotaciona torre para olhar na direção do inimigo
         if(targets.Count != 0)
             myRotate.LookAt(targets[0].transform, transform);
 
+        // Debug.Log("tagets1: " + targets.Count);
         myEffect.Apply(targets);
+        // Debug.Log("tagets2: " + targets.Count);
     }
 
     public void Activate()

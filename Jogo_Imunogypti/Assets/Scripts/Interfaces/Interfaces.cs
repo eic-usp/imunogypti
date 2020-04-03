@@ -4,9 +4,9 @@ using UnityEngine;
 
 public interface ITarget
 {
-    string Tag {get;}
-    float Range {get;}
     DynamicTable Table {get;}
+    //string Tag {get;}
+    // float Range {get;}
     void Upgrade(int level);
     List<GameObject> UpdateTarget();
 }
