@@ -13,27 +13,41 @@ public class Virus : MonoBehaviour
     private Transform target; //Dita a direção do movimento do virus
     private int wavePointIndex=0; //É adicionada de 1 a cada target alcançado
 
+    private Vector3 actualDirection; //Direção na qual o virus está se movendo
+    private Vector3 previousDirection; //direção anterior do virus
+
+    //public GameObject a ,b,c; //Teste para calcular normal
+    private Vector3 normal;
     void Start()
     {
         //Alvo inicial é o primeiro waypoint 
         target = Waypoints.points[0];
+        actualDirection = -this.transform.position + target.transform.position;
         //Se o waypoint for nulo
         if(target==null)
         		Debug.Log("Error: Target null");
+
+        //Vector3 side1 = b.transform.position - a.transform.position;
+        //Vector3 side2 = c.transform.position - a.transform.position;
+         //normal = Vector3.Cross(side1,side2);
     }
 
     void Update()
     {
         //Se a distancia entre o virus e o target é muito pequena, chame o método pra mudar de target
-        if(Vector3.Distance(transform.position,target.position)<=0.25f)
+        if(Vector3.Distance(transform.position,target.position)<=0.25f){
         	GetNextWayPoint();
-
+            previousDirection = actualDirection;
+            actualDirection = -this.transform.position + target.transform.position;
+        }
+        Rotativ(previousDirection,actualDirection); 
+        //actualDirection = -this.transform.position + target.transform.position;
     	// a Direção é o vetor que liga o virus ao target
-        Vector3 dir = -this.transform.position + target.transform.position;
         //this.transform.LookAt(Camera.main.transform.position);
         //Move o virus na direção com uma velocidade 'speed' em relação ao World
-        this.transform.Translate(dir.normalized * speed * Time.deltaTime,Space.World);
+        this.transform.Translate(actualDirection.normalized * speed * Time.deltaTime,Space.World);
 
+        //TurnToNormal();
     }
 
     //funcao que pega o ponto para onde o virus deve ir
@@ -70,4 +84,18 @@ public class Virus : MonoBehaviour
     {
         SpawnPoint.instance.activeViruses--;    
     }
+
+    private Quaternion TLookRotation(Vector3 right, Vector3 up){
+        Quaternion rightToForward = Quaternion.Euler(0,-90f,0);
+        Quaternion forwardToTarget = Quaternion.LookRotation(right,up);
+        return rightToForward * forwardToTarget;
+    }
+
+    private void Rotativ(Vector3 prev, Vector3 actual){
+
+        transform.rotation = Quaternion.LookRotation(actual,-target.transform.forward);
+        
+
+    }
+    
 }

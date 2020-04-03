@@ -46,7 +46,7 @@ public class Ground : MonoBehaviour
             //não é pressionado)
            	BuildManager.instance.canDrag = false;
             //Chama método para posicionar torre de acordo com a camera
-           	BuildManager.instance.SetTurretTransform(Xo,Yo,Zo,d);
+           	BuildManager.instance.SetTurretTransform(this.transform);
              //Retorna a cor padrão da torre
             BuildManager.instance.changeTurretColor(Color.white);
             //Existe uma torre neste tile

@@ -11,6 +11,8 @@ public class Shopping : MonoBehaviour
     [SerializeField] private Text goldText; //mostrar pro jogador quanto dinheiro ele tem
     private float returnPercentageGold = 0.5f;
     public static Shopping instance; //Classe estática
+    
+    public Image evolvePanel; // Painel de evolução de torres
 
     void Awake()
     {

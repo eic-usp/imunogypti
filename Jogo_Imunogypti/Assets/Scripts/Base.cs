@@ -7,7 +7,26 @@ using UnityEngine.SceneManagement;
 public class Base : MonoBehaviour
 {
     [SerializeField] private int hp;
+    [SerializeField] private int hpIni;
     [SerializeField] private Text hpText;
+    public GameObject EndScreen;
+    public static Base instance; //Classe estática
+
+
+    void Awake()
+    {
+        if(instance!=null)
+        {
+            Debug.LogError("Mais de uma Base");
+            return;
+        }
+
+        instance = this;
+    }
+
+    void Start(){
+        hpIni = hp;
+    }
 
     void Update() {
         hpText.text = hp.ToString();    
@@ -24,7 +43,12 @@ public class Base : MonoBehaviour
     public void Defeat()
     {
         Debug.Log("PErDi");
-         SceneManager.LoadScene("Lose");
+         EndScreen.SetActive(true);
+         EndScreen.transform.GetChild(1).gameObject.SetActive(true);
+    }
+    public void Won(){
+        EndScreen.SetActive(true);
+         EndScreen.transform.GetChild(0).gameObject.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other) 
@@ -37,5 +61,12 @@ public class Base : MonoBehaviour
     public void BaseLocate(Vector3 locate)
     {
         transform.position = locate;
+    }
+
+    public int getHP(){
+        return hp;
+    }
+    public int getIHP(){
+        return hpIni;
     }
 }
