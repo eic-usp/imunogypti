@@ -104,7 +104,7 @@ public class SpawnPoint : MonoBehaviour
     public void Win()
     {
         Debug.Log("voce venceu, PARABAINS!!!");
-        SceneManager.LoadScene("Win");
+        Base.instance.Won();
     }
 }
 
