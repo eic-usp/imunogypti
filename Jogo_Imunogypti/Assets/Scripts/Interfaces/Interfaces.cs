@@ -5,8 +5,6 @@ using UnityEngine;
 public interface ITarget
 {
     DynamicTable Table {get;}
-    //string Tag {get;}
-    // float Range {get;}
     void Upgrade(int level);
     List<GameObject> UpdateTarget();
 }

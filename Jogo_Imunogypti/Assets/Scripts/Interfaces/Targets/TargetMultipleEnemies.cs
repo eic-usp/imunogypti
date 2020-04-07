@@ -5,13 +5,6 @@ using UnityEngine;
 public class TargetMultipleEnemies : BaseTarget
 {
 	private int cont = 0;
-	void Awake()
-    {
-        table = DynamicTable.Create(targetTable);
-        tag = Table.Rows[0].Field<string>("Tag");
-		range = Table.Rows[0].Field<float>("Range");
-        Debug.Log("tag: "+tag);
-    }
 
 	public override List<GameObject> UpdateTarget()
    	{

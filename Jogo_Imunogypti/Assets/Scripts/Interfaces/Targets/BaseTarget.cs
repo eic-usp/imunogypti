@@ -20,7 +20,7 @@ public abstract class BaseTarget : MonoBehaviour, ITarget
         }
     }
 
-    void Awake()
+    protected void Awake()
     {
         table = DynamicTable.Create(targetTable);
         tag = Table.Rows[0].Field<string>("Tag");

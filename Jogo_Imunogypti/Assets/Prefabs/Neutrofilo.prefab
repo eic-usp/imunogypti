@@ -235,6 +235,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7d005a1f5911e48ab679375403e785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: 
+  range: 0
+  targetTable: {fileID: 4900000, guid: e4f6a84a1fc1e1e4194d9804dfd4f452, type: 3}
 --- !u!114 &6321052807853105507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,8 +281,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 1
-  range: 2
+  upgradeCost: 0
   cost: 200
+  costTable: {fileID: 4900000, guid: 8569c843c0cd85f41a01e438feac2e29, type: 3}
 --- !u!1 &5718095240079147646
 GameObject:
   m_ObjectHideFlags: 0

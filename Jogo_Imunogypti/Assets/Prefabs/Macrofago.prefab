@@ -281,6 +281,7 @@ MonoBehaviour:
   active: 1
   upgradeCost: 0
   cost: 300
+  costTable: {fileID: 4900000, guid: 8569c843c0cd85f41a01e438feac2e29, type: 3}
 --- !u!1 &5718095240079147646
 GameObject:
   m_ObjectHideFlags: 0

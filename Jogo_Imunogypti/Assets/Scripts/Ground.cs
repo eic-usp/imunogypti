@@ -117,10 +117,7 @@ public class Ground : MonoBehaviour
     public void Deactivate()
     {
         activeLinfocitos = false;
-        if(buffMacrofago)
-            defaultColor = Color.magenta;
-        else
-            defaultColor = originalColor;
+        defaultColor = originalColor;
         rend.material.color = defaultColor;
 
         if(tower != null && tower.CompareTag("Linfocito"))
@@ -129,6 +126,8 @@ public class Ground : MonoBehaviour
     
     public void ActivateBuffMacrofago(float buffAS, float buffD)
     {
+        float difBuffAtackSpeed = Mathf.Max(buffAtackSpeed, buffAS) - buffAtackSpeed;
+        float difBuffDamage = Mathf.Max(buffDamage, buffD) - buffDamage;
         buffAtackSpeed = Mathf.Max(buffAtackSpeed, buffAS);
         buffDamage = Mathf.Max(buffDamage, buffD);
 
@@ -136,7 +135,7 @@ public class Ground : MonoBehaviour
         {
             DiscretDamage dD = tower.GetComponent<DiscretDamage>();
             if(dD != null)
-                dD.Buff(buffAtackSpeed, buffDamage);
+                dD.Buff(difBuffAtackSpeed, difBuffDamage);
         }
 
         buffMacrofago = true;

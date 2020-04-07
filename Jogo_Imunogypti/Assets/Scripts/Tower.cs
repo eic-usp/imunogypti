@@ -17,8 +17,21 @@ public class Tower : MonoBehaviour
    	private IRotate myRotate;
    	private IEffect myEffect;
 
-	void Awake()
+    [SerializeField] protected TextAsset costTable;
+    protected DynamicTable table;
+    public DynamicTable Table {
+        get {
+            if(table == null)
+                table = DynamicTable.Create(costTable);
+            return table;
+        }
+    }
+
+    protected void Awake()
     {
+        table = DynamicTable.Create(costTable);
+        upgradeCost = Table.Rows[0].Field<int>("Cost");
+
         myTarget = GetComponent<ITarget>();
         myRotate = GetComponent<IRotate>();
         myEffect = GetComponent<IEffect>();
@@ -49,6 +62,7 @@ public class Tower : MonoBehaviour
     public void Deactivate()
     {
         active = false;
+        myEffect.Remove(targets);
     }
 
     public void Uninstall()
@@ -59,6 +73,8 @@ public class Tower : MonoBehaviour
 
     public void Upgrade()
     {
+        cost += upgradeCost;
+        upgradeCost = Table.Rows[level].Field<int>("Cost");
         myTarget.Upgrade(++level);
     }
 }
