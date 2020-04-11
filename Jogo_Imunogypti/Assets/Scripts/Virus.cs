@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 //Classe que representa os inimigos que devem ser derrotados
 public class Virus : MonoBehaviour
 {
     public float hp; //vida do inimigo
+    private float hpI;
     public int damage; //dano que o inimigo da ao jogador quando chega ao fim do caminho
     [SerializeField] private float speed; //velocidade com que o inimigo caminha pelo mapa
     [SerializeField] private int goldValue; //dinheiro que o inimigo da ao jogador quando eh destruido
@@ -16,8 +18,9 @@ public class Virus : MonoBehaviour
     private Vector3 actualDirection; //Direção na qual o virus está se movendo
     private Vector3 previousDirection; //direção anterior do virus
 
-    //public GameObject a ,b,c; //Teste para calcular normal
-    private Vector3 normal;
+    [SerializeField] private Transform partToRotate;
+    [SerializeField] private Transform lifeBar;
+
     void Start()
     {
         //Alvo inicial é o primeiro waypoint 
@@ -27,9 +30,8 @@ public class Virus : MonoBehaviour
         if(target==null)
         		Debug.Log("Error: Target null");
 
-        //Vector3 side1 = b.transform.position - a.transform.position;
-        //Vector3 side2 = c.transform.position - a.transform.position;
-         //normal = Vector3.Cross(side1,side2);
+        hpI = hp;
+       
     }
 
     void Update()
@@ -67,7 +69,7 @@ public class Virus : MonoBehaviour
     public void DealDamage(float damage)
     {
         hp -= damage;
-        
+        lifeBar.transform.GetChild(0).localScale = new Vector3(0.5f,lifeBar.transform.localScale.y,lifeBar.transform.localScale.z);
         //mata o  inimigo quando a (nao) vida chega a 0
         if(hp <= 0)
             Killed();
@@ -85,15 +87,10 @@ public class Virus : MonoBehaviour
         SpawnPoint.instance.activeViruses--;    
     }
 
-    private Quaternion TLookRotation(Vector3 right, Vector3 up){
-        Quaternion rightToForward = Quaternion.Euler(0,-90f,0);
-        Quaternion forwardToTarget = Quaternion.LookRotation(right,up);
-        return rightToForward * forwardToTarget;
-    }
 
     private void Rotativ(Vector3 prev, Vector3 actual){
 
-        transform.rotation = Quaternion.LookRotation(actual,-target.transform.forward);
+        partToRotate.transform.rotation = Quaternion.LookRotation(actual,-target.transform.forward);
         
 
     }

@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3875394875400523810}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 690.90894, y: 428.14844, z: -2617.2268}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8251755134562131050}
@@ -50,6 +50,7 @@ MonoBehaviour:
   damage: 2
   speed: 4
   goldValue: 100
+  lifeBar: {fileID: 5991145626007380924, guid: 25762b4e2eb499b4db29233eb976b7b3, type: 3}
 --- !u!135 &3315892202427799712
 SphereCollider:
   m_ObjectHideFlags: 0
