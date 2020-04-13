@@ -68,8 +68,13 @@ public class Virus : MonoBehaviour
     //funcao que da dano na vida do inimigo
     public void DealDamage(float damage)
     {
+        if(!lifeBar.gameObject.active){
+            lifeBar.gameObject.SetActive(true);
+        }
         hp -= damage;
-        lifeBar.transform.GetChild(0).localScale = new Vector3(0.5f,lifeBar.transform.localScale.y,lifeBar.transform.localScale.z);
+        Vector3 lScale = lifeBar.transform.GetChild(0).localScale;
+        float deltaL = (damage/hpI);
+        lifeBar.transform.GetChild(0).localScale = new Vector3(lScale.x - deltaL,lScale.y,lScale.z);
         //mata o  inimigo quando a (nao) vida chega a 0
         if(hp <= 0)
             Killed();

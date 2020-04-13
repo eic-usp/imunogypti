@@ -53,7 +53,7 @@ public class Base : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        Virus virus = other.GetComponent<Virus>();
+        Virus virus = other.gameObject.transform.parent.GetComponent<Virus>();
     
         TakeDamage(virus.damage);
     }

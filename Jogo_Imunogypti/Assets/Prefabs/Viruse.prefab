@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2364083291904759915}
-  - component: {fileID: 6445875033940270758}
+  - component: {fileID: 1731299338086990880}
   m_Layer: 0
   m_Name: Viruse
   m_TagString: Enemy
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6445875033940270758
+--- !u!114 &1731299338086990880
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,7 +147,7 @@ PrefabInstance:
     - target: {fileID: 5991145626007380924, guid: 25762b4e2eb499b4db29233eb976b7b3,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4029577277187634699, guid: 25762b4e2eb499b4db29233eb976b7b3,
         type: 3}
@@ -219,9 +219,19 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.4531
       objectReference: {fileID: 0}
+    - target: {fileID: 1554444096932087333, guid: 25762b4e2eb499b4db29233eb976b7b3,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2739009827935351112, guid: 25762b4e2eb499b4db29233eb976b7b3,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293189953369116575, guid: 25762b4e2eb499b4db29233eb976b7b3,
+        type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
