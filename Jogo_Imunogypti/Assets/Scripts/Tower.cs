@@ -5,16 +5,11 @@ using UnityEngine;
 //Classe que representa o basico de todas as torres
 public class Tower : MonoBehaviour
 {
-    [SerializeField] public bool active = false; //define se a torre esta ativa
-    [SerializeField] private float range = 5f; //alcance da torre, ex: do ataque
+    public string name;
+    public int level = 1;
+    public bool active = false; //define se a torre esta ativa
     public int upgradeCost;
     public int cost;
-    public GameObject rangeCircle;
-    public bool drawRange = false;
-
-    private int ID;
-
-    public Tower[] towers;
 
    	private List<GameObject> targets;
 
@@ -23,16 +18,34 @@ public class Tower : MonoBehaviour
    	private IRotate myRotate;
    	private IEffect myEffect;
 
-	void Awake()
+    //desenha o circulo do alcance da torre
+    public GameObject rangeCircle;
+    public bool drawRange = false;
+    // public Tower[] towers;
+
+    [SerializeField] protected TextAsset costTable;
+    protected DynamicTable table;
+    public DynamicTable Table {
+        get {
+            if(table == null)
+                table = DynamicTable.Create(costTable);
+            return table;
+        }
+    }
+
+    protected void Awake()
     {
+        table = DynamicTable.Create(costTable);
+        cost = Table.Rows[0].Field<int>("Cost");
+        upgradeCost = Table.Rows[1].Field<int>("Cost");
+        name = Table.Rows[0].Field<string>("Name");
+
         myTarget = GetComponent<ITarget>();
         myRotate = GetComponent<IRotate>();
         myEffect = GetComponent<IEffect>();
+
         rangeCircle = this.gameObject.transform.GetChild(2).gameObject;
-        rangeCircle.transform.localScale *=(range+2);
-        ID =GameObject.FindGameObjectsWithTag(this.gameObject.tag).Length;
-
-
+        rangeCircle.transform.localScale *=(myTarget.GetRange()+2);
     }
 
     void Update()
@@ -40,53 +53,69 @@ public class Tower : MonoBehaviour
         if(active==false)
             return;
 
-		targets = myTarget.UpdateTarget(range);
+		targets = myTarget.UpdateTarget();
+        // Debug.Log("tagets: " + targets.Count);
 
     	//Rotaciona torre para olhar na direção do inimigo
         if(targets.Count != 0)
             myRotate.LookAt(targets[0].transform, transform);
 
+        // Debug.Log("tagets1: " + targets.Count);
         myEffect.Apply(targets);
+        // Debug.Log("tagets2: " + targets.Count);
 
-        if(drawRange == true){
-            rangeCircle.SetActive(true);
-        }
-        else{
-            rangeCircle.SetActive(false);
-        }
+        // if(drawRange == true){
+        //     rangeCircle.SetActive(true);
+        // }
+        // else{
+        //     rangeCircle.SetActive(false);
+        // }
     }
-    private void OnMouseDown() {
-        towers = FindObjectsOfType(typeof(Tower)) as Tower[];
-        foreach (Tower t in towers )
-        {
-            if(!t.Equals(this))
-                t.drawRange = false;
-        }
-        Debug.Log("This is sparta");
-        drawRange = !drawRange;
-        EvolvePanel.instance.showEvolvePanel(this,drawRange);
-    }
+
+    // private void OnMouseDown()
+    // {
+    //     towers = FindObjectsOfType(typeof(Tower)) as Tower[];
+    //     foreach (Tower t in towers )
+    //     {
+    //         if(!t.Equals(this))
+    //             t.drawRange = false;
+    //     }
+    //     Debug.Log("This is sparta");
+    //     drawRange = !drawRange;
+    //     EvolvePanel.instance.showEvolvePanel(this,drawRange);
+    // }
+
+    //deixa a torre ativa
     public void Activate()
     {
         active = true;
     }
-    
+
+    //deixa a torre desativada
     public void Deactivate()
     {
         active = false;
+        myEffect.Remove(targets);
     }
 
+    //desinstala a torre e remove seus efeitos
     public void Uninstall()
     {  
         myEffect.Remove(targets);
         Destroy(this.gameObject);
     }
 
-    public float getRange(){
-        return range;
-    }
-    public int getID()
+    //evolui a torre
+    public void Upgrade()
     {
-        return ID;
+        cost += upgradeCost;
+        upgradeCost = Table.Rows[++level].Field<int>("Cost");
+        myTarget.Upgrade(level);
+        rangeCircle.transform.localScale *=(myTarget.GetRange()+2);
+    }
+
+    public float GetRange()
+    {
+        return myTarget.GetRange();
     }
 }

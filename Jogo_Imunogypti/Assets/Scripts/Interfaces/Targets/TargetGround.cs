@@ -2,19 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetGround : MonoBehaviour, ITarget
+public class TargetGround : BaseTarget
 {
-    public string Tag {get; set;}
 	private float distanceToGround;
 
-    void Awake()
-    {
-        Tag = "Ground";
-    }
-
-    public List<GameObject> UpdateTarget(float range)
+    public override List<GameObject> UpdateTarget()
    	{
-   		GameObject[] grounds = GameObject.FindGameObjectsWithTag(Tag);
+   		GameObject[] grounds = GameObject.FindGameObjectsWithTag(tag);
     	
     	List<GameObject> groundsInRange = new List<GameObject>();
 
@@ -24,9 +18,7 @@ public class TargetGround : MonoBehaviour, ITarget
     		distanceToGround = Vector3.Distance(transform.position, ground.transform.position);
 
     		if(distanceToGround <= range)
-			{
 				groundsInRange.Add(ground);
-    		}
     	}
 
 		return groundsInRange;

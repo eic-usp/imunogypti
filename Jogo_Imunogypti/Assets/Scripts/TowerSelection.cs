@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class TowerSelection : MonoBehaviour
 {
     [SerializeField] private GameObject ui;
-    [SerializeField] private Text upgrade;
-    [SerializeField] private Text sell;
+    [SerializeField] private Text headText;
+    [SerializeField] private Text rangeText;
+    [SerializeField] private Text upgradeText;
+    [SerializeField] private Text sellText;
     public Ground selected;
 
     public static TowerSelection instance; //Classe estática
@@ -28,8 +30,10 @@ public class TowerSelection : MonoBehaviour
         if(selected == null)
             return;
 
-        upgrade.text = "$" + selected.tower.upgradeCost.ToString();
-        sell.text = "$" + (Shopping.instance.SalePrice(selected.tower)).ToString();
+        headText.text = selected.tower.name + "(nível: " + selected.tower.level.ToString() + ")";
+        rangeText.text = "alcance: " + selected.tower.GetRange().ToString();
+        upgradeText.text = "evoluir: $" + selected.tower.upgradeCost.ToString();
+        sellText.text = "vender: $" + (Shopping.instance.SalePrice(selected.tower)).ToString();
     }
     
     public void Select(Ground g)
@@ -40,13 +44,19 @@ public class TowerSelection : MonoBehaviour
             return;
         }
 
+        if(selected != null)
+            selected.tower.rangeCircle.SetActive(false);
+        
         selected = g;
+        selected.tower.rangeCircle.SetActive(true);
         ui.SetActive(true);
     }
 
     public void Hide()
     {
         ui.SetActive(false);
+        if(selected.tower != null)
+            selected.tower.rangeCircle.SetActive(false);
         selected = null;
     }
 
