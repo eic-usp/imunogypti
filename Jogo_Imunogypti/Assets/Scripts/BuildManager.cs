@@ -76,7 +76,7 @@ public class BuildManager : MonoBehaviour
         {
             turretToBuild.transform.position = t.position;
             //Rotação de acordo com a rotação escolhida para o mapa
-            turretToBuild.transform.rotation = Quaternion.Euler(-90,0,0);
+            turretToBuild.transform.rotation = Quaternion.Euler(-70f,0,0);
         }
     }
 

@@ -11,7 +11,7 @@ public class MenuPause : MonoBehaviour
  
     public void Pause(){
     	menu.SetActive(true);
-    	Time.timeScale = 0f;
+    	//Time.timeScale = 0f;
     }
 
     public void GoToMenu(){
