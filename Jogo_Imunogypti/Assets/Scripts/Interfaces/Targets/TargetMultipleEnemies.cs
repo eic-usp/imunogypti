@@ -2,20 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetMultipleEnemies : MonoBehaviour, ITarget
+public class TargetMultipleEnemies : BaseTarget
 {
-    public string Tag {get; set;}   
-	List<GameObject> target = new List<GameObject>();
+	private int cont = 0;
 
-    void Awake()
-    {
-        Tag = "Enemy";
-    }
-
-    public List<GameObject> UpdateTarget(float range)
+	public override List<GameObject> UpdateTarget()
    	{
+		Debug.Log("oi" + tag);
    		//Os inimigos são todos com a tag de inimigos
-    	GameObject[] enemies = GameObject.FindGameObjectsWithTag(Tag);
+    	GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
     	//Distancia mais curta até um inimigo
     	float distanceToEnemy;
 		target.Clear();
@@ -23,12 +18,16 @@ public class TargetMultipleEnemies : MonoBehaviour, ITarget
     	//Percorre todos os inimigos, tomando as ditancia da torre até eles e decidindo a menor distancia e portanto o inimigo mais proximo
     	foreach(GameObject enemy in enemies)
 		{
+			if(cont == 0)
+				Debug.Log("chama");
     		distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
 			
 			//Se o inimigo mais proximo não for nulo e a distancia estiver no range da torre, ele será o alvo
 			if(distanceToEnemy<=range)
 				target.Add(enemy);
     	}
+
+		cont++;
 
 		return target;
     }

@@ -2,20 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetNearestEnemy : MonoBehaviour, ITarget
+public class TargetNearestEnemy : BaseTarget
 {
-    public string Tag {get; set;}   
-	List<GameObject> target = new List<GameObject>();
-
-    void Awake()
-    {
-        Tag = "Enemy";
-    }
-
-    public List<GameObject> UpdateTarget(float range)
+    public override List<GameObject> UpdateTarget()
    	{
    		//Os inimigos são todos com a tag de inimigos
-    	GameObject[] enemies = GameObject.FindGameObjectsWithTag(Tag);
+    	GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
     	//Distancia mais curta até um inimigo
     	float shortestDistance = Mathf.Infinity;
     	GameObject nearestEnemy = null;

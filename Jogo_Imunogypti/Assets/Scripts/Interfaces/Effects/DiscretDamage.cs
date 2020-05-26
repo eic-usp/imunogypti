@@ -7,12 +7,13 @@ public class DiscretDamage : MonoBehaviour, IEffect
    	[SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float attackSpeed; //velocidade de ataque da torre
-    private float buffAttackSpeed = 1; //porcentagem que a velocidade de ataque da torre esta sendo buffada
+    [SerializeField] private float buffAttackSpeed = 1; //porcentagem que a velocidade de ataque da torre esta sendo buffada
     [SerializeField] private float damage; //dano da torre
-    private float buffDamage = 1; //porcentagem que o dano da torre esta sendo buffado
+    [SerializeField] private float buffDamage = 1; //porcentagem que o dano da torre esta sendo buffado
     private float fireCountdown = 0f; 
 
-    public void Apply(List<GameObject> targets){
+    public void Apply(List<GameObject> targets)
+    {
         if(targets.Count != 0 && fireCountdown <= 0)
         {
             foreach (GameObject target in targets)
@@ -23,7 +24,7 @@ public class DiscretDamage : MonoBehaviour, IEffect
                 {
                     bullet.target = target;
                     bullet.damage = damage * buffDamage;
-                }   
+                }
             }
             
             fireCountdown = 1f / (attackSpeed * buffAttackSpeed);

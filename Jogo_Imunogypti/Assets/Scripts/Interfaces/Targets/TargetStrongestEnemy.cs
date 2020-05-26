@@ -3,28 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Foca o inimigo mais forte(com mais vida)
-public class TargetStrongestEnemy : MonoBehaviour, ITarget
+public class TargetStrongestEnemy : BaseTarget
 {
-    public string Tag {get; set;}
 	private float distanceToEnemy;
-	List<GameObject> target = new List<GameObject>();
 
-    void Awake()
-    {
-        Tag = "Enemy";
-    }
-
-    public List<GameObject> UpdateTarget(float range)
+    public override List<GameObject> UpdateTarget()
    	{
    		if(target.Count != 0 && target[0] != null)
 		{
 			distanceToEnemy = Vector3.Distance(transform.position, target[0].transform.position);
 			if(distanceToEnemy <= range)
 				return target;
-		}  
+		}
 
 		//Os inimigos são todos com a tag de inimigos
-    	GameObject[] enemies = GameObject.FindGameObjectsWithTag(Tag);
+    	GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
     	//Força do inimigo mais forte
     	float strongest = 0;
     	GameObject strongestEnemy = null;
