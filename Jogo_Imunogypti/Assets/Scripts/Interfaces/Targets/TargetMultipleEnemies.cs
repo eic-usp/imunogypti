@@ -5,6 +5,7 @@ using UnityEngine;
 public class TargetMultipleEnemies : BaseTarget
 {
 	private int cont = 0;
+	
 
 	public override List<GameObject> UpdateTarget()
    	{
