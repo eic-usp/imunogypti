@@ -91,7 +91,7 @@ public class SpawnPoint : MonoBehaviour
         {
             Vector3 rotation = new Vector3(-90f,0.4f,0);
             Instantiate(virus, gameObject.transform.position, Quaternion.Euler(rotation));
-            yield return new WaitForSeconds(0.3f); //tempo entre a instanciacao de cada inimigo
+            yield return new WaitForSeconds(2.0f); //tempo entre a instanciacao de cada inimigo
         }
     }
 

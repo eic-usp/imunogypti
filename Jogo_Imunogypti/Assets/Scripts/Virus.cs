@@ -18,6 +18,8 @@ public class Virus : MonoBehaviour
     private Vector3 actualDirection; //Direção na qual o virus está se movendo
     private Vector3 previousDirection; //direção anterior do virus
 
+    public float spawnTime= 0.5f;
+
     [SerializeField] private Transform partToRotate;
     [SerializeField] private Transform lifeBar;
 
@@ -89,7 +91,7 @@ public class Virus : MonoBehaviour
 
     private void OnDestroy() 
     {
-        SpawnPoint.instance.activeViruses--;    
+        HordeManager.instance.activeViruses--;    
     }
 
 
@@ -98,6 +100,9 @@ public class Virus : MonoBehaviour
         partToRotate.transform.rotation = Quaternion.LookRotation(actual,-target.transform.forward);
         
 
+    }
+    public float getSpawnTime(){
+        return spawnTime;
     }
     
 }

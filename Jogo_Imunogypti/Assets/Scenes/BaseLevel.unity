@@ -8076,6 +8076,8 @@ GameObject:
   - component: {fileID: 498840708}
   - component: {fileID: 498840711}
   - component: {fileID: 498840712}
+  - component: {fileID: 498840713}
+  - component: {fileID: 498840714}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -8159,6 +8161,38 @@ MonoBehaviour:
   upgradeText: {fileID: 456728275}
   sellText: {fileID: 756808863}
   selected: {fileID: 0}
+--- !u!114 &498840713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498840707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2211a7fa96052514396d20d38f072221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &498840714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498840707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e60d0ec2a4948947a8ff149db181d1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  genotypeList:
+  - {fileID: 1731299338086990880, guid: 669c0ac283675f146afd87d6712c7d29, type: 3}
+  - {fileID: 1731299338086990880, guid: 669c0ac283675f146afd87d6712c7d29, type: 3}
+  SpawnPoint: {fileID: 2003263286}
+  activeViruses: 0
+  wavesRemaningText: {fileID: 1476833572}
+  timeRemaningNextWaveText: {fileID: 1781908970}
+  hordeTable: {fileID: 4900000, guid: 005b9fea112e3c842abde2b66b9ea086, type: 3}
 --- !u!1001 &507557027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25885,11 +25919,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89367745bbea31546867b983e60445b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evolvePanel: {fileID: 1399627077}
-  Area: {fileID: 1619603957}
-  Dano: {fileID: 0}
-  Head: {fileID: 1515273601}
-  Price: {fileID: 456728275}
 --- !u!4 &1401633794 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5742828843268607196, guid: bd4c839914041ab4f97657c51946b098,
@@ -36602,7 +36631,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003263286}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6cbd5fcd8be12f642965a1df832e132b, type: 3}
   m_Name: 
