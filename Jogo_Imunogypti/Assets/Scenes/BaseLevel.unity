@@ -5220,7 +5220,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2003263287}
+      - m_Target: {fileID: 0}
         m_MethodName: CallNextWave
         m_Mode: 1
         m_Arguments:
@@ -8185,11 +8185,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e60d0ec2a4948947a8ff149db181d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  genotypeList:
-  - {fileID: 1731299338086990880, guid: 669c0ac283675f146afd87d6712c7d29, type: 3}
-  - {fileID: 1731299338086990880, guid: 669c0ac283675f146afd87d6712c7d29, type: 3}
-  SpawnPoint: {fileID: 2003263286}
+  wavesRemaning: 0
+  waveNumber: 0
+  timeBetweenWaves: 5
+  countdown: 0
+  totalSpawnPoints: 0
+  hordeComposition: 
   activeViruses: 0
+  SpawnPoints:
+  - {fileID: 2003263286}
+  virusPrefab:
+  - {fileID: 6886852627310644988, guid: 53cd2b3dc0242cf4382a15b1d7116b75, type: 3}
+  - {fileID: 1731299338086990880, guid: 669c0ac283675f146afd87d6712c7d29, type: 3}
   wavesRemaningText: {fileID: 1476833572}
   timeRemaningNextWaveText: {fileID: 1781908970}
   hordeTable: {fileID: 4900000, guid: 005b9fea112e3c842abde2b66b9ea086, type: 3}
@@ -36616,7 +36623,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2003263288}
-  - component: {fileID: 2003263287}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -36624,28 +36630,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2003263287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2003263286}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cbd5fcd8be12f642965a1df832e132b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wavesRemaning: 5
-  waveNumber: 0
-  timeBetweenWaves: 5
-  countdown: 0
-  activeViruses: 0
-  virusPrefab:
-  - {fileID: 1731299338086990880, guid: 669c0ac283675f146afd87d6712c7d29, type: 3}
-  - {fileID: 1731299338086990880, guid: 669c0ac283675f146afd87d6712c7d29, type: 3}
-  wavesRemaningText: {fileID: 1476833572}
-  timeRemaningNextWaveText: {fileID: 1781908970}
 --- !u!4 &2003263288
 Transform:
   m_ObjectHideFlags: 0
