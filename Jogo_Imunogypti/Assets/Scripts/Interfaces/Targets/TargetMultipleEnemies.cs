@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class TargetMultipleEnemies : BaseTarget
 {
-	private int cont = 0;
+	// private int cont = 0;
 	
 
 	public override List<GameObject> UpdateTarget()
    	{
-		Debug.Log("oi" + tag);
+		// Debug.Log("oi" + tag);
    		//Os inimigos são todos com a tag de inimigos
     	GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
     	//Distancia mais curta até um inimigo
@@ -19,8 +19,8 @@ public class TargetMultipleEnemies : BaseTarget
     	//Percorre todos os inimigos, tomando as ditancia da torre até eles e decidindo a menor distancia e portanto o inimigo mais proximo
     	foreach(GameObject enemy in enemies)
 		{
-			if(cont == 0)
-				Debug.Log("chama");
+			// if(cont == 0)
+			// 	Debug.Log("chama");
     		distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
 			
 			//Se o inimigo mais proximo não for nulo e a distancia estiver no range da torre, ele será o alvo
@@ -28,7 +28,7 @@ public class TargetMultipleEnemies : BaseTarget
 				target.Add(enemy);
     	}
 
-		cont++;
+		// cont++;
 
 		return target;
     }
