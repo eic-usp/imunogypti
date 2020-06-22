@@ -5,26 +5,24 @@ using UnityEngine.SceneManagement;
 using System;
 using UnityEngine.UI;
 
-public class HordeManager:MonoBehaviour{
-
-    private List<Horde> hordes = new List<Horde>();
-    public List<Virus> genotypeList = new List<Virus>();
-
-    public GameObject SpawnPoint;
-
-    public static HordeManager instance;
-
-    private int totalCount;
-    private int actualHorde;
-
-    private float countdown=0;
-    public int activeViruses;
-
+public class HordeManager:MonoBehaviour
+{
+    [SerializeField] private int wavesRemaning; //marca quanntas ondas de inimigos faltam para o jogador vencer
+    [SerializeField] private int waveNumber; //marca qual a onda que o jogador esta enfrentando atualmente
+    [SerializeField] private float timeBetweenWaves = 5f; //tempo entre as ondas de inimigos
+    [SerializeField] private float countdown = 7f; //marca tempo ate a proxima onda de ininmigos chegar
+    [SerializeField] private int totalSpawnPoints; //marca quantos SpawnPonit tera na tela
+    [SerializeField] private int[] hordeComposition; //marca quais os inimigos que viram na onda atual
+    public int activeViruses = 0; //marca quantos virus ainda estao ativos
+    [SerializeField] private GameObject[] SpawnPoints;
+    [SerializeField] private Virus[] virusPrefab;
     [SerializeField] private Text wavesRemaningText;
     [SerializeField] private Text timeRemaningNextWaveText;
 
-    [SerializeField] protected TextAsset hordeTable;
-    protected DynamicTable table;
+    public static HordeManager instance;
+
+    [SerializeField] private TextAsset hordeTable;
+    private DynamicTable table;
     public DynamicTable Table {
         get {
             if(table == null)
@@ -44,61 +42,65 @@ public class HordeManager:MonoBehaviour{
 
         instance = this;
 
-        totalCount = 0;
-        actualHorde = 0;
-        
         table = DynamicTable.Create(hordeTable);
-
-        for(int i=0;i<Table.Rows.Count;i++){
-
-        	//Pega os parâmetros da horda da tabela
-            int hordeID = Table.Rows[i].Field<int>("ID");
-            int hordeLevel = Table.Rows[i].Field<int>("LEVEL");
-
-            string[] s_hordeComposition = Table.Rows[i].Field<string>("COMPOSITION").Split(',');
-            int[] hordeComposition = Array.ConvertAll(s_hordeComposition, s => int.Parse(s));
-
-        	//Vê se a horda pertence ao nivel atual e pega as hordas do nivel atual
-            if(hordeLevel==1){//Alterar mais tarde, para hordeLevel igual ao nivel atual.
-                Horde horde = new Horde(hordeID, hordeLevel, hordeComposition);
-                hordes.Add(horde);
-                totalCount++;
-            }
-        }
-
+        //seta o num de hordas
+        wavesRemaning = Table.Rows[0].Field<int>("TotalWaves");
+        //seta o num de SpawnPoint
+        totalSpawnPoints = Table.Rows[0].Field<int>("TotalSpawnPoints");
     }
 
+    void Start()
+    {
+        //jogo comeca na onda de numero 0, com nenhum virus ativo
+        waveNumber = 0;
+        activeViruses = 0;
+    }
 
     void Update()
     {
-        wavesRemaningText.text = (hordes.Count - actualHorde).ToString(); 
+        wavesRemaningText.text = wavesRemaning.ToString(); 
         timeRemaningNextWaveText.text = Mathf.FloorToInt(countdown).ToString(); 
 
-        if(hordes.Count - actualHorde <= 0 && activeViruses <= 0)
-        {
+        //condicao de vitoria
+        if(wavesRemaning <= 0 && activeViruses <= 0)
             Win();
-        }
 
-        //Verifica se o contador zerou e se a horda atual é a ultima
-        if(countdown<=0 && actualHorde<hordes.Count){
-            SpawnHorde();
-            actualHorde++;
-            Debug.Log(hordes.Count.ToString());
-        }
-        //Diminui o contador
-        if(countdown>0){
-            countdown -=Time.deltaTime;
-        }
-        
+        //verifica se esta na hora de mandar a proxima onda de inimigos
+        if(countdown <= 0 && wavesRemaning > 0)
+        {
+            for(int i = 0; i < totalSpawnPoints; i++)
+            {
+                string nSP;
+                nSP = "SP" + i.ToString();
+                
+                string[] s_hordeComposition = Table.Rows[waveNumber].Field<string>(nSP).Split(',');
+                hordeComposition = Array.ConvertAll(s_hordeComposition, s => int.Parse(s));
 
+                StartCoroutine(SpawnWave(i));
+
+                countdown = timeBetweenWaves+waveNumber;
+                wavesRemaning--;
+                waveNumber++;
+            }
+        }    
+
+        if(countdown > 0)
+            countdown -= Time.deltaTime; //conta tempo para mandar proxima onda de inimigos
     }
 
-    void SpawnHorde(){
-                //Spawna a wave, e espera o tempo da horda.
-           		//Debug.Log(hordes[actualHorde].getSpawnDelay().ToString());
-                StartCoroutine(hordes[actualHorde].SpawnWave(SpawnPoint));
-                countdown = hordes[actualHorde].getSpawnDelay();
-                activeViruses += hordes[actualHorde].getActiveViruses();
+
+    //funcao que libera uma onda de inimigos
+    IEnumerator SpawnWave(int spawnPoint)
+    {
+        activeViruses += hordeComposition.Length; //coloca todos os inimigos que serao estanciados nessa onda como ativos
+
+        //estancia os inimigos dessa onda
+        foreach (int virus in hordeComposition)
+        {
+            Vector3 rotation = new Vector3(-90f,0.4f,0);
+            Instantiate(virusPrefab[virus], SpawnPoints[spawnPoint].transform.position, Quaternion.Euler(rotation));
+            yield return new WaitForSeconds(2.0f); //tempo entre a instanciacao de cada inimigo
+        }
     }
 
     public void CallNextWave()
@@ -106,10 +108,8 @@ public class HordeManager:MonoBehaviour{
         countdown = 0;
     }
 
-
      public void Win()
     {
-        Debug.Log("voce venceu, PARABAINS!!!");
         Base.instance.Won();
     }
 }
