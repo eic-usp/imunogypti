@@ -49,6 +49,7 @@ MonoBehaviour:
   damage: 2
   speed: 4
   goldValue: 100
+  spawnTime: 1
   partToRotate: {fileID: 2460521522265496577}
   lifeBar: {fileID: 6742443278195384162}
 --- !u!1001 &6862360715815139443
