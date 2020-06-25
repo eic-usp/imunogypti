@@ -27,11 +27,10 @@ public class Win : MonoBehaviour
 
     void Awake()
     {
-               
         CalculateHeights(fHP,iHP);
         Debug.Log(((float)iHP/fHP).ToString());
-        fHP = Base.instance.getHP();
-        iHP = Base.instance.getIHP();
+        fHP = LifeManager.instance.getHP();
+        iHP = LifeManager.instance.getIHP();
     }
 
     // Update is called once per frame

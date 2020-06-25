@@ -10,7 +10,7 @@ public class Base : MonoBehaviour
     {
         Virus virus = other.gameObject.transform.parent.GetComponent<Virus>();
     
-        GameMannager.instance.TakeDamage(virus.damage);
+        LifeManager.instance.TakeDamage(virus.damage);
     }
 
     public void BaseLocate(Vector3 locate)

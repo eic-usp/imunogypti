@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 15
-  damage: 2
-  speed: 6
-  goldValue: 100
+  damage: 1
+  speed: 3
+  goldValue: 50
   spawnTime: 1
   partToRotate: {fileID: 2460521522265496577}
   lifeBar: {fileID: 6742443278195384162}

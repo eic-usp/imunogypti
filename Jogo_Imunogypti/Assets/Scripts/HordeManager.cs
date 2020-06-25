@@ -99,7 +99,7 @@ public class HordeManager:MonoBehaviour
         {
             Vector3 rotation = new Vector3(-90f,0.4f,0);
             Instantiate(virusPrefab[virus], SpawnPoints[spawnPoint].transform.position, Quaternion.Euler(rotation));
-            yield return new WaitForSeconds(2.0f); //tempo entre a instanciacao de cada inimigo
+            yield return new WaitForSeconds(0.5f); //tempo entre a instanciacao de cada inimigo
         }
     }
 
@@ -108,8 +108,8 @@ public class HordeManager:MonoBehaviour
         countdown = 0;
     }
 
-     public void Win()
+    public void Win()
     {
-        Base.instance.Won();
+        LifeManager.instance.Win();
     }
 }

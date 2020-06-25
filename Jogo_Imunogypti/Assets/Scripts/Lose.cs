@@ -20,8 +20,8 @@ public class Lose : MonoBehaviour
         CalculateHeights(fHP,iHP);
         Debug.Log(((float)iHP/fHP).ToString());
 
-        fHP = Base.instance.getHP();
-        iHP = Base.instance.getIHP();
+        fHP = LifeManager.instance.getHP();
+        iHP = LifeManager.instance.getIHP();
     }
 
     void Start()
