@@ -8,7 +8,7 @@ using UnityEngine.UI;
 //classe que controla as principais funcoes do jogo
 public class LifeManager : MonoBehaviour
 {
-    [SerializeField] private Base[] bases;
+    // [SerializeField] private Base[] bases;
     [SerializeField] private int hp;
     [SerializeField] private int hpIni;
     [SerializeField] private Text hpText;

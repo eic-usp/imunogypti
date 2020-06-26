@@ -1,0 +1,4 @@
+TotalWaves;TotalSpawnPoints;SP0;SP1
+int;int;string;string
+2;2;0,0,0;0,0
+2;2;0,0;0,0,0

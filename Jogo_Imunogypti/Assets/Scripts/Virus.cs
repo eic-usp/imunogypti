@@ -7,11 +7,12 @@ using UnityEngine;
 public class Virus : MonoBehaviour
 {
     public float hp; //vida do inimigo
-    private float hpI;
+    private float hpI; //vida inicial do inimigo
     public int damage; //dano que o inimigo da ao jogador quando chega ao fim do caminho
     [SerializeField] private float speed; //velocidade com que o inimigo caminha pelo mapa
     [SerializeField] private int goldValue; //dinheiro que o inimigo da ao jogador quando eh destruido
     //[SerializeField] private Color color; // cor/sprite do inimigo
+    public SpawnPoint spawnPoint; //ponto de onde o inimigo saiu, guarda a trajetoria do virus até a base
     private Transform target; //Dita a direção do movimento do virus
     private int wavePointIndex=0; //É adicionada de 1 a cada target alcançado
 
@@ -26,7 +27,7 @@ public class Virus : MonoBehaviour
     void Start()
     {
         //Alvo inicial é o primeiro waypoint 
-        target = Waypoints.points[0];
+        target = spawnPoint.points[0];
         actualDirection = -this.transform.position + target.transform.position;
         //Se o waypoint for nulo
         if(target==null)
@@ -39,7 +40,7 @@ public class Virus : MonoBehaviour
     void Update()
     {
         //Se a distancia entre o virus e o target é muito pequena, chame o método pra mudar de target
-        if(Vector3.Distance(transform.position,target.position)<=0.25f){
+        if(Vector3.Distance(transform.position,target.position) <= 0.25f){
         	GetNextWayPoint();
             previousDirection = actualDirection;
             actualDirection = -this.transform.position + target.transform.position;
@@ -56,14 +57,15 @@ public class Virus : MonoBehaviour
 
     //funcao que pega o ponto para onde o virus deve ir
     void GetNextWayPoint(){
-    	//Se o virus está prestes a sair do ultimo target, destrua
-    	if(wavePointIndex>=Waypoints.points.Length-1){
-    		Destroy(this.gameObject);
+        wavePointIndex++;
+
+    	//se ainda tem um proximo ponto para ir, escolhe esse ponto como novo target
+    	if(wavePointIndex < spawnPoint.points.Length){
+    			target = spawnPoint.points[wavePointIndex];
     	}
-    	//Senão, acrescente 1 ao index e mude de target
+    	//se não o inimigo chegou na base, destroi ele
     	else{
-    			wavePointIndex++;
-    			target = Waypoints.points[wavePointIndex];
+    		Destroy(this.gameObject);
     	}
     }
 
@@ -76,7 +78,7 @@ public class Virus : MonoBehaviour
         hp -= damage;
         Vector3 lScale = lifeBar.transform.GetChild(0).localScale;
         float deltaL = (damage/hpI);
-        lifeBar.transform.GetChild(0).localScale = new Vector3(lScale.x - deltaL,lScale.y,lScale.z);
+        lifeBar.transform.GetChild(0).localScale = new Vector3(lScale.x-deltaL, lScale.y, lScale.z);
         //mata o  inimigo quando a (nao) vida chega a 0
         if(hp <= 0)
             Killed();
@@ -94,13 +96,10 @@ public class Virus : MonoBehaviour
         HordeManager.instance.activeViruses--;    
     }
 
-
     private void Rotativ(Vector3 prev, Vector3 actual){
-
-        partToRotate.transform.rotation = Quaternion.LookRotation(actual,-target.transform.forward);
-        
-
+        partToRotate.transform.rotation = Quaternion.LookRotation(actual, -target.transform.forward);
     }
+
     public float getSpawnTime(){
         return spawnTime;
     }
