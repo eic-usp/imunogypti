@@ -54,7 +54,7 @@ public class Path : MonoBehaviour
         }
     }
 
-    //Seleciona torre
+    //Desseleciona torre
     void OnMouseDown()
     {
         TowerSelection.instance.Hide();

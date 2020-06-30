@@ -97,7 +97,7 @@ public class HordeManager:MonoBehaviour
         foreach(int virus in hordeComposition)
         {
             virusPrefab[virus].spawnPoint = spawnPoints[spawnPoint];
-            Vector3 rotation = new Vector3(-90f,0.4f,0);
+            Vector3 rotation = new Vector3(-90f ,0.4f,0f);
             Instantiate(virusPrefab[virus], spawnPoints[spawnPoint].gameObject.transform.position, Quaternion.Euler(rotation));
             yield return new WaitForSeconds(0.5f); //tempo entre a instanciacao de cada inimigo
         }

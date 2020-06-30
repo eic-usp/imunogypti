@@ -44,8 +44,8 @@ public class Tower : MonoBehaviour
         myRotate = GetComponent<IRotate>();
         myEffect = GetComponent<IEffect>();
 
-        rangeCircle = this.gameObject.transform.GetChild(2).gameObject;
-        rangeCircle.transform.localScale *=(myTarget.GetRange()+2);
+        // rangeCircle = this.gameObject.transform.GetChild(2).gameObject;
+        // rangeCircle.transform.localScale *=(myTarget.GetRange()+2);
     }
 
     void Update()
