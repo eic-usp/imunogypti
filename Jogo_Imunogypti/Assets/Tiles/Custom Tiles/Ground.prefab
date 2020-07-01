@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5742828843268607196}
   - component: {fileID: 3691378474379987582}
   - component: {fileID: 1589060495751750440}
+  - component: {fileID: 315779621199999055}
   - component: {fileID: 4500771649769112098}
   m_Layer: 0
   m_Name: Ground
@@ -100,6 +101,20 @@ MonoBehaviour:
   tower: {fileID: 0}
   activeLinfocitos: 0
   buffMacrofago: 0
+--- !u!114 &315779621199999055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119705502966535510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897250b3b0d0fcb459dedf8d85372d43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  celulaDendritica: {fileID: 2902032361193593442, guid: 1bfc273daecfd32418e152e77d6658cd,
+    type: 3}
 --- !u!61 &4500771649769112098
 BoxCollider2D:
   m_ObjectHideFlags: 0

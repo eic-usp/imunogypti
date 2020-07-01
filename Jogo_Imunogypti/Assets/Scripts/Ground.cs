@@ -13,7 +13,7 @@ public class Ground : MonoBehaviour
     private float d = 27.31f;
     private float Xo,Yo,Zo;
     //True caso haja uma torre posicionada neste tile do mapa;
-    public Tower tower = null;
+    public Tower tower;
     [SerializeField] private bool activeLinfocitos = false;
     [SerializeField] private bool buffMacrofago = false;
 
