@@ -11,9 +11,11 @@ public class DiscretDamage : MonoBehaviour, IEffect
     [SerializeField] private float damage; //dano da torre
     [SerializeField] private float buffDamage = 1; //porcentagem que o dano da torre esta sendo buffado
     private float fireCountdown = 0f; 
+    private Animator myAnimator;
 
     public void Apply(List<GameObject> targets)
     {
+        myAnimator = GetComponent<Animator>();
         if(targets.Count != 0 && fireCountdown <= 0)
         {
             foreach (GameObject target in targets)
@@ -25,8 +27,10 @@ public class DiscretDamage : MonoBehaviour, IEffect
                     bullet.target = target;
                     bullet.damage = damage * buffDamage;
                 }
+                if(myAnimator!=null){
+                    myAnimator.SetTrigger("Shoot");
+                }
             }
-            
             fireCountdown = 1f / (attackSpeed * buffAttackSpeed);
         }
 

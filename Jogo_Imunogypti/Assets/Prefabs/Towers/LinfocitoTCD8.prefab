@@ -196,7 +196,7 @@ MonoBehaviour:
   active: 0
   upgradeCost: 0
   cost: 400
-  rangeCircle: {fileID: 0}
+  rangeCircle: {fileID: 2634232327138577525}
   drawRange: 0
   costTable: {fileID: 4900000, guid: 8569c843c0cd85f41a01e438feac2e29, type: 3}
 --- !u!120 &2165922076141081770
@@ -549,16 +549,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7941079387172320717}
     m_Modifications:
-    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
-        type: 3}
-      propertyPath: m_Name
-      value: rangeCircle
-      objectReference: {fileID: 0}
-    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7415355645631449467, guid: b2cce9d4ce7fdd5498936036f2c16386,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -629,6 +619,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.7
       objectReference: {fileID: 0}
+    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
+        type: 3}
+      propertyPath: m_Name
+      value: rangeCircle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7271045595607306559, guid: b2cce9d4ce7fdd5498936036f2c16386,
         type: 3}
       propertyPath: m_Color.r
@@ -637,12 +637,12 @@ PrefabInstance:
     - target: {fileID: 7271045595607306559, guid: b2cce9d4ce7fdd5498936036f2c16386,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.12941177
+      value: 0.60279435
       objectReference: {fileID: 0}
     - target: {fileID: 7271045595607306559, guid: b2cce9d4ce7fdd5498936036f2c16386,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.17254902
+      value: 0.12941174
       objectReference: {fileID: 0}
     - target: {fileID: 7271045595607306559, guid: b2cce9d4ce7fdd5498936036f2c16386,
         type: 3}
@@ -656,6 +656,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2cce9d4ce7fdd5498936036f2c16386, type: 3}
+--- !u!1 &2634232327138577525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
+    type: 3}
+  m_PrefabInstance: {fileID: 7680698118590044931}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &900702974523658872 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7415355645631449467, guid: b2cce9d4ce7fdd5498936036f2c16386,

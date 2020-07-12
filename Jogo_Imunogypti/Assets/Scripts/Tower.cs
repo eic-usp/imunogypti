@@ -18,6 +18,7 @@ public class Tower : MonoBehaviour
    	private IRotate myRotate;
    	private IEffect myEffect;
 
+
     //desenha o circulo do alcance da torre
     public GameObject rangeCircle;
     public bool drawRange = false;
@@ -44,6 +45,7 @@ public class Tower : MonoBehaviour
         myRotate = GetComponent<IRotate>();
         myEffect = GetComponent<IEffect>();
 
+
         // rangeCircle = this.gameObject.transform.GetChild(2).gameObject;
         // rangeCircle.transform.localScale *=(myTarget.GetRange()+2);
     }
@@ -57,8 +59,9 @@ public class Tower : MonoBehaviour
         // Debug.Log("tagets: " + targets.Count);
 
     	//Rotaciona torre para olhar na direção do inimigo
-        if(targets.Count != 0)
+        if(targets.Count != 0){
             myRotate.LookAt(targets[0].transform, transform);
+        }
 
         // Debug.Log("tagets1: " + targets.Count);
         myEffect.Apply(targets);
@@ -111,11 +114,18 @@ public class Tower : MonoBehaviour
         cost += upgradeCost;
         upgradeCost = Table.Rows[++level].Field<int>("Cost");
         myTarget.Upgrade(level);
+        
+    }
+
+    public void expandRangeCircle(){
+        rangeCircle.transform.localScale = new Vector3(1,1,1);
         rangeCircle.transform.localScale *=(myTarget.GetRange()+2);
     }
 
     public float GetRange()
     {
+        Debug.Log(myTarget.GetRange());
         return myTarget.GetRange();
+
     }
 }

@@ -49,6 +49,7 @@ public class TowerSelection : MonoBehaviour
         
         selected = g;
         selected.tower.rangeCircle.SetActive(true);
+        selected.tower.expandRangeCircle();
         ui.SetActive(true);
     }
 
