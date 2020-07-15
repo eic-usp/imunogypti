@@ -27,15 +27,17 @@ public class Win : MonoBehaviour
 
     void Awake()
     {
-        CalculateHeights(fHP,iHP);
-        Debug.Log(((float)iHP/fHP).ToString());
+        //CalculateHeights(fHP,iHP);
+        //Debug.Log(((float)iHP/fHP).ToString());
         fHP = LifeManager.instance.getHP();
         iHP = LifeManager.instance.getIHP();
+        R = (((float)fHP/(float)iHP));
+        DoLittleStars(R);
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {       /*
             //Fluido da estrela bonus e efeitos de particulas dos dois lados da estrela
             GameObject fluidStar= Stars[0].transform.GetChild(0).GetChild(0).gameObject;
             RectTransform effect = Stars[0].transform.GetChild(1).gameObject.GetComponent<RectTransform>();
@@ -54,7 +56,7 @@ public class Win : MonoBehaviour
                     h -= (5*K/R)*Time.deltaTime;
                     starSong.PlayOneShot(magicSpell,0.1f);
                 }    
-            }
+            }*/
 
             foreach(GameObject star in Stars){
                 RectTransform rt = (RectTransform)star.transform;
@@ -65,7 +67,7 @@ public class Win : MonoBehaviour
 
     }
 
-    public void CalculateHeights(int fHP,int iHP){
+    /*public void CalculateHeights(int fHP,int iHP){
 
         if(fHP==null || iHP == null){
           return;
@@ -92,23 +94,23 @@ public class Win : MonoBehaviour
         Debug.Log(R);
         DoLittleStars(Hl,Hg);
 
-    }
+    }*/
 
-    public void DoLittleStars(float Hl, float Hg){
-        float Q = h/(100f*Hl);
-        if(Q>3){
-            Q = 3;
+    public void DoLittleStars(float Q){
+        
+        if(Q==null){
+            return;
         }
+
         Debug.Log("Q:"+Q);
-        for(int i=1;i<=(int)Q;i++){
+
+        for(int i=1;i<=Mathf.Round(Q*3);i++){
             Stars[i].transform.GetChild(0).GetComponent<Image>().sprite = goldStar;
         }
-        Debug.Log("Subtract " +(int)Q *100 * Hl);
-        h = h - (int)Q * 100 *Hl;
-        Debug.Log("h final " + h);
-        Points.text = ((int)(h/Hg)).ToString()+"%";
-        K = 100*Hg/h;
-
+        //Debug.Log("Subtract " +(int)Q *100 * Hl);
+        //h = h - (int)Q * 100 *Hl;
+        //Debug.Log("h final " + h);
+        Points.text = ((int)(Q)).ToString()+"%";
     }
 
     public void Play(){
