@@ -8392,7 +8392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1feaf0c30a731764da1300f1e8c24bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 4000
+  gold: 400
   goldText: {fileID: 1197417146}
 --- !u!114 &498840709
 MonoBehaviour:
@@ -39095,6 +39095,11 @@ PrefabInstance:
       propertyPath: evolvePanel
       value: 
       objectReference: {fileID: 1399627077}
+    - target: {fileID: 9160878690202534308, guid: 3d5ce3a097ab5324e9ffb7704efbd86b,
+        type: 3}
+      propertyPath: gold
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 9160878690202534310, guid: 3d5ce3a097ab5324e9ffb7704efbd86b,
         type: 3}
       propertyPath: m_LocalPosition.x
