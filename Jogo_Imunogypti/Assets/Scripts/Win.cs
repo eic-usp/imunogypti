@@ -60,7 +60,8 @@ public class Win : MonoBehaviour
 
             foreach(GameObject star in Stars){
                 RectTransform rt = (RectTransform)star.transform;
-                if(star.transform.GetChild(0).GetComponent<Image>().sprite == goldStar){
+                if(star.transform.GetComponent<LittleStars>().filled == true){
+                   //Debug.Log("tchau");
                     rt.Rotate(new Vector3(0,0,100f*Time.deltaTime));
                 }
             }
@@ -104,8 +105,9 @@ public class Win : MonoBehaviour
 
         Debug.Log("Q:"+Q);
 
-        for(int i=1;i<=Mathf.Round(Q*3);i++){
-            Stars[i].transform.GetChild(0).GetComponent<Image>().sprite = goldStar;
+        for(int i=0;i<Mathf.Round(Q*3);i++){
+            Stars[i].transform.GetComponent<SVGImage>().sprite = goldStar;
+            Stars[i].transform.GetComponent<LittleStars>().filled = true;
         }
         //Debug.Log("Subtract " +(int)Q *100 * Hl);
         //h = h - (int)Q * 100 *Hl;

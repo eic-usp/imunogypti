@@ -14,6 +14,7 @@ public class LifeManager : MonoBehaviour
     [SerializeField] private Text hpText;
     public GameObject EndScreen;
     public static LifeManager instance; //Classe estática
+    private bool defeat=false;
 
     void Awake()
     {
@@ -48,6 +49,7 @@ public class LifeManager : MonoBehaviour
     public void Defeat()
     {
         Debug.Log("perdeu");
+        defeat = true;
         EndScreen.SetActive(true);
         EndScreen.transform.GetChild(1).gameObject.SetActive(true);
     }
@@ -55,9 +57,11 @@ public class LifeManager : MonoBehaviour
     //funcao de vitoria do jogador
     public void Win()
     {
-        Debug.Log("ganhou");
-        EndScreen.SetActive(true);
-        EndScreen.transform.GetChild(0).gameObject.SetActive(true);
+        if(defeat==false){
+            Debug.Log("ganhou");
+            EndScreen.SetActive(true);
+            EndScreen.transform.GetChild(0).gameObject.SetActive(true);
+        }
     }
 
     public int getHP(){

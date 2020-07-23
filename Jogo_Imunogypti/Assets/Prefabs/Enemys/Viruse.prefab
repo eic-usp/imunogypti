@@ -49,6 +49,7 @@ MonoBehaviour:
   damage: 1
   speed: 3
   goldValue: 50
+  spawnPoint: {fileID: 0}
   spawnTime: 1
   partToRotate: {fileID: 2460521522265496577}
   lifeBar: {fileID: 6742443278195384162}
@@ -148,7 +149,7 @@ PrefabInstance:
     - target: {fileID: 5991145626007380924, guid: 25762b4e2eb499b4db29233eb976b7b3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4029577277187634699, guid: 25762b4e2eb499b4db29233eb976b7b3,
         type: 3}
