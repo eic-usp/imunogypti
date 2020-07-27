@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,6 +18,16 @@ public class HordeManager:MonoBehaviour
     [SerializeField] private Virus[] virusPrefab;
     [SerializeField] private Text wavesRemaningText;
     [SerializeField] private Text timeRemaningNextWaveText;
+
+    [SerializeField] private Text ImmunityRewardText;
+    [SerializeField] private float ImmunityReward;
+    [SerializeField] private float maxImmunityReward;
+
+    [SerializeField] private bool AutomaticMode=true;
+    [SerializeField] private bool WaveCalled=false;
+
+    //[SerializeField] private float timeRewardDecrease = 1.75f;
+    //[SerializeField] private float RewardCountdown = 1.75f;
 
     public static HordeManager instance;
 
@@ -66,9 +76,83 @@ public class HordeManager:MonoBehaviour
             Win();
 
         //verifica se esta na hora de mandar a proxima onda de inimigos
-        if(countdown <= 0 && wavesRemaning > 0)
+        if(wavesRemaning > 0)
         {
-            for(int i = 0; i < totalSpawnPoints; i++)
+            if(countdown<=0 && AutomaticMode ==true){
+                CallWave();
+                countdown = timeBetweenWaves+waveNumber;
+                //timeRewardDecrease = 0.25f*countdown;
+                wavesRemaning--;
+                waveNumber++;
+          }
+          if(AutomaticMode==false && WaveCalled ==true ) {
+            CallWave();
+            wavesRemaning --;
+            waveNumber++;
+            WaveCalled = false;
+          }    
+        }    
+        if(countdown > 0 && AutomaticMode ==true)
+            countdown -= Time.deltaTime; //conta tempo para mandar proxima onda de inimigos
+        else
+            countdown = waveNumber + timeBetweenWaves;
+        if(ImmunityReward>0)
+            ImmunityReward +=(-(maxImmunityReward/5)*Time.deltaTime);
+        else
+            ImmunityReward = 0;
+
+        ImmunityRewardText.text = ((int)ImmunityReward).ToString();
+        //if(RewardCountdown>0)
+          //  RewardCountdown-=5*Time.deltaTime;
+
+        //ImmunityReward = 20(Time.deltaTime - 5)*()
+        /*bool a = RewardCountdown>timeRewardDecrease;
+        if(RewardCountdown<=0){
+            ImmunityReward -=Mathf.FloorToInt(0.25f*ImmunityReward);
+            ImmunityRewardText.text = ImmunityReward.ToString();
+            RewardCountdown = timeRewardDecrease;
+        }*/
+    }
+
+
+    //funcao que libera uma onda de inimigos
+    IEnumerator SpawnWave(int spawnPoint)
+    {
+        activeViruses += hordeComposition.Length; //coloca todos os inimigos que serao estanciados nessa onda como ativos
+        //ImmunityReward = 0;
+        //ImmunityRewardText.text = ImmunityReward.ToString();
+        //estancia os inimigos dessa onda
+        foreach(int virus in hordeComposition)
+        {
+            virusPrefab[virus].spawnPoint = spawnPoints[spawnPoint];
+            Vector3 rotation = new Vector3(-90f ,0.4f,0f);
+            Instantiate(virusPrefab[virus], spawnPoints[spawnPoint].gameObject.transform.position, Quaternion.Euler(rotation));
+            yield return new WaitForSeconds(0.5f); //tempo entre a instanciacao de cada inimigo
+        }
+        ShowImmunityReward();
+    }
+
+    public void CallNextWave()
+    {
+        if(AutomaticMode == true)
+            countdown = 0;
+        else
+            WaveCalled = true;
+    }
+
+    public void Win()
+    {
+        LifeManager.instance.Win();
+    }
+
+    public void ShowImmunityReward(){
+        ImmunityReward = Table.Rows[waveNumber-1].Field<float>("ImmunityReward");
+        ImmunityRewardText.text = ImmunityReward.ToString();
+        maxImmunityReward = ImmunityReward;
+    }
+
+    public void CallWave(){
+        for(int i = 0; i < totalSpawnPoints; i++)
             {
                 string nSP;
                 nSP = "SP" + i.ToString();
@@ -78,38 +162,14 @@ public class HordeManager:MonoBehaviour
 
                 StartCoroutine(SpawnWave(i));
             }
-                countdown = timeBetweenWaves+waveNumber;
-                wavesRemaning--;
-                waveNumber++;
-        }    
-
-        if(countdown > 0)
-            countdown -= Time.deltaTime; //conta tempo para mandar proxima onda de inimigos
     }
 
-
-    //funcao que libera uma onda de inimigos
-    IEnumerator SpawnWave(int spawnPoint)
-    {
-        activeViruses += hordeComposition.Length; //coloca todos os inimigos que serao estanciados nessa onda como ativos
-
-        //estancia os inimigos dessa onda
-        foreach(int virus in hordeComposition)
-        {
-            virusPrefab[virus].spawnPoint = spawnPoints[spawnPoint];
-            Vector3 rotation = new Vector3(-90f ,0.4f,0f);
-            Instantiate(virusPrefab[virus], spawnPoints[spawnPoint].gameObject.transform.position, Quaternion.Euler(rotation));
-            yield return new WaitForSeconds(0.5f); //tempo entre a instanciacao de cada inimigo
+    public void ChangeAutomaticMode(){
+        if(AutomaticMode==true){
+            AutomaticMode = false;
         }
-    }
-
-    public void CallNextWave()
-    {
-        countdown = 0;
-    }
-
-    public void Win()
-    {
-        LifeManager.instance.Win();
+        else{
+            AutomaticMode = true;
+        }
     }
 }

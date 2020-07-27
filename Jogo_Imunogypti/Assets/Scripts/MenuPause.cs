@@ -7,25 +7,39 @@ using UnityEngine.SceneManagement;
 public class MenuPause : MonoBehaviour
 {
 	public GameObject menu;
-
+    Animator anim;
+    bool paused=false;
  
     public void Pause(){
+        paused=true;
     	menu.SetActive(true);
-    	//Time.timeScale = 0f;
     }
 
     public void GoToMenu(){
     	Time.timeScale = 1f;
+        paused = false;
     	SceneManager.LoadScene("MainMenu");
     }
 
     public void Restart(){
     	Time.timeScale = 1f;
+        paused = false;
     	SceneManager.LoadScene("BaseLevel");
     }
     public void Play(){
     	menu.SetActive(false);
+        paused = false;
     	Time.timeScale = 1f;
+    }
+
+    void Update(){
+        if(menu==null)
+            return;
+
+        anim = menu.transform.GetChild(0).GetComponent<Animator>();
+        if(anim.GetCurrentAnimatorStateInfo(0).IsName("Pause") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f && paused ==true){
+            Time.timeScale = 0f;
+        }
     }
 
 }
