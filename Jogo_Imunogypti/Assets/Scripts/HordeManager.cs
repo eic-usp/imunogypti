@@ -9,7 +9,7 @@ public class HordeManager:MonoBehaviour
 {
     [SerializeField] private int wavesRemaning; //marca quanntas ondas de inimigos faltam para o jogador vencer
     [SerializeField] private int waveNumber; //marca qual a onda que o jogador esta enfrentando atualmente
-    [SerializeField] private float timeBetweenWaves = 5f; //tempo entre as ondas de inimigos
+    [SerializeField] private float timeBetweenWaves = 10f; //tempo entre as ondas de inimigos
     [SerializeField] private float countdown = 7f; //marca tempo ate a proxima onda de ininmigos chegar
     [SerializeField] private int totalSpawnPoints; //marca quantos SpawnPoint tera na tela
     [SerializeField] private int[] hordeComposition; //marca quais os inimigos que viram na onda atual
@@ -21,10 +21,15 @@ public class HordeManager:MonoBehaviour
 
     [SerializeField] private Text ImmunityRewardText;
     [SerializeField] private float ImmunityReward;
-    [SerializeField] private float maxImmunityReward;
+    private bool ShowImmunityReward = false;
 
     [SerializeField] private bool AutomaticMode=true;
     [SerializeField] private bool WaveCalled=false;
+
+    [SerializeField] private float minValue;
+
+
+
 
     //[SerializeField] private float timeRewardDecrease = 1.75f;
     //[SerializeField] private float RewardCountdown = 1.75f;
@@ -96,22 +101,12 @@ public class HordeManager:MonoBehaviour
             countdown -= Time.deltaTime; //conta tempo para mandar proxima onda de inimigos
         else
             countdown = waveNumber + timeBetweenWaves;
-        if(ImmunityReward>0)
-            ImmunityReward +=(-(maxImmunityReward/5)*Time.deltaTime);
-        else
-            ImmunityReward = 0;
 
-        ImmunityRewardText.text = ((int)ImmunityReward).ToString();
-        //if(RewardCountdown>0)
-          //  RewardCountdown-=5*Time.deltaTime;
-
-        //ImmunityReward = 20(Time.deltaTime - 5)*()
-        /*bool a = RewardCountdown>timeRewardDecrease;
-        if(RewardCountdown<=0){
-            ImmunityReward -=Mathf.FloorToInt(0.25f*ImmunityReward);
-            ImmunityRewardText.text = ImmunityReward.ToString();
-            RewardCountdown = timeRewardDecrease;
-        }*/
+        if(ShowImmunityReward){
+             StartCoroutine(DecreaseReward(100f));
+             ShowImmunityReward = false;
+        }
+        
     }
 
 
@@ -129,7 +124,7 @@ public class HordeManager:MonoBehaviour
             Instantiate(virusPrefab[virus], spawnPoints[spawnPoint].gameObject.transform.position, Quaternion.Euler(rotation));
             yield return new WaitForSeconds(0.5f); //tempo entre a instanciacao de cada inimigo
         }
-        ShowImmunityReward();
+        ShowImmunityReward = true;
     }
 
     public void CallNextWave()
@@ -145,11 +140,6 @@ public class HordeManager:MonoBehaviour
         LifeManager.instance.Win();
     }
 
-    public void ShowImmunityReward(){
-        ImmunityReward = Table.Rows[waveNumber-1].Field<float>("ImmunityReward");
-        ImmunityRewardText.text = ImmunityReward.ToString();
-        maxImmunityReward = ImmunityReward;
-    }
 
     public void CallWave(){
         for(int i = 0; i < totalSpawnPoints; i++)
@@ -171,5 +161,25 @@ public class HordeManager:MonoBehaviour
         else{
             AutomaticMode = true;
         }
+    }
+
+    public IEnumerator DecreaseReward(float timeForDecrease){
+
+        //ImmunityReward = Table.Rows[waveNumber-1].Field<float>("ImmunityReward");
+        ImmunityReward = 100;
+        ImmunityRewardText.text = ImmunityReward.ToString();
+
+        float t = 0f;
+        while(t<timeForDecrease){
+
+            t+=Time.deltaTime;
+            ImmunityReward = Mathf.Lerp(ImmunityReward,0,(t/timeForDecrease));
+            ImmunityRewardText.text = ((int)ImmunityReward).ToString();
+            yield return null;
+
+        }
+        ImmunityReward = 0;
+        ImmunityRewardText.text = ((int)ImmunityReward).ToString();
+
     }
 }
