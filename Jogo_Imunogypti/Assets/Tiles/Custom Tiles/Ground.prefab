@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   celulaDendritica: {fileID: 2902032361193593442, guid: 1bfc273daecfd32418e152e77d6658cd,
     type: 3}
+  cell: {fileID: 5382534014338106279, guid: 711c4a915f57aa943b156be0bf7a0111, type: 3}
 --- !u!61 &4500771649769112098
 BoxCollider2D:
   m_ObjectHideFlags: 0

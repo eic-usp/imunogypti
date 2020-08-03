@@ -40,47 +40,74 @@ public class Ground : MonoBehaviour
     	rend.material.color = new Color(255,255,255);
         //Se o mouse não estiver pressionado (Torre não está sendo arrastada) e a torre a ser construida pelo buildManager for diferente de null 
         //(Alguma possivelmente torre foi instanciada recentemente)
-        if(BuildManager.instance.turretToBuild!=null && Input.GetMouseButton(0)==false && tower==null)
+        if(BuildManager.instance.turretToBuild!=null && Input.GetMouseButton(0)==false)
         {
-            //Torre não pode mais ser arrastada (impede torre de ser destruida pelo shopping, que seria o caso em que canDrag == true e a torre não nula, mas o mouse
-            //não é pressionado)
-           	BuildManager.instance.canDrag = false;
-            //Chama método para posicionar torre de acordo com a camera
-           	BuildManager.instance.SetTurretTransform(this.transform);
-             //Retorna a cor padrão da torre
-            BuildManager.instance.changeTurretColor(Color.white);
-            //Existe uma torre neste tile
-            tower = BuildManager.instance.turretToBuild;
-            //Torre posicionada, coloca torre a ser construida como null para fazer a torre parar de seguir o mouse
-            BuildManager.instance.turretToBuild = null;
-
-            //Verifica se precisa ativar algo na torre
-            if(activeLinfocitos)
-                tower.Activate();    
-            if(buffMacrofago)
+            if(BuildManager.instance.turretToBuild.name == "NaturalKiller")
             {
-                DiscretDamage dD = tower.GetComponent<DiscretDamage>();
-                if(dD != null)
-                    dD.Buff(buffAtackSpeed, buffDamage);
+                if(tower.name == "Cell")
+                {
+                    //Torre não pode mais ser arrastada (impede torre de ser destruida pelo shopping, que seria o caso em que canDrag == true e a torre não nula, mas o mouse
+                    //não é pressionado)
+                    BuildManager.instance.canDrag = false;
+                    //Chama método para posicionar torre de acordo com a camera
+                    BuildManager.instance.SetTurretTransform(this.transform);
+                    //Torre posicionada, coloca torre a ser construida como null para fazer a torre parar de seguir o mouse
+                    BuildManager.instance.turretToBuild = null;
+                }
+            }
+            else if(tower == null)
+            {
+                //Torre não pode mais ser arrastada (impede torre de ser destruida pelo shopping, que seria o caso em que canDrag == true e a torre não nula, mas o mouse
+                //não é pressionado)
+                BuildManager.instance.canDrag = false;
+                //Chama método para posicionar torre de acordo com a camera
+                BuildManager.instance.SetTurretTransform(this.transform);
+                //Retorna a cor padrão da torre
+                BuildManager.instance.changeTurretColor(Color.white);
+                //Existe uma torre neste tile
+                tower = BuildManager.instance.turretToBuild;
+                //Torre posicionada, coloca torre a ser construida como null para fazer a torre parar de seguir o mouse
+                BuildManager.instance.turretToBuild = null;
+
+                //Verifica se precisa ativar algo na torre
+                if(activeLinfocitos)
+                    tower.Activate();    
+                if(buffMacrofago)
+                {
+                    DiscretDamage dD = tower.GetComponent<DiscretDamage>();
+                    if(dD != null)
+                        dD.Buff(buffAtackSpeed, buffDamage);
+                }
             }
         }
 
         //A ser executado quando uma torre está sendo arrastada sobre esse tile
-        if(BuildManager.instance.turretToBuild!=null && Input.GetMouseButton(0)){
-            //Se o tile já tiver uma torre (Deixei separado do if de cima pois depois o if abaixo vai ter que ganhar outra cara pra comportar torres que usam mais espaço)
-            if(tower != null)
+        if(BuildManager.instance.turretToBuild!=null && Input.GetMouseButton(0))
+        {
+            if(BuildManager.instance.turretToBuild.name == "NaturalKiller")
             {
-                //Se há uma torre aqui, deixar torre vermelha
-                BuildManager.instance.changeTurretColor(Color.red);
-            }
-            else if(BuildManager.instance.turretToBuild.active == false && activeLinfocitos == false)
-            {
-                BuildManager.instance.changeTurretColor(Color.yellow);
+                if(tower != null && tower.name == "Cell")
+                    BuildManager.instance.changeTurretColor(Color.green);
+                else   
+                    BuildManager.instance.changeTurretColor(Color.red);
             }
             else
             {
-                //Se não há torres aqui, deixar torre verde
-                BuildManager.instance.changeTurretColor(Color.green);
+                //Se o tile já tiver uma torre (Deixei separado do if de cima pois depois o if abaixo vai ter que ganhar outra cara pra comportar torres que usam mais espaço)
+                if(tower != null)
+                {
+                    //Se há uma torre aqui, deixar torre vermelha
+                    BuildManager.instance.changeTurretColor(Color.red);
+                }
+                else if(BuildManager.instance.turretToBuild.active == false && activeLinfocitos == false)
+                {
+                    BuildManager.instance.changeTurretColor(Color.yellow);
+                }
+                else
+                {
+                    //Se não há torres aqui, deixar torre verde
+                    BuildManager.instance.changeTurretColor(Color.green);
+                }
             }
         }
     }
@@ -89,7 +116,8 @@ public class Ground : MonoBehaviour
     {
         //Volta a cor original
     	rend.material.color = defaultColor;
-        if(BuildManager.instance.turretToBuild!=null){
+        if(BuildManager.instance.turretToBuild!=null)
+        {
             //Volta a cor original da torre
             BuildManager.instance.changeTurretColor(Color.white);
         }

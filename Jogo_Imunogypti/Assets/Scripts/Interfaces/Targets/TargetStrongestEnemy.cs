@@ -7,7 +7,7 @@ public class TargetStrongestEnemy : BaseTarget
 {
 	private float distanceToEnemy;
 
-    public override List<GameObject> UpdateTarget()
+    public override List<GameObject> UpdateTarget(List<GameObject> targets)
    	{
    		if(target.Count != 0 && target[0] != null)
 		{

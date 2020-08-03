@@ -7,7 +7,7 @@ public class TargetMultipleEnemies : BaseTarget
 	// private int cont = 0;
 	
 
-	public override List<GameObject> UpdateTarget()
+	public override List<GameObject> UpdateTarget(List<GameObject> targets)
    	{
 		// Debug.Log("oi" + tag);
    		//Os inimigos são todos com a tag de inimigos
