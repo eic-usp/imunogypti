@@ -21,12 +21,16 @@ public class HordeManager:MonoBehaviour
 
     [SerializeField] private Text ImmunityRewardText;
     [SerializeField] private float ImmunityReward;
+    [SerializeField] private float maxImmunityReward;
     private bool ShowImmunityReward = false;
 
     [SerializeField] private bool AutomaticMode=true;
     [SerializeField] private bool WaveCalled=false;
 
-    [SerializeField] private float minValue;
+    [SerializeField] private float endValue=0;
+    [SerializeField] private float timeForDecrease=10;
+    [SerializeField] private float elapsedTime=10;
+
 
 
 
@@ -85,7 +89,8 @@ public class HordeManager:MonoBehaviour
         {
             if(countdown<=0 && AutomaticMode ==true){
                 CallWave();
-                countdown = timeBetweenWaves+waveNumber;
+                ShowImmunityReward = true;
+                countdown = timeBetweenWaves;
                 //timeRewardDecrease = 0.25f*countdown;
                 wavesRemaning--;
                 waveNumber++;
@@ -100,11 +105,13 @@ public class HordeManager:MonoBehaviour
         if(countdown > 0 && AutomaticMode ==true)
             countdown -= Time.deltaTime; //conta tempo para mandar proxima onda de inimigos
         else
-            countdown = waveNumber + timeBetweenWaves;
+            countdown = timeBetweenWaves;
 
-        if(ShowImmunityReward){
-             StartCoroutine(DecreaseReward(100f));
-             ShowImmunityReward = false;
+        if(elapsedTime<timeForDecrease){
+            ImmunityReward = Mathf.Lerp(maxImmunityReward,0,(elapsedTime/timeForDecrease));
+            ImmunityRewardText.text = ((int)ImmunityReward).ToString();
+            elapsedTime+=Time.deltaTime;
+            //Debug.Log(elapsedTime);
         }
         
     }
@@ -113,6 +120,7 @@ public class HordeManager:MonoBehaviour
     //funcao que libera uma onda de inimigos
     IEnumerator SpawnWave(int spawnPoint)
     {
+        ImmunityReward = 0;
         activeViruses += hordeComposition.Length; //coloca todos os inimigos que serao estanciados nessa onda como ativos
         //ImmunityReward = 0;
         //ImmunityRewardText.text = ImmunityReward.ToString();
@@ -124,7 +132,8 @@ public class HordeManager:MonoBehaviour
             Instantiate(virusPrefab[virus], spawnPoints[spawnPoint].gameObject.transform.position, Quaternion.Euler(rotation));
             yield return new WaitForSeconds(0.5f); //tempo entre a instanciacao de cada inimigo
         }
-        ShowImmunityReward = true;
+        elapsedTime = 0;
+        maxImmunityReward = Table.Rows[waveNumber-1].Field<float>("ImmunityReward");
     }
 
     public void CallNextWave()
@@ -133,6 +142,11 @@ public class HordeManager:MonoBehaviour
             countdown = 0;
         else
             WaveCalled = true;
+
+        ImmunityManager.instance.Increase(ImmunityReward);
+        ImmunityReward = 0;
+        ImmunityRewardText.text = ((int)ImmunityReward).ToString();
+        elapsedTime = 10f;
     }
 
     public void Win()
@@ -162,24 +176,27 @@ public class HordeManager:MonoBehaviour
             AutomaticMode = true;
         }
     }
+/*
+    IEnumerator DecreaseReward(){
 
-    public IEnumerator DecreaseReward(float timeForDecrease){
-
-        //ImmunityReward = Table.Rows[waveNumber-1].Field<float>("ImmunityReward");
-        ImmunityReward = 100;
+        //maxImmunityReward = Table.Rows[waveNumber-1].Field<float>("ImmunityReward");
+        ImmunityReward = 100f;
         ImmunityRewardText.text = ImmunityReward.ToString();
 
-        float t = 0f;
-        while(t<timeForDecrease){
+        float elapsedTime = 0f;
+        float timeForDecrease = 10f;
 
-            t+=Time.deltaTime;
-            ImmunityReward = Mathf.Lerp(ImmunityReward,0,(t/timeForDecrease));
+        while(elapsedTime<timeForDecrease){
+            ImmunityReward = Mathf.Lerp(ImmunityReward,0,(elapsedTime/timeForDecrease));
+
             ImmunityRewardText.text = ((int)ImmunityReward).ToString();
+            elapsedTime+=2*Time.deltaTime;
+
             yield return null;
 
         }
-        ImmunityReward = 0;
-        ImmunityRewardText.text = ((int)ImmunityReward).ToString();
-
+        ShowImmunityReward = false;
+        yield return null;
     }
+    */
 }

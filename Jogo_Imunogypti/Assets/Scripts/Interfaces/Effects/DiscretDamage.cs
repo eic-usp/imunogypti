@@ -44,4 +44,6 @@ public class DiscretDamage : MonoBehaviour, IEffect
         buffAttackSpeed += buffAS;
         buffDamage += buffD;
     }
+
+    
 }

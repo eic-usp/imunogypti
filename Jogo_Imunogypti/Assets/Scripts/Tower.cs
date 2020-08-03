@@ -24,6 +24,7 @@ public class Tower : MonoBehaviour
     public bool drawRange = false;
     // public Tower[] towers;
 
+
     [SerializeField] protected TextAsset costTable;
     protected DynamicTable table;
     public DynamicTable Table {
@@ -66,7 +67,6 @@ public class Tower : MonoBehaviour
         // Debug.Log("tagets1: " + targets.Count);
         myEffect.Apply(targets);
         // Debug.Log("tagets2: " + targets.Count);
-
         // if(drawRange == true){
         //     rangeCircle.SetActive(true);
         // }

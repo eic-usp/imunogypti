@@ -11,6 +11,8 @@ public class Shopping : MonoBehaviour
     [SerializeField] private Text goldText; //mostrar pro jogador quanto dinheiro ele tem
     private float returnPercentageGold = 0.5f;
     public static Shopping instance; //Classe estática
+    [SerializeField] public GameObject[] sales; //Torres que serão vendidas
+    [SerializeField] private Text[] priceText;
 
     void Awake()
     {
@@ -26,6 +28,12 @@ public class Shopping : MonoBehaviour
     void Update()
     {
         goldText.text = gold.ToString();
+
+        for(int i=0;i<sales.Length;i++){
+            Tower tower = sales[i].GetComponent<Tower>();
+            if(tower!=null)
+            priceText[i].text = "$" + tower.cost.ToString();
+        }
     }
 
     //funcao que adiciona dinheiro ao jogador

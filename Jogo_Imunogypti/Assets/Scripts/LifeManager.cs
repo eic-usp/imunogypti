@@ -27,6 +27,9 @@ public class LifeManager : MonoBehaviour
 
     public GameObject EndScreen;
 
+    private GameObject[] Linfocitos;
+
+
     float t=Mathf.PI/5f;
 
 
@@ -65,6 +68,8 @@ public class LifeManager : MonoBehaviour
             t+=Time.deltaTime;
             _vignette.intensity.value =Mathf.Lerp(_vignette.intensity.value,5*Mathf.Cos(5f*t),0.5f*Time.deltaTime);
         }
+
+
     }
 
     public void TakeDamage(int damage)
@@ -74,7 +79,7 @@ public class LifeManager : MonoBehaviour
         if(hp <= 0)
             Defeat();
 
-        if(((float)hp/(float)hpIni)*100f<=30f)
+        if(((float)hp/(float)hpIni)*100f<=30f && isWithFever==false)
             Fever();
 
         
@@ -110,9 +115,20 @@ public class LifeManager : MonoBehaviour
     }
 
     public void Fever(){
-        Debug.Log(hp.ToString() + hpIni.ToString() );
+
         isWithFever = true;
         FeverScreen.SetActive(true);
-        //_vignette.intensity.value = Mathf.Lerp(_vignette.intensity.value,Math.Cos(0.5.Time.deltaTime),0.5f*Time.deltaTime);
+
+        foreach(GameObject sale in Shopping.instance.sales){
+            if(sale.tag == "Linfocito"){
+                Tower tower = sale.GetComponent<Tower>();          
+            }
+        }
+
+        Linfocitos = GameObject.FindGameObjectsWithTag("Linfocito");
+        foreach(GameObject linfocito in Linfocitos){
+            IncreaseContinuousDamage effect = linfocito.GetComponent<IncreaseContinuousDamage>();
+            effect.SetMultiplier(2f);
+        }
     }
 }
