@@ -17,11 +17,12 @@ public class Lose : MonoBehaviour
     void Awake()
     {
                
-        CalculateHeights(fHP,iHP);
         Debug.Log(((float)iHP/fHP).ToString());
 
         fHP = LifeManager.instance.getHP();
         iHP = LifeManager.instance.getIHP();
+        R = (((float)fHP/(float)iHP));
+        DoLittleStars(R);
     }
 
     void Start()
@@ -35,7 +36,7 @@ public class Lose : MonoBehaviour
         
     }
 
-    public void CalculateHeights(int fHP,int iHP){
+    /*public void CalculateHeights(int fHP,int iHP){
 
         if(fHP==null || iHP == null){
           return;
@@ -62,19 +63,24 @@ public class Lose : MonoBehaviour
         Debug.Log(R);
         DoLittleStars(Hl,Hg);
 
-    }
+    }*/
 
-    public void DoLittleStars(float Hl, float Hg){
-        float Q = h/(100f*Hl);
-        if(Q>3){
-            Q = 3;
+    public void DoLittleStars(float Q){
+        
+        if(Q==null){
+            return;
         }
+
         Debug.Log("Q:"+Q);
-        for(int i=0;i<=(int)Q;i++){
-            Stars[i].transform.GetChild(0).GetComponent<Image>().sprite = goldStar;
+
+        for(int i=0;i<Mathf.Round(Q*3);i++){
+            Stars[i].transform.GetComponent<SVGImage>().sprite = goldStar;
+            Stars[i].transform.GetComponent<LittleStars>().filled = true;
         }
-        Debug.Log("Subtract " +(int)Q *100 * Hl);
-        h = h - (int)Q * 100 *Hl;
+        //Debug.Log("Subtract " +(int)Q *100 * Hl);
+        //h = h - (int)Q * 100 *Hl;
+        //Debug.Log("h final " + h);
+        //Points.text = ((int)(Q)).ToString()+"%";
     }
 
     public void Play(){
