@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class HordeManager:MonoBehaviour
 {
     [SerializeField] private int wavesRemaning; //marca quanntas ondas de inimigos faltam para o jogador vencer
-    [SerializeField] private int waveNumber; //marca qual a onda que o jogador esta enfrentando atualmente
+    public int waveNumber; //marca qual a onda que o jogador esta enfrentando atualmente
     [SerializeField] private float timeBetweenWaves = 10f; //tempo entre as ondas de inimigos
     [SerializeField] private float countdown = 7f; //marca tempo ate a proxima onda de ininmigos chegar
     [SerializeField] private int totalSpawnPoints; //marca quantos SpawnPoint tera na tela
@@ -128,8 +128,8 @@ public class HordeManager:MonoBehaviour
         foreach(int virus in hordeComposition)
         {
             virusPrefab[virus].spawnPoint = spawnPoints[spawnPoint];
-            Vector3 rotation = new Vector3(-90f ,0.4f,0f);
-            Instantiate(virusPrefab[virus], spawnPoints[spawnPoint].gameObject.transform.position, Quaternion.Euler(rotation));
+            // Vector3 rotation = new Vector3(-90f ,0.4f,0f);
+            Instantiate(virusPrefab[virus], spawnPoints[spawnPoint].gameObject.transform.position, Quaternion.identity);
             yield return new WaitForSeconds(0.5f); //tempo entre a instanciacao de cada inimigo
         }
         elapsedTime = 0;
@@ -154,6 +154,14 @@ public class HordeManager:MonoBehaviour
         LifeManager.instance.Win();
     }
 
+    public void MultiplyVirus(Virus virus)
+    {
+        activeViruses ++; //coloca o inimigo que sera estanciado como ativo
+        // Vector3 rotation = new Vector3(-90f ,0.4f,0f);
+        // SpawnVirus(spawnPoints[spawnPoint].gameObject.transform.position, Quaternion.identity);
+        var v = Instantiate(virus);
+        v.invader = true;
+    }
 
     public void CallWave(){
         for(int i = 0; i < totalSpawnPoints; i++)

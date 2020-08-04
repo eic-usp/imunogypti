@@ -10,6 +10,7 @@ TagManager:
   - Neutrofilo
   - Macrofago
   - "C\xE9lula Dendr\xEDtica"
+  - Cell
   layers:
   - Default
   - TransparentFX

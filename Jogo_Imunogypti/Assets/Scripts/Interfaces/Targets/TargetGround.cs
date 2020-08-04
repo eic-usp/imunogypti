@@ -6,7 +6,7 @@ public class TargetGround : BaseTarget
 {
 	private float distanceToGround;
 
-    public override List<GameObject> UpdateTarget()
+    public override List<GameObject> UpdateTarget(List<GameObject> targets)
    	{
    		GameObject[] grounds = GameObject.FindGameObjectsWithTag(tag);
     	

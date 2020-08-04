@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TargetNearestEnemy : BaseTarget
 {
-    public override List<GameObject> UpdateTarget()
+    public override List<GameObject> UpdateTarget(List<GameObject> targets)
    	{
    		//Os inimigos são todos com a tag de inimigos
     	GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);

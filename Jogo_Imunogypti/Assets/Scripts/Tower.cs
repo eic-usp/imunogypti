@@ -11,7 +11,7 @@ public class Tower : MonoBehaviour
     public int upgradeCost;
     public int cost;
 
-   	private List<GameObject> targets;
+   	public List<GameObject> targets;
 
     //Interfaces
    	private ITarget myTarget;
@@ -56,7 +56,7 @@ public class Tower : MonoBehaviour
         if(active==false)
             return;
 
-		targets = myTarget.UpdateTarget();
+		targets = myTarget.UpdateTarget(targets);
         // Debug.Log("tagets: " + targets.Count);
 
     	//Rotaciona torre para olhar na direção do inimigo

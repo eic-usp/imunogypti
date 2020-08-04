@@ -5,11 +5,18 @@ using UnityEngine;
 public class DendriticaInstallerScript : MonoBehaviour
 {
     [SerializeField] private Tower celulaDendritica;
+    [SerializeField] private Tower cell;
     private Ground myGround;
 
     public void InstallDendritica()
     {
         myGround = GetComponent<Ground>();
-        myGround.tower = Instantiate(celulaDendritica,transform.position,Quaternion.Euler(-90f,0f,0f));
+        Instantiate(celulaDendritica,transform.position,Quaternion.Euler(-90f,0f,0f));
+    }
+    
+    public void InstallCell()
+    {
+        myGround = GetComponent<Ground>();
+        Instantiate(cell,transform.position,Quaternion.Euler(-90f,0f,0f));
     }
 }

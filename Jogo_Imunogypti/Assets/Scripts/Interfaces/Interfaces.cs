@@ -6,7 +6,7 @@ public interface ITarget
 {
     DynamicTable Table {get;}
     void Upgrade(int level);
-    List<GameObject> UpdateTarget();
+    List<GameObject> UpdateTarget(List<GameObject> targets);
     float GetRange();
 }
 

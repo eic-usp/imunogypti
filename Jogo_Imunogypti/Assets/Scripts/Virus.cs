@@ -14,7 +14,9 @@ public class Virus : MonoBehaviour
     //[SerializeField] private Color color; // cor/sprite do inimigo
     public SpawnPoint spawnPoint; //ponto de onde o inimigo saiu, guarda a trajetoria do virus até a base
     private Transform target; //Dita a direção do movimento do virus
-    private int wavePointIndex=0; //É adicionada de 1 a cada target alcançado
+    public int wavePointIndex=0; //É adicionada de 1 a cada target alcançado
+    public bool stop = false;
+    public bool invader = false;
 
     private Vector3 actualDirection; //Direção na qual o virus está se movendo
     private Vector3 previousDirection; //direção anterior do virus
@@ -27,8 +29,9 @@ public class Virus : MonoBehaviour
     void Start()
     {
         //Alvo inicial é o primeiro waypoint 
-        target = spawnPoint.points[0];
+        target = spawnPoint.points[wavePointIndex];
         actualDirection = -this.transform.position + target.transform.position;
+        stop = false;
         //Se o waypoint for nulo
         if(target==null)
         		Debug.Log("Error: Target null");
@@ -39,28 +42,32 @@ public class Virus : MonoBehaviour
 
     void Update()
     {
+
+        if(stop)
+            return;
         //Se a distancia entre o virus e o target é muito pequena, chame o método pra mudar de target
-        if(Vector3.Distance(transform.position,target.position) <= 0.25f){
+        if(Vector3.Distance(transform.position,target.position) <= 0.25f)
+        {
         	GetNextWayPoint();
-            previousDirection = actualDirection;
-            actualDirection = -this.transform.position + target.transform.position;
+            actualDirection = -this.transform.position + target.position;
         }
-        Rotativ(previousDirection,actualDirection); 
+
+        Rotativ(actualDirection); 
         //actualDirection = -this.transform.position + target.transform.position;
-    	// a Direção é o vetor que liga o virus ao target
+        // a Direção é o vetor que liga o virus ao target
         //this.transform.LookAt(Camera.main.transform.position);
         //Move o virus na direção com uma velocidade 'speed' em relação ao World
         this.transform.Translate(actualDirection.normalized * speed * Time.deltaTime,Space.World);
-
-        //TurnToNormal();
     }
 
     //funcao que pega o ponto para onde o virus deve ir
-    void GetNextWayPoint(){
+    void GetNextWayPoint()
+    {
         wavePointIndex++;
 
     	//se ainda tem um proximo ponto para ir, escolhe esse ponto como novo target
-    	if(wavePointIndex < spawnPoint.points.Length){
+    	if(wavePointIndex < spawnPoint.points.Length)
+        {
     			target = spawnPoint.points[wavePointIndex];
     	}
     	//se não o inimigo chegou na base, destroi ele
@@ -96,12 +103,25 @@ public class Virus : MonoBehaviour
         HordeManager.instance.activeViruses--;    
     }
 
-    private void Rotativ(Vector3 prev, Vector3 actual){
+    private void Rotativ(Vector3 actual)
+    {
         partToRotate.transform.rotation = Quaternion.LookRotation(actual, -target.transform.forward);
     }
 
-    public float getSpawnTime(){
+    public float getSpawnTime()
+    {
         return spawnTime;
     }
+
+    public void InvadeCell(Transform cell)
+    {
+        actualDirection = -this.transform.position + cell.position;
+        invader = true;
+    }
     
+    public void Evacuate()
+    {
+        actualDirection = -this.transform.position + target.position;
+        stop = false;
+    }
 }

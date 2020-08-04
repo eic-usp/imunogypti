@@ -11,9 +11,15 @@ public class DendriticaInstallerEditor : Editor
         DrawDefaultInspector();
 
         DendriticaInstallerScript myScript = (DendriticaInstallerScript)target;
+
         if(GUILayout.Button("Install Celula Dendritica"))
         {
             myScript.InstallDendritica();
+        }
+
+        if(GUILayout.Button("Install Cell"))
+        {
+            myScript.InstallCell();
         }
     }
 }
