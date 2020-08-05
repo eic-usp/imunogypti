@@ -47,6 +47,6 @@ public class LookEnemy : MonoBehaviour, IRotate
          
         // actualDirection = -this.transform.position + target.transform.position;
 
-        partToRotate.transform.rotation = Quaternion.LookRotation(dir, target.transform.up);
+        partToRotate.transform.rotation = Quaternion.LookRotation(dir, -target.transform.forward);
     }
 }

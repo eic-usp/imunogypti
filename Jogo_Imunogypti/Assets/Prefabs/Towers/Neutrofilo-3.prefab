@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3156037208244328517}
   - component: {fileID: -1411232501615719383}
   - component: {fileID: 2629695235435068415}
-  - component: {fileID: -2031679422840046392}
+  - component: {fileID: 6416088356141066677}
   - component: {fileID: 3446598974820031783}
   - component: {fileID: 3556480051797919179}
   - component: {fileID: 2575060292869399195}
@@ -55,6 +55,7 @@ MonoBehaviour:
   active: 1
   upgradeCost: 0
   cost: 0
+  targets: []
   rangeCircle: {fileID: 5785413531730331687}
   drawRange: 0
   costTable: {fileID: 4900000, guid: 8569c843c0cd85f41a01e438feac2e29, type: 3}
@@ -77,7 +78,7 @@ MonoBehaviour:
   buffAttackSpeed: 1
   damage: 2
   buffDamage: 1
---- !u!114 &-2031679422840046392
+--- !u!114 &6416088356141066677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +121,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!95 &2575060292869399195
 Animator:
@@ -152,11 +153,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Neutrofilo2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 0867cf9382717864a8dff82e92219c42,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0867cf9382717864a8dff82e92219c42,
         type: 3}
@@ -211,6 +207,11 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 0867cf9382717864a8dff82e92219c42,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 0867cf9382717864a8dff82e92219c42,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
