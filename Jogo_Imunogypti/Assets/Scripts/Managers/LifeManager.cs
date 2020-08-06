@@ -29,6 +29,11 @@ public class LifeManager : MonoBehaviour
 
     private GameObject[] Linfocitos;
 
+    [SerializeField] private Slider HidratationBar;
+    private float elapsedTime = 0f;
+    private float timeForDecrease = 2f;
+    private float maxActualHidratation=0.4f;
+
 
     float t=Mathf.PI/5f;
 
@@ -69,6 +74,22 @@ public class LifeManager : MonoBehaviour
             _vignette.intensity.value =Mathf.Lerp(_vignette.intensity.value,5*Mathf.Cos(5f*t),0.5f*Time.deltaTime);
         }
 
+        if(elapsedTime<timeForDecrease){
+            HidratationBar.value = Mathf.Lerp(maxActualHidratation,maxActualHidratation - 0.02f*maxActualHidratation,(elapsedTime/timeForDecrease));
+            elapsedTime+=Time.deltaTime;
+            //Debug.Log(elapsedTime);
+        }
+        else{
+            elapsedTime = 0f;
+            maxActualHidratation = HidratationBar.value;
+        }
+
+        if(HidratationBar.value < 0.4){
+            AttackAttributesManager.instance.buffLinfocito(-0.5f);
+            AttackAttributesManager.instance.buffNeutrofilo(-0.5f,-0.5f);
+            AttackAttributesManager.instance.buffMacrofago(-0.5f,-0.5f);
+
+        }
 
     }
 
@@ -82,7 +103,8 @@ public class LifeManager : MonoBehaviour
         if(((float)hp/(float)hpIni)*100f<=30f && isWithFever==false)
             Fever();
 
-        
+        maxActualHidratation -=0.1f*maxActualHidratation;
+        elapsedTime = 0f;      
     }
 
     //funcao de derrota do jogador
@@ -121,14 +143,15 @@ public class LifeManager : MonoBehaviour
 
         foreach(GameObject sale in Shopping.instance.sales){
             if(sale.tag == "Linfocito"){
-                Tower tower = sale.GetComponent<Tower>();          
+                Tower tower = sale.GetComponent<Tower>();
+                tower.cost += 50;          
             }
         }
 
-        Linfocitos = GameObject.FindGameObjectsWithTag("Linfocito");
-        foreach(GameObject linfocito in Linfocitos){
-            IncreaseContinuousDamage effect = linfocito.GetComponent<IncreaseContinuousDamage>();
-            effect.SetMultiplier(2f);
-        }
+        AttackAttributesManager.instance.buffLinfocito(1.2f);
+    }
+
+    public void Hidratate(){
+        maxActualHidratation+= 0.05f*maxActualHidratation;
     }
 }

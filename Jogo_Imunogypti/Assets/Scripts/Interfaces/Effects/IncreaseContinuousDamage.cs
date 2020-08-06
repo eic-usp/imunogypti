@@ -10,6 +10,7 @@ public class IncreaseContinuousDamage : MonoBehaviour, IEffect
     [SerializeField] protected float initialDamage; //dano da torre
     private GameObject previousTarget = null;
     [SerializeField] private float multiplier = 1;
+    [SerializeField] private float buffDamage = 1; //porcentagem que o dano da torre esta sendo buffado
     private Animator myAnimator;
 
     public void Apply(List<GameObject> targets){
@@ -32,7 +33,7 @@ public class IncreaseContinuousDamage : MonoBehaviour, IEffect
             multiplier = 1;
 
         Virus enemy = targets[0].GetComponent<Virus>();
-        enemy.DealDamage(initialDamage*multiplier);
+        enemy.DealDamage(initialDamage*multiplier*buffDamage);
 
         multiplier += Time.deltaTime*multiplierIncreaseRate;
 
@@ -41,7 +42,8 @@ public class IncreaseContinuousDamage : MonoBehaviour, IEffect
 
     public void Remove(List<GameObject> targets){}
 
-    public void SetMultiplier(float x){
-        initialDamage = x;
+    public void Buff(float buffD)
+    {
+        buffDamage += buffD;
     }
 }
