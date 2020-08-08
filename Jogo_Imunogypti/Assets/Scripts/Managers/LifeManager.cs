@@ -32,7 +32,7 @@ public class LifeManager : MonoBehaviour
     [SerializeField] private Slider HidratationBar;
     private float elapsedTime = 0f;
     private float timeForDecrease = 2f;
-    private float maxActualHidratation=0.4f;
+    private float maxActualHidratation=1f;
 
 
     float t=Mathf.PI/5f;
