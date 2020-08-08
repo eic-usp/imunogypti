@@ -11,6 +11,7 @@ TagManager:
   - Macrofago
   - "C\xE9lula Dendr\xEDtica"
   - Cell
+  - Path
   layers:
   - Default
   - TransparentFX
