@@ -6,18 +6,27 @@ public class MultipliesViruses : MonoBehaviour, IEffect
 {
     [SerializeField] private bool destroyed = false;
     [SerializeField] private int waveToRespawn = 0;
-    [SerializeField] private int nInvaders = 0;
     [SerializeField] private int progression = 0;
     private List<Virus> enemies = new List<Virus>();
+    private List<Color> StandardColors = new List<Color>();//Lista com cores padrão da torre
+
+    void start()
+    {
+        // var t = this.gameObject.GetComponent<Tower>();
+        foreach(Renderer r in this.gameObject.GetComponentsInChildren<Renderer>())
+            StandardColors.Add(r.material.color);
+    }
 
     public void Apply(List<GameObject> targets)
     {
+        //se a célula estiver destruída
         if(destroyed)
         {
+            //se a célula já deve ser reparada
             if(HordeManager.instance.waveNumber == waveToRespawn)
             {
+                changeTurretColor(Color.white);
                 destroyed = false;
-                nInvaders = 0;
                 progression = 0;
                 enemies.Clear();
                 targets.Clear();
@@ -25,7 +34,7 @@ public class MultipliesViruses : MonoBehaviour, IEffect
             return;
         }
 
-        for(int i = nInvaders; i < targets.Count; i++)
+        for(int i = enemies.Count; i < targets.Count; i++)
         {
             var virus = targets[i].GetComponent<Virus>();
 
@@ -33,7 +42,6 @@ public class MultipliesViruses : MonoBehaviour, IEffect
             {
                 enemies.Add(virus);
                 enemies[i].InvadeCell(this.transform);
-                nInvaders++;
             }
             else
             {
@@ -72,17 +80,42 @@ public class MultipliesViruses : MonoBehaviour, IEffect
             enemy.Evacuate();
         }
 
-        waveToRespawn = HordeManager.instance.waveNumber + 1;
+        waveToRespawn = HordeManager.instance.waveNumber + 2;
+        changeTurretColor(Color.red);
     }
 
     public void Destroyed()
     {
         destroyed = true;
-        waveToRespawn = HordeManager.instance.waveNumber + 1;
+        waveToRespawn = HordeManager.instance.waveNumber + 2;
         foreach (Virus enemy in enemies)
         {
             Destroy(enemy.gameObject);
         }
         this.gameObject.GetComponent<Tower>().targets.Clear();
+        changeTurretColor(Color.red);
+    }
+
+    //Função que troca a cor da torre para indicar a condição de posicionamento em um tile do mapa
+    public void changeTurretColor(Color clr)
+    {
+        //contador
+        int i=0;
+        //Para cada renderer de objetos filhos da atual turretToBuild
+        foreach(Renderer r in this.gameObject.GetComponentsInChildren<Renderer>()){
+            //Se a cor parametro for branco, retorne as cores originais do prefab
+            if(clr == Color.white)
+            {
+                r.material.color = StandardColors[i];
+                i++;
+            }
+            //Se a cor não for branco, insira essa cor como a nova cor da torre
+            else
+            {
+                StandardColors.Add(r.material.color);
+
+                r.material.color = clr;      
+            }
+        }
     }
 }

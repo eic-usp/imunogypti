@@ -26,9 +26,11 @@ public class TargetNMultipleEnemies : BaseTarget
 		//Percorre todos os inimigos, tomando as ditancia da torre até eles e verificando se estão no alcance
 		foreach(GameObject enemy in enemies)
 		{
+			//se atingir o maximo de alvos para de buscar alvos
 			if(targets.Count == maxTargets)
 				break;
 
+			//verifica se o inimigo já está na lista de alvos
 			bool cont = false;
 			foreach(GameObject t in targets)
 			{
@@ -38,8 +40,11 @@ public class TargetNMultipleEnemies : BaseTarget
 					break;
 				}
 			}
+			
+			var virus = enemy.GetComponent<Virus>();
 
-			if(!cont)
+			//caso o inimigo já não esteja na lista de alvos
+			if(!cont && !virus.stop)
 			{
 				distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
 				

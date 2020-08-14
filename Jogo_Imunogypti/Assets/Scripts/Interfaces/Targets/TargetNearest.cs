@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetNearestEnemy : BaseTarget
+public class TargetNearest : BaseTarget
 {
     public override List<GameObject> UpdateTarget(List<GameObject> targets)
    	{
@@ -17,8 +17,7 @@ public class TargetNearestEnemy : BaseTarget
     	foreach(GameObject enemy in enemies)
 		{
     		float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-			var virus = enemy.GetComponent<Virus>();
-    		if(!virus.stop && distanceToEnemy<shortestDistance)
+    		if(distanceToEnemy<shortestDistance)
 			{
     			shortestDistance = distanceToEnemy;
     			nearestEnemy = enemy;
