@@ -35,6 +35,14 @@ public abstract class BaseTarget : MonoBehaviour, ITarget
         maxTargets = Table.Rows[level-1].Field<int>("MaxTargets");
     }
 
+    public void Downgrade()
+    {
+        tag = Table.Rows[0].Field<string>("Tag");
+		range = Table.Rows[0].Field<float>("Range");
+		maxTargets = Table.Rows[0].Field<int>("MaxTargets");
+    }
+
+
     public abstract List<GameObject> UpdateTarget(List<GameObject> targets);
 
     public float GetRange()
