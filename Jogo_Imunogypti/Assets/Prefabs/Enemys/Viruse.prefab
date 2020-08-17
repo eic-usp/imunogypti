@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2364083291904759915}
   - component: {fileID: 1731299338086990880}
-  - component: {fileID: -6518001731954889119}
   m_Layer: 0
   m_Name: Viruse
   m_TagString: Enemy
@@ -57,19 +56,6 @@ MonoBehaviour:
   spawnTime: 1
   partToRotate: {fileID: 2460521522265496577}
   lifeBar: {fileID: 6742443278195384162}
---- !u!135 &-6518001731954889119
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7334652085758379484}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6862360715815139443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -142,8 +128,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3315892202427799712, guid: 4c3c3bf7fd1f4ca4da1256b75174d63f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6432617340520425369, guid: 4c3c3bf7fd1f4ca4da1256b75174d63f, type: 3}
+    - {fileID: 8301611992808018537, guid: 4c3c3bf7fd1f4ca4da1256b75174d63f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4c3c3bf7fd1f4ca4da1256b75174d63f, type: 3}
 --- !u!4 &2460521522265496577 stripped
 Transform:
