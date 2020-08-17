@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class TargetNearestEnemy : BaseTarget
 {
+
     public override List<GameObject> UpdateTarget(List<GameObject> targets)
    	{
    		//Os inimigos são todos com a tag de inimigos
     	GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
     	//Distancia mais curta até um inimigo
-    	float shortestDistance = Mathf.Infinity;
+        float shortestDistance = Mathf.Infinity;
     	GameObject nearestEnemy = null;
 		target.Clear();
 

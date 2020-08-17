@@ -11,6 +11,8 @@ TagManager:
   - Macrofago
   - "C\xE9lula Dendr\xEDtica"
   - Cell
+  - Path
+  - Imunoglobulina B
   layers:
   - Default
   - TransparentFX

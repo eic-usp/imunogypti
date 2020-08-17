@@ -50,6 +50,9 @@ MonoBehaviour:
   speed: 3
   goldValue: 50
   spawnPoint: {fileID: 0}
+  wavePointIndex: 0
+  stop: 0
+  invader: 0
   spawnTime: 1
   partToRotate: {fileID: 2460521522265496577}
   lifeBar: {fileID: 6742443278195384162}
@@ -125,8 +128,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3315892202427799712, guid: 4c3c3bf7fd1f4ca4da1256b75174d63f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6432617340520425369, guid: 4c3c3bf7fd1f4ca4da1256b75174d63f, type: 3}
+    - {fileID: 8301611992808018537, guid: 4c3c3bf7fd1f4ca4da1256b75174d63f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4c3c3bf7fd1f4ca4da1256b75174d63f, type: 3}
 --- !u!4 &2460521522265496577 stripped
 Transform:
