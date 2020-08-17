@@ -10171,7 +10171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1feaf0c30a731764da1300f1e8c24bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 900
+  gold: 400
   goldText: {fileID: 1197417146}
   sales:
   - {fileID: 4177599114399398344, guid: 7a8b8376fcce2f645aa530cd3e3d73a7, type: 3}
@@ -45600,7 +45600,7 @@ PrefabInstance:
     - target: {fileID: 9160878690202534308, guid: 3d5ce3a097ab5324e9ffb7704efbd86b,
         type: 3}
       propertyPath: gold
-      value: 900
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 9160878690202534310, guid: 3d5ce3a097ab5324e9ffb7704efbd86b,
         type: 3}
