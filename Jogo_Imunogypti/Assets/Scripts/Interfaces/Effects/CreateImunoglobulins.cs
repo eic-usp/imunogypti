@@ -1,0 +1,34 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CreateImunoglobulins : MonoBehaviour, IEffect
+{
+    // Start is called before the first frame update
+    [SerializeField] List<GameObject> ImunoglobPrefabs;
+    private float fireCountdown=0f;
+    private float plotRate= 0.5f;
+    public void Apply(List<GameObject> targets){
+        if(targets.Count != 0 && fireCountdown <= 0)
+        {
+            foreach (GameObject target in targets)
+            {
+                int num = UnityEngine.Random.Range(0,ImunoglobPrefabs.Count);
+    			GameObject ImunoObj = Instantiate(ImunoglobPrefabs[num], target.transform);
+    			Imunoglobulin imunoglob = ImunoObj.GetComponent<Imunoglobulin>();
+                //Imunoglobulin imunoglobB = ImunoObjB.GetComponent<Imunoglobulin>();
+
+                /*if(imunoglob != null)
+                {
+                    bullet.target = target;
+                    bullet.damage = damage * buffDamage;
+                }*/
+            }
+            fireCountdown = 1f / plotRate;
+        }
+
+        fireCountdown -= Time.deltaTime;
+    }
+
+    public void Remove(List<GameObject> targets){}
+}

@@ -50,6 +50,12 @@ MonoBehaviour:
   damage: 2
   speed: 4
   goldValue: 100
+  spawnPoint: {fileID: 0}
+  wavePointIndex: 0
+  stop: 0
+  invader: 0
+  spawnTime: 0.5
+  partToRotate: {fileID: 0}
   lifeBar: {fileID: 5991145626007380924, guid: 25762b4e2eb499b4db29233eb976b7b3, type: 3}
 --- !u!135 &3315892202427799712
 SphereCollider:
@@ -129,6 +135,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: virus (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c0602cfd4e177444b84218b5aefbb722,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c0602cfd4e177444b84218b5aefbb722,
         type: 3}

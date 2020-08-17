@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Imunoglobulin : MonoBehaviour
 {
-	public SpawnPoint spawnPoint;
+	private SpawnPoint spawnPoint;
 	private Transform target; //Dita a direção do movimento da bala
 	public int wavePointIndex=11; //É adicionada de 1 a cada target alcançado
 
@@ -17,6 +18,10 @@ public class Imunoglobulin : MonoBehaviour
 
 
     // Start is called before the first frame update
+
+    void Awake(){
+    	spawnPoint = HordeManager.instance.GetSpawnPoint(UnityEngine.Random.Range(0,HordeManager.instance.getTotalSpawnPoints()-1));
+    }
     void Start()
     {
     	float dL=1000;
@@ -26,7 +31,7 @@ public class Imunoglobulin : MonoBehaviour
     		if(dL<previousdL){
     			wavePointIndex = i;
     			previousdL = dL;
-    			Debug.Log(wavePointIndex.ToString() + dL.ToString());
+    			
     		}
     	}
     	Vector3 firstDirect = -transform.position + spawnPoint.points[wavePointIndex].transform.position;
