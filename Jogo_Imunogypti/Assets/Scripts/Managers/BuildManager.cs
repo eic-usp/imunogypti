@@ -45,7 +45,8 @@ public class BuildManager : MonoBehaviour
     //funcao seta a torre a ser instalada no mapa
     public void Install(Tower tower)
     {
-        if(turretToBuild==null){
+        if(turretToBuild==null)
+        {
             //verifica se o jogador tem dinheiro o suficiente para fazer a compra
             if(!Shopping.instance.ShellOut(tower.cost))
                return;

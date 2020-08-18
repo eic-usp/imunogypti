@@ -56,7 +56,7 @@ public class TowerSelection : MonoBehaviour
     public void Hide()
     {
         ui.SetActive(false);
-        if(selected.tower != null)
+        if(selected != null && selected.tower != null)
             selected.tower.rangeCircle.SetActive(false);
         selected = null;
     }

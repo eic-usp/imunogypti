@@ -30,7 +30,7 @@ public class TargetStrongestEnemy : BaseTarget
 
 			Virus virus = enemy.GetComponent<Virus>();
 
-    		if(virus.hp > strongest && distanceToEnemy <= range)
+    		if(!virus.stop && virus.hp > strongest && distanceToEnemy <= range)
 			{
     			strongest = virus.hp;
     			strongestEnemy = enemy;

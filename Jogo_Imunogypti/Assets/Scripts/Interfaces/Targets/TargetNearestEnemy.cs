@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class TargetNearestEnemy : BaseTarget
 {
+
     public override List<GameObject> UpdateTarget(List<GameObject> targets)
    	{
    		//Os inimigos são todos com a tag de inimigos
     	GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
     	//Distancia mais curta até um inimigo
-    	float shortestDistance = Mathf.Infinity;
+        float shortestDistance = Mathf.Infinity;
     	GameObject nearestEnemy = null;
 		target.Clear();
 
@@ -17,7 +18,8 @@ public class TargetNearestEnemy : BaseTarget
     	foreach(GameObject enemy in enemies)
 		{
     		float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-    		if(distanceToEnemy<shortestDistance)
+			var virus = enemy.GetComponent<Virus>();
+    		if(!virus.stop && distanceToEnemy<shortestDistance)
 			{
     			shortestDistance = distanceToEnemy;
     			nearestEnemy = enemy;

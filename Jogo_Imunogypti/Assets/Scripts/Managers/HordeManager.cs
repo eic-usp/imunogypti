@@ -184,6 +184,14 @@ public class HordeManager:MonoBehaviour
             AutomaticMode = true;
         }
     }
+
+    public int getTotalSpawnPoints(){
+        return totalSpawnPoints;
+    }
+
+    public SpawnPoint GetSpawnPoint(int number){
+        return spawnPoints[number];
+    }
 /*
     IEnumerator DecreaseReward(){
 

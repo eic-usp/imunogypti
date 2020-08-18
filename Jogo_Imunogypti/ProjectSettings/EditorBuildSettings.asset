@@ -12,12 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/StageMenu.unity
     guid: a921e6b6d819fa3a8b0b73acbf29db39
   - enabled: 1
-    path: Assets/Scenes/BaseLevel.unity
-    guid: 030a20bcc7a947e419e8ad2a74a59e75
-  - enabled: 0
     path: Assets/Scenes/Lose.unity
     guid: c724bcd455eb8774eae6e5d02911282c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Win.unity
     guid: 83c81f562576c7943af047aeb937e53b
+  - enabled: 1
+    path: Assets/Scenes/BaseLevel.unity
+    guid: 030a20bcc7a947e419e8ad2a74a59e75
+  - enabled: 1
+    path: Assets/Scenes/ForkedPath.unity
+    guid: 3b620523291810645897fe58d1c7726f
   m_configObjects: {}

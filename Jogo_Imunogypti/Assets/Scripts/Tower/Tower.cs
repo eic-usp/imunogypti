@@ -7,7 +7,7 @@ public class Tower : MonoBehaviour
 {
     public string name;
     public int level = 1;
-    public bool active = false; //define se a torre esta ativa
+    public bool active; //define se a torre esta ativa
     public int upgradeCost;
     public int cost;
 
@@ -27,15 +27,17 @@ public class Tower : MonoBehaviour
 
     [SerializeField] protected TextAsset costTable;
     protected DynamicTable table;
-    public DynamicTable Table {
-        get {
+    public DynamicTable Table 
+    {
+        get 
+        {
             if(table == null)
                 table = DynamicTable.Create(costTable);
             return table;
         }
     }
 
-    protected void Awake()
+    void Awake()
     {
         table = DynamicTable.Create(costTable);
         cost = Table.Rows[0].Field<int>("Cost");
@@ -60,7 +62,8 @@ public class Tower : MonoBehaviour
         // Debug.Log("tagets: " + targets.Count);
 
     	//Rotaciona torre para olhar na direção do inimigo
-        if(targets.Count != 0){
+        if(targets.Count != 0)
+        {
             myRotate.LookAt(targets[0].transform, transform);
         }
 
@@ -115,6 +118,16 @@ public class Tower : MonoBehaviour
         upgradeCost = Table.Rows[++level].Field<int>("Cost");
         myTarget.Upgrade(level);
         
+    }
+
+
+    public void Downgrade()
+    {
+        level = 1;
+        cost = Table.Rows[0].Field<int>("Cost");
+        upgradeCost = Table.Rows[1].Field<int>("Cost");
+        myEffect.Remove(targets);
+        myTarget.Downgrade();
     }
 
     public void expandRangeCircle(){

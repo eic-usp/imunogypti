@@ -126,7 +126,7 @@ public class Ground : MonoBehaviour
     //Seleciona torre
     void OnMouseDown()
     {
-        if(tower == null)
+        if(tower == null || tower.name == "Cell")
             TowerSelection.instance.Hide();
         else
             TowerSelection.instance.Select(this);
@@ -193,7 +193,12 @@ public class Ground : MonoBehaviour
 
     public void Uninstall()
     {  
-        tower.Uninstall();
-        tower = null;
+        if(tower.name == "Celula Dendritica")
+            tower.Downgrade();
+        else
+        {
+            tower.Uninstall();
+            tower = null;
+        }
     }
 }

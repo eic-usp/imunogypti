@@ -1,0 +1,3 @@
+Level;Tag;Range;MaxTargets
+int;string;float;int
+1;Enemy;2;1

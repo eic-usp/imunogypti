@@ -32,7 +32,8 @@ public class LifeManager : MonoBehaviour
     [SerializeField] private Slider HidratationBar;
     private float elapsedTime = 0f;
     private float timeForDecrease = 2f;
-    private float maxActualHidratation=0.4f;
+    private float maxActualHidratation=1f;
+    private bool isDehydrated = false;
 
 
     float t=Mathf.PI/5f;
@@ -84,11 +85,11 @@ public class LifeManager : MonoBehaviour
             maxActualHidratation = HidratationBar.value;
         }
 
-        if(HidratationBar.value < 0.4){
+        if(HidratationBar.value < 0.4 && isDehydrated==false){
             AttackAttributesManager.instance.buffLinfocito(-0.5f);
             AttackAttributesManager.instance.buffNeutrofilo(-0.5f,-0.5f);
             AttackAttributesManager.instance.buffMacrofago(-0.5f,-0.5f);
-
+            isDehydrated = true;
         }
 
     }
@@ -153,5 +154,8 @@ public class LifeManager : MonoBehaviour
 
     public void Hidratate(){
         maxActualHidratation+= 0.05f*maxActualHidratation;
+        if(maxActualHidratation>0.4)
+            isDehydrated = false;
     }
+
 }

@@ -71,6 +71,7 @@ MonoBehaviour:
   active: 1
   upgradeCost: 0
   cost: 0
+  targets: []
   rangeCircle: {fileID: 8901869090359525625}
   drawRange: 0
   costTable: {fileID: 4900000, guid: 8569c843c0cd85f41a01e438feac2e29, type: 3}
@@ -105,7 +106,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -244,6 +245,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cellMacro
       objectReference: {fileID: 0}
+    - target: {fileID: -444521105353760620, guid: 0aa8303c4f0add94c836679bacb21d14,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.991
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0aa8303c4f0add94c836679bacb21d14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -298,11 +304,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -444521105353760620, guid: 0aa8303c4f0add94c836679bacb21d14,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.991
       objectReference: {fileID: 0}
     - target: {fileID: 5574657383665397177, guid: 0aa8303c4f0add94c836679bacb21d14,
         type: 3}

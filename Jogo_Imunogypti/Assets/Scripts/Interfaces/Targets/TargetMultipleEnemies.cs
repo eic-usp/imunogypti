@@ -21,11 +21,16 @@ public class TargetMultipleEnemies : BaseTarget
 		{
 			// if(cont == 0)
 			// 	Debug.Log("chama");
-    		distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-			
-			//Se o inimigo mais proximo não for nulo e a distancia estiver no range da torre, ele será o alvo
-			if(distanceToEnemy<=range)
-				target.Add(enemy);
+			var virus = enemy.GetComponent<Virus>();
+
+			if(!virus.stop)
+			{
+				distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+				
+				//Se o inimigo mais proximo não for nulo e a distancia estiver no range da torre, ele será o alvo
+				if(distanceToEnemy<=range)
+					target.Add(enemy);
+			}
     	}
 
 		// cont++;
