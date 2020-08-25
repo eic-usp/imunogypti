@@ -1,0 +1,197 @@
+fileFormatVersion: 2
+guid: e5e5b0f0f9d1d6941a58dfeea4e8b6cc
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      74: -1422011007694221501
+    second: Armature|ArmatureAction.001
+  - first:
+      74: 5449073193131188545
+    second: Armature|CubeAction
+  - first:
+      74: 783080663221867442
+    second: Armature|CubeAction.001
+  - first:
+      74: 6755636440131579798
+    second: Armature|CubeAction.002
+  - first:
+      74: 1956874707923393825
+    second: Armature|oculos|oculos|CubeAction.001|oculos|CubeAction.001
+  - first:
+      74: 928333555395354912
+    second: Armature|oculos|oculos|Cylinder.001Action|oculos|Cylinder.001Action
+  - first:
+      74: 2242804296747152077
+    second: Armature|oculos|oculos|CylinderAction.002|oculos|CylinderAction.002
+  - first:
+      74: 3586816154127927453
+    second: Armature|oculos|oculos|Sphere.003Action|oculos|Sphere.003Action
+  - first:
+      74: -6788291789069941537
+    second: Armature|SphereAction
+  - first:
+      74: -5715046431763523848
+    second: Armature|stand
+  - first:
+      74: 5255627395168236259
+    second: Sphere|CubeAction
+  - first:
+      74: -7281406130967981712
+    second: Sphere|CubeAction.001
+  - first:
+      74: -6366007596751498496
+    second: Sphere|CubeAction.002
+  - first:
+      74: -382687726451929801
+    second: Sphere|oculos|oculos|CubeAction.001|oculos|CubeAction.001
+  - first:
+      74: 9092483814236557846
+    second: Sphere|oculos|oculos|Cylinder.001Action|oculos|Cylinder.001Action
+  - first:
+      74: -6153911101713576480
+    second: Sphere|oculos|oculos|CylinderAction.002|oculos|CylinderAction.002
+  - first:
+      74: -2644387008653189513
+    second: Sphere|oculos|oculos|Sphere.003Action|oculos|Sphere.003Action
+  - first:
+      74: -3100628101864396295
+    second: Sphere|SphereAction
+  - first:
+      74: -3999578356269874737
+    second: Cube|CubeAction
+  - first:
+      74: -7918129362319027497
+    second: Cube|CubeAction.001
+  - first:
+      74: -4473016424031684122
+    second: Cube|CubeAction.002
+  - first:
+      74: 3605814576032001603
+    second: Cube|oculos|oculos|CubeAction.001|oculos|CubeAction.001
+  - first:
+      74: 3629845926501418437
+    second: Cube|oculos|oculos|Cylinder.001Action|oculos|Cylinder.001Action
+  - first:
+      74: 4634091272720266443
+    second: Cube|oculos|oculos|CylinderAction.002|oculos|CylinderAction.002
+  - first:
+      74: -3009077842120155103
+    second: Cube|oculos|oculos|Sphere.003Action|oculos|Sphere.003Action
+  - first:
+      74: -7212608545778248225
+    second: Cube|SphereAction
+  - first:
+      74: -2668840433891739077
+    second: oculos.001|CubeAction
+  - first:
+      74: 727287254427940080
+    second: oculos.001|CubeAction.001
+  - first:
+      74: -549569214970119270
+    second: oculos.001|CubeAction.002
+  - first:
+      74: -752910518524350840
+    second: oculos.001|oculos|oculos|CubeAction.001|oculos|CubeAction.001
+  - first:
+      74: -4717449767816285268
+    second: oculos.001|oculos|oculos|Cylinder.001Action|oculos|Cylinder.001Action
+  - first:
+      74: 2346592422855598793
+    second: oculos.001|oculos|oculos|CylinderAction.002|oculos|CylinderAction.002
+  - first:
+      74: -704750044685803360
+    second: oculos.001|oculos|oculos|Sphere.003Action|oculos|Sphere.003Action
+  - first:
+      74: 5384194976421062967
+    second: oculos.001|SphereAction
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
