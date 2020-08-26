@@ -38,4 +38,8 @@ public class ImmunityManager : MonoBehaviour
     public void Decrease(float amount){
     	immunity-=amount;
     }
+
+    public float getImmunity(){
+        return immunity;
+    }
 }
