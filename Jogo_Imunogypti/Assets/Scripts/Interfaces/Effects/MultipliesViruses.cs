@@ -86,14 +86,16 @@ public class MultipliesViruses : MonoBehaviour, IEffect
 
     public void Destroyed()
     {
-        destroyed = true;
-        waveToRespawn = HordeManager.instance.waveNumber + 2;
-        foreach (Virus enemy in enemies)
-        {
-            Destroy(enemy.gameObject);
+        if(destroyed == false){
+            destroyed = true;
+            waveToRespawn = HordeManager.instance.waveNumber + 2;
+            foreach (Virus enemy in enemies)
+            {
+                Destroy(enemy.gameObject);
+            }
+            this.gameObject.GetComponent<Tower>().targets.Clear();
+            changeTurretColor(Color.red);
         }
-        this.gameObject.GetComponent<Tower>().targets.Clear();
-        changeTurretColor(Color.red);
     }
 
     //Função que troca a cor da torre para indicar a condição de posicionamento em um tile do mapa

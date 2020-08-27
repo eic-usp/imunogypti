@@ -50,7 +50,8 @@ public class Ground : MonoBehaviour
                     //não é pressionado)
                     BuildManager.instance.canDrag = false;
                     //Chama método para posicionar torre de acordo com a camera
-                    BuildManager.instance.SetTurretTransform(this.transform);
+                    BuildManager.instance.SetNaturalKiller();
+                    BuildManager.instance.changeTurretColor(Color.white);
                     //Torre posicionada, coloca torre a ser construida como null para fazer a torre parar de seguir o mouse
                     BuildManager.instance.turretToBuild = null;
                 }
