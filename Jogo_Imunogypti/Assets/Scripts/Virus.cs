@@ -17,6 +17,7 @@ public class Virus : MonoBehaviour
     public int wavePointIndex=0; //É adicionada de 1 a cada target alcançado
     public bool stop = false;
     public bool invader = false;
+    Animator Anim; //Animaotor do virus
 
     private Vector3 actualDirection; //Direção na qual o virus está se movendo
     private Vector3 previousDirection; //direção anterior do virus
@@ -37,6 +38,7 @@ public class Virus : MonoBehaviour
         		Debug.Log("Error: Target null");
 
         hpI = hp;
+        Anim = gameObject.GetComponent<Animator>(); //Pega animator vinculado ao GameObject do virus
        
     }
 
@@ -95,7 +97,9 @@ public class Virus : MonoBehaviour
     public void Killed()
     {
         Shopping.instance.EarnGold(goldValue);
-        Destroy(this.gameObject);
+        stop = true;
+        Anim.SetTrigger("Death");
+        Destroy(this.gameObject, 3);
     }
 
     private void OnDestroy() 
@@ -117,11 +121,13 @@ public class Virus : MonoBehaviour
     {
         actualDirection = -this.transform.position + cell.position;
         invader = true;
+        Anim.SetBool("Attack", true);        
     }
     
     public void Evacuate()
     {
         actualDirection = -this.transform.position + target.position;
         stop = false;
+        Anim.SetBool("Attack", false);
     }
 }

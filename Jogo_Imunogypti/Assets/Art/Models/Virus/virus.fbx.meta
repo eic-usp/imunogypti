@@ -12,6 +12,9 @@ ModelImporter:
   - first:
       74: -7551964380084998518
     second: Armature|Run
+  - first:
+      74: 4723146814002874508
+    second: Armature|Attack
   externalObjects: {}
   materials:
     importMaterials: 1
