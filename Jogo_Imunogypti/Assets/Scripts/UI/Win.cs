@@ -12,8 +12,10 @@ public class Win : MonoBehaviour
     public int iHP=2;// numero total de inimigos
     int R;
     public List<GameObject> Stars; //Estrelas
+    [SerializeField] private GameObject StarBonus;
     float h; //Altura total do fluido dourado
     float K;
+    float RBonus;
     private int sceneIndex;
 
 
@@ -25,6 +27,7 @@ public class Win : MonoBehaviour
     public AudioClip magicSpell;
 
     public Sprite goldStar; //Sprite da estrela preenchida
+
 
     void Awake()
     {
@@ -40,6 +43,7 @@ public class Win : MonoBehaviour
         SaveLoader.SaveGame();
         
         DoLittleStars(R);
+        RBonus = (ImmunityManager.instance.getImmunity())/200f;
     }
 
     // Update is called once per frame
@@ -72,6 +76,12 @@ public class Win : MonoBehaviour
                     rt.Rotate(new Vector3(0,0,100f*Time.deltaTime));
                 }
             }
+
+            if(RBonus>0){
+                StarBonus.transform.GetComponent<SVGImage>().sprite = goldStar;
+                Points.text = (RBonus * 100).ToString() + "%";
+            }
+            
 
     }
 
@@ -119,7 +129,7 @@ public class Win : MonoBehaviour
         //Debug.Log("Subtract " +(int)Q *100 * Hl);
         //h = h - (int)Q * 100 *Hl;
         //Debug.Log("h final " + h);
-        Points.text = ((int)(Q)).ToString()+"%";
+        //Points.text = ((int)(Q)).ToString()+"%";
     }
 
     public void Play(){
