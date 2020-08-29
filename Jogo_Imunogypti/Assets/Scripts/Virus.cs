@@ -36,7 +36,7 @@ public class Virus : MonoBehaviour
         if(target==null)
         		Debug.Log("Error: Target null");
 
-        hpI = hp;
+        hp = hpI;
        
     }
 

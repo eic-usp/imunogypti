@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("StageMenu");
+        // SaveLoader.LoadGame();
     }
 
     public void LoadNextScene()
@@ -17,6 +18,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadScene(int i)
     {
-        SceneManager.LoadScene(i);
+        if(i == 1 || SaveLoader.saveFile.stagesWon[i-1])
+            SceneManager.LoadScene(i+3);
     }
 }
