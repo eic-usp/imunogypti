@@ -81,11 +81,15 @@ public class BuildManager : MonoBehaviour
         }
     }
 
-    public void SetNaturalKiller(){
+    public void SetNaturalKiller(Tower tower){
         if(turretToBuild!=null)
         {
             Vector3 pos = new Vector3(pistaDePouso.position.x,pistaDePouso.position.y,pistaDePouso.position.z - 10f);
             turretToBuild.transform.position = pos;
+            Tower nK = turretToBuild.GetComponent<Tower>();
+            nK.Activate();
+            nK.targets.Add(tower.gameObject);
+
             //Rotação de acordo com a rotação escolhida para o mapa
             //turretToBuild.transform.rotation = Quaternion.Euler(-90f,0f,0f);
         }

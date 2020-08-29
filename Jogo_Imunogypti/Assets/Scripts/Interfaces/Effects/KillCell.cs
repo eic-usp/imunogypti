@@ -34,7 +34,7 @@ public class KillCell : MonoBehaviour, IEffect
             hasReached = true;
 
         if(!hasReached){
-            this.transform.Translate(direction.normalized * 5f* Time.deltaTime,Space.World);
+            this.transform.Translate(direction.normalized * 10f* Time.deltaTime,Space.World);
         }
         else if(hasReached && !goAway){
             cell.Destroyed();
@@ -43,7 +43,7 @@ public class KillCell : MonoBehaviour, IEffect
         }
         if(goAway){
              Vector3 direction2 = -this.transform.position + startPosition; 
-            this.transform.Translate(direction2.normalized * 5f *Time.deltaTime,Space.World);
+            this.transform.Translate(direction2.normalized * 10f *Time.deltaTime,Space.World);
         }
         if(goAway && Vector3.Distance(this.transform.position,startPosition)<0.25){
             Destroy(this.gameObject);

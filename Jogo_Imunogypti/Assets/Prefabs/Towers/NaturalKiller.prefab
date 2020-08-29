@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2974114497039325301}
   m_Layer: 0
   m_Name: NaturalKiller
-  m_TagString: Untagged
+  m_TagString: NaturalKiller
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -381,6 +381,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 656e67aca5bf8c549818595220204cb0,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: be34fbf55a6bd7f47a8eebdae9d6aa11, type: 2}
     - target: {fileID: -4216859302048453862, guid: 656e67aca5bf8c549818595220204cb0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -441,11 +446,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 656e67aca5bf8c549818595220204cb0,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: be34fbf55a6bd7f47a8eebdae9d6aa11, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 656e67aca5bf8c549818595220204cb0, type: 3}
 --- !u!4 &2544499888923420280 stripped

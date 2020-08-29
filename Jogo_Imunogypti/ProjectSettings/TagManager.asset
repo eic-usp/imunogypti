@@ -13,6 +13,7 @@ TagManager:
   - Cell
   - Path
   - Imunoglobulina B
+  - NaturalKiller
   layers:
   - Default
   - TransparentFX

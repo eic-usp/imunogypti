@@ -49,8 +49,9 @@ public class Ground : MonoBehaviour
                     //Torre não pode mais ser arrastada (impede torre de ser destruida pelo shopping, que seria o caso em que canDrag == true e a torre não nula, mas o mouse
                     //não é pressionado)
                     BuildManager.instance.canDrag = false;
-                    //Chama método para posicionar torre de acordo com a camera
-                    BuildManager.instance.SetNaturalKiller();
+                    //Chama método para posicionar torre
+                    BuildManager.instance.SetNaturalKiller(tower);
+                    // volta pra cor normal
                     BuildManager.instance.changeTurretColor(Color.white);
                     //Torre posicionada, coloca torre a ser construida como null para fazer a torre parar de seguir o mouse
                     BuildManager.instance.turretToBuild = null;

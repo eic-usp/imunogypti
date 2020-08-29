@@ -58,7 +58,12 @@ public class Tower : MonoBehaviour
         if(active==false)
             return;
 
-		targets = myTarget.UpdateTarget(targets);
+        if(this.gameObject.tag!="NaturalKiller"){
+		  targets = myTarget.UpdateTarget(targets);
+        }
+        else if(!active){
+            targets = myTarget.UpdateTarget(targets);
+        }
         // Debug.Log("tagets: " + targets.Count);
 
     	//Rotaciona torre para olhar na direção do inimigo
