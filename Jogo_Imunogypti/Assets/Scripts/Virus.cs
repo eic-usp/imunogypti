@@ -17,7 +17,7 @@ public class Virus : MonoBehaviour
     public int wavePointIndex=0; //É adicionada de 1 a cada target alcançado
     public bool stop = false;
     public bool invader = false;
-    Animator Anim; //Animaotor do virus
+    Animator Anim; //Animator do virus
 
     private Vector3 actualDirection; //Direção na qual o virus está se movendo
     private Vector3 previousDirection; //direção anterior do virus
@@ -39,6 +39,7 @@ public class Virus : MonoBehaviour
 
         hpI = hp;
         Anim = gameObject.GetComponent<Animator>(); //Pega animator vinculado ao GameObject do virus
+        Anim.SetFloat("Offset", Random.Range(0.0f, 1.0f));
        
     }
 
