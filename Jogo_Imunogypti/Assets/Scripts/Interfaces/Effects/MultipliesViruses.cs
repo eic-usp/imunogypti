@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MultipliesViruses : MonoBehaviour, IEffect
+public class MultipliesViruses : BaseNoAttack
 {
     [SerializeField] private bool destroyed = false;
     [SerializeField] private int waveToRespawn = 0;
@@ -17,7 +17,7 @@ public class MultipliesViruses : MonoBehaviour, IEffect
             StandardColors.Add(r.material.color);
     }
 
-    public void Apply(List<GameObject> targets)
+    public override void Apply(List<GameObject> targets)
     {
         //se a célula estiver destruída
         if(destroyed)
@@ -65,10 +65,7 @@ public class MultipliesViruses : MonoBehaviour, IEffect
         }
     }
 
-    public void Remove(List<GameObject> targets)
-    {
-
-    }
+    public override void Remove(List<GameObject> targets){}
 
     IEnumerator Multiply()
     {

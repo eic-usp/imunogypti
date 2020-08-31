@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuffMacrofagoInGround : MonoBehaviour, IEffect
+public class BuffMacrofagoInGround : BaseNoAttack
 {
     [SerializeField] private float buffAttackSpeed; //porcentagem que a velocidade de ataque da torre esta sendo buffada
     [SerializeField] private float buffDamage; //porcentagem que o dano da torre esta sendo buffado
 
-    public void Apply(List<GameObject> targets){
+    public override void Apply(List<GameObject> targets){
         foreach (GameObject ground in targets)
         {
             Ground activeGround = ground.GetComponent<Ground>();
@@ -15,7 +15,7 @@ public class BuffMacrofagoInGround : MonoBehaviour, IEffect
         }
     }
 
-    public void Remove(List<GameObject> targets)
+    public override void Remove(List<GameObject> targets)
     {
         foreach (GameObject ground in targets)
         {

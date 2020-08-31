@@ -13,6 +13,8 @@ public interface ITarget
 
 public interface IEffect
 {
+    void Upgrade(int level);
+    void Downgrade();
     void Apply(List<GameObject> targets);
     void Remove(List<GameObject> targets);
 }

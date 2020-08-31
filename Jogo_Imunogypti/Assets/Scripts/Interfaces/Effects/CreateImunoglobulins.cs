@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateImunoglobulins : MonoBehaviour, IEffect
+public class CreateImunoglobulins : BaseNoAttack
 {
     // Start is called before the first frame update
     [SerializeField] List<GameObject> ImunoglobPrefabs;
     private float fireCountdown=0f;
     private float plotRate= 0.5f;
-    public void Apply(List<GameObject> targets){
+
+    public override void Apply(List<GameObject> targets){
         if(targets.Count != 0 && fireCountdown <= 0)
         {
             foreach (GameObject target in targets)
@@ -30,5 +31,5 @@ public class CreateImunoglobulins : MonoBehaviour, IEffect
         fireCountdown -= Time.deltaTime;
     }
 
-    public void Remove(List<GameObject> targets){}
+    public override void Remove(List<GameObject> targets){}
 }

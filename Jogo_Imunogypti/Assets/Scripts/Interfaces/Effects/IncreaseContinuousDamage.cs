@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IncreaseContinuousDamage : MonoBehaviour, IEffect
+public class IncreaseContinuousDamage : BaseAttack
 {
    	[SerializeField] private Transform firePoint;
     [SerializeField] private LineRenderer lineRenderer;
-    [SerializeField] protected float multiplierIncreaseRate; //velocidade de ataque da torre
-    [SerializeField] protected float initialDamage; //dano da torre
+    // [SerializeField] protected float multiplierIncreaseRate; //velocidade de ataque da torre
+    // [SerializeField] protected float initialDamage; //dano da torre
     private GameObject previousTarget = null;
     [SerializeField] private float multiplier = 1;
     [SerializeField] private float buffDamage = 1; //porcentagem que o dano da torre esta sendo buffado
     private Animator myAnimator;
 
-    public void Apply(List<GameObject> targets){
+    public override void Apply(List<GameObject> targets){
         myAnimator = GetComponent<Animator>();
 
         if(targets.Count == 0)
@@ -33,14 +33,12 @@ public class IncreaseContinuousDamage : MonoBehaviour, IEffect
             multiplier = 1;
 
         Virus enemy = targets[0].GetComponent<Virus>();
-        enemy.DealDamage(initialDamage*multiplier*buffDamage);
+        enemy.DealDamage(damage*multiplier*buffDamage);
 
-        multiplier += Time.deltaTime*multiplierIncreaseRate;
+        multiplier += Time.deltaTime*attackSpeed;
 
         previousTarget = targets[0];
     }
-
-    public void Remove(List<GameObject> targets){}
 
     public void Buff(float buffD)
     {

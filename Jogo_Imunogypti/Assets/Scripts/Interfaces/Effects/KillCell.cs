@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KillCell : MonoBehaviour, IEffect
+public class KillCell : BaseNoAttack
 {
 
-    public void Apply(List<GameObject> targets)
+    public override void Apply(List<GameObject> targets)
     {
         if(targets.Count <= 0)
             return;
@@ -16,5 +16,5 @@ public class KillCell : MonoBehaviour, IEffect
         Destroy(this.gameObject);
     }
 
-    public void Remove(List<GameObject> targets){}
+    public override void Remove(List<GameObject> targets){}
 }

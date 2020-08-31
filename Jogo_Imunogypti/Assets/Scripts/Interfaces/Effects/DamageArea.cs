@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageArea : MonoBehaviour,IEffect
+public class DamageArea : BaseAttack
 {
-    [SerializeField] private float damage=15f;
+    //[SerializeField] private float damage=15f;
     [SerializeField] private float explosionRange=5f;
 
-    public void Apply(List<GameObject> targets)
+    public override void Apply(List<GameObject> targets)
     {
     	GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -24,6 +24,4 @@ public class DamageArea : MonoBehaviour,IEffect
     	}
 
     }
-   public void Remove(List<GameObject> targets){}
-
 }

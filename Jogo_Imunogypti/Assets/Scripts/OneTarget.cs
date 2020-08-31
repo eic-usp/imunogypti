@@ -19,5 +19,7 @@ public class OneTarget : MonoBehaviour, IEffect
     }
 
     public void Remove(List<GameObject> targets){}
+	public void Upgrade(int level){}
+    public void Downgrade(){}
 
 }
