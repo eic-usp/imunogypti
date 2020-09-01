@@ -22,21 +22,15 @@ public abstract class BaseAttack : MonoBehaviour, IEffect
     protected void Awake()
     {
         table = DynamicTable.Create(attackTable);
-        damage = Table.Rows[0].Field<int>("Damage");
-		attackSpeed = Table.Rows[0].Field<float>("AttackSpeed");
+        damage = Table.Rows[0].Field<float>("Damage");
+		attackSpeed = Table.Rows[0].Field<float>("AttackSpeed")/100; //o valor esta multiplicado por 100 para nao colocar virgula/ponto
     }
 
     public void Upgrade(int level)
     {
-        damage = Table.Rows[level-1].Field<float>("Damage");
-        attackSpeed = Table.Rows[level-1].Field<int>("AttackSpeed");
+        damage = Table.Rows[level].Field<float>("Damage");
+        attackSpeed = Table.Rows[level].Field<float>("AttackSpeed")/100; //o valor esta multiplicado por 100 para nao colocar virgula/ponto
     }
-
-    public void Downgrade()
-    {
-        damage = Table.Rows[0].Field<int>("Damage");
-		attackSpeed = Table.Rows[0].Field<float>("AttackSpeed");
-	}
 
     public abstract void Apply(List<GameObject> targets);
 

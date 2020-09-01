@@ -52,7 +52,7 @@ MonoBehaviour:
   tag: 
   range: 0
   maxTargets: 0
-  targetTable: {fileID: 4900000, guid: 1e25e2b1e975bcb4ab91f60f76b2c876, type: 3}
+  targetTable: {fileID: 4900000, guid: 9f01ac8509206c2469731ce0ab816453, type: 3}
 --- !u!114 &4084312700644361147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ MonoBehaviour:
   level: 1
   active: 1
   upgradeCost: 0
-  cost: 250
+  cost: 0
   targets: []
   rangeCircle: {fileID: 2536912358959881648}
   drawRange: 0
@@ -121,16 +121,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 17360280091397700}
     m_Modifications:
-    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
-        type: 3}
-      propertyPath: m_Name
-      value: rangeCircle
-      objectReference: {fileID: 0}
-    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7415355645631449467, guid: b2cce9d4ce7fdd5498936036f2c16386,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -201,6 +191,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
+        type: 3}
+      propertyPath: m_Name
+      value: rangeCircle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7271045595607306559, guid: b2cce9d4ce7fdd5498936036f2c16386,
         type: 3}
       propertyPath: m_Color.r
@@ -247,11 +247,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 17360280091397700}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: a70dbf7c656de844c9fb252fbc554141,
-        type: 3}
-      propertyPath: m_Name
-      value: dent
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a70dbf7c656de844c9fb252fbc554141,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -306,6 +301,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: a70dbf7c656de844c9fb252fbc554141,
+        type: 3}
+      propertyPath: m_Name
+      value: dent
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70dbf7c656de844c9fb252fbc554141, type: 3}

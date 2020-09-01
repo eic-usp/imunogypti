@@ -7,7 +7,7 @@ using UnityEngine;
 public class Virus : MonoBehaviour
 {
     public float hp; //vida do inimigo
-    private float hpI; //vida inicial do inimigo
+    [SerializeField] private float hpI; //vida inicial do inimigo
     public int damage; //dano que o inimigo da ao jogador quando chega ao fim do caminho
     [SerializeField] private float speed; //velocidade com que o inimigo caminha pelo mapa
     [SerializeField] private int goldValue; //dinheiro que o inimigo da ao jogador quando eh destruido

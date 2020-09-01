@@ -93,7 +93,7 @@ MonoBehaviour:
   level: 1
   active: 1
   upgradeCost: 0
-  cost: 50
+  cost: 200
   targets: []
   rangeCircle: {fileID: 7595854426635927060}
   drawRange: 0
@@ -229,41 +229,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1419372936798858508}
     m_Modifications:
-    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
-        type: 3}
-      propertyPath: m_Name
-      value: rangeCircle
-      objectReference: {fileID: 0}
-    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7271045595607306559, guid: b2cce9d4ce7fdd5498936036f2c16386,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.9843137
-      objectReference: {fileID: 0}
-    - target: {fileID: 7271045595607306559, guid: b2cce9d4ce7fdd5498936036f2c16386,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.1736671
-      objectReference: {fileID: 0}
-    - target: {fileID: 7271045595607306559, guid: b2cce9d4ce7fdd5498936036f2c16386,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.12775902
-      objectReference: {fileID: 0}
-    - target: {fileID: 7271045595607306559, guid: b2cce9d4ce7fdd5498936036f2c16386,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.39215687
-      objectReference: {fileID: 0}
-    - target: {fileID: 7271045595607306559, guid: b2cce9d4ce7fdd5498936036f2c16386,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7415355645631449467, guid: b2cce9d4ce7fdd5498936036f2c16386,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -333,6 +298,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
+        type: 3}
+      propertyPath: m_Name
+      value: rangeCircle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271045595607306559, guid: b2cce9d4ce7fdd5498936036f2c16386,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.9843137
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271045595607306559, guid: b2cce9d4ce7fdd5498936036f2c16386,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.1736671
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271045595607306559, guid: b2cce9d4ce7fdd5498936036f2c16386,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.12775902
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271045595607306559, guid: b2cce9d4ce7fdd5498936036f2c16386,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271045595607306559, guid: b2cce9d4ce7fdd5498936036f2c16386,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2cce9d4ce7fdd5498936036f2c16386, type: 3}

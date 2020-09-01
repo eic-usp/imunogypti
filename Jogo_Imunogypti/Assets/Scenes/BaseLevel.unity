@@ -10532,7 +10532,6 @@ MonoBehaviour:
   timeBetweenWaves: 10
   countdown: 0
   totalSpawnPoints: 0
-  hordeComposition: 
   activeViruses: 0
   spawnPoints:
   - {fileID: 2003263287}
@@ -10548,7 +10547,7 @@ MonoBehaviour:
   endValue: 0
   timeForDecrease: 10
   elapsedTime: 10
-  hordeTable: {fileID: 4900000, guid: 005b9fea112e3c842abde2b66b9ea086, type: 3}
+  hordeTable: {fileID: 4900000, guid: af553e10923f223409a68dbc2a1db154, type: 3}
 --- !u!114 &498840715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12083,7 +12082,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1428.9993, y: -28.000122}
+  m_AnchoredPosition: {x: -1428.9993, y: -28.000183}
   m_SizeDelta: {x: -1198.5, y: -480.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &576525008
@@ -20042,7 +20041,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1486, y: -12.549927}
+  m_AnchoredPosition: {x: 1486, y: -12.549988}
   m_SizeDelta: {x: -1133.7, y: -449.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &950855662

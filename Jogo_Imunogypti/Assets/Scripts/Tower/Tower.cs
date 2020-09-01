@@ -115,19 +115,20 @@ public class Tower : MonoBehaviour
     public void Upgrade()
     {
         cost += upgradeCost;
-        upgradeCost = Table.Rows[++level].Field<int>("Cost");
         myTarget.Upgrade(level);
+        myEffect.Upgrade(level);
+        upgradeCost = Table.Rows[++level].Field<int>("Cost");
         
     }
 
 
-    public void Downgrade()
+    public void Reset()
     {
         level = 1;
         cost = Table.Rows[0].Field<int>("Cost");
         upgradeCost = Table.Rows[1].Field<int>("Cost");
         myEffect.Remove(targets);
-        myTarget.Downgrade();
+        myTarget.Reset();
     }
 
     public void expandRangeCircle(){

@@ -194,7 +194,7 @@ public class Ground : MonoBehaviour
     public void Uninstall()
     {  
         if(tower.name == "Celula Dendritica")
-            tower.Downgrade();
+            tower.Reset();
         else
         {
             tower.Uninstall();

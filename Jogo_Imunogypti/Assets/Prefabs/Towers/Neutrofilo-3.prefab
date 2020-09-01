@@ -54,11 +54,11 @@ MonoBehaviour:
   level: 1
   active: 1
   upgradeCost: 0
-  cost: 0
+  cost: 30
   targets: []
   rangeCircle: {fileID: 5785413531730331687}
   drawRange: 0
-  costTable: {fileID: 4900000, guid: 8569c843c0cd85f41a01e438feac2e29, type: 3}
+  costTable: {fileID: 4900000, guid: 1fcd46b4c12dff54594926fa8981693d, type: 3}
 --- !u!114 &2629695235435068415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,12 +71,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf45f96ad1f02bd45bab96fa5d26fc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSpeed: 2
+  damage: 2
+  attackTable: {fileID: 4900000, guid: ba8d685638d6f514ca9ec4e4551211be, type: 3}
   firePoint: {fileID: 379110905486647456}
   bulletPrefab: {fileID: 7926088877875659735, guid: 70aa45e2fdd00c248a012f514fb55f49,
     type: 3}
-  attackSpeed: 2
   buffAttackSpeed: 1
-  damage: 2
   buffDamage: 1
 --- !u!114 &6416088356141066677
 MonoBehaviour:
@@ -106,7 +107,7 @@ MonoBehaviour:
   tag: 
   range: 0
   maxTargets: 0
-  targetTable: {fileID: 4900000, guid: e4f6a84a1fc1e1e4194d9804dfd4f452, type: 3}
+  targetTable: {fileID: 4900000, guid: 2c6cbd8cea749e244b42269f0290c4c4, type: 3}
 --- !u!54 &3556480051797919179
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -235,16 +236,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3156037208244328517}
     m_Modifications:
-    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
-        type: 3}
-      propertyPath: m_Name
-      value: rangeCircle
-      objectReference: {fileID: 0}
-    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7415355645631449467, guid: b2cce9d4ce7fdd5498936036f2c16386,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -298,6 +289,16 @@ PrefabInstance:
     - target: {fileID: 7415355645631449467, guid: b2cce9d4ce7fdd5498936036f2c16386,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
+        type: 3}
+      propertyPath: m_Name
+      value: rangeCircle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7271045595607306559, guid: b2cce9d4ce7fdd5498936036f2c16386,

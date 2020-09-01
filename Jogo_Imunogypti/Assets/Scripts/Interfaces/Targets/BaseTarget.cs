@@ -25,20 +25,20 @@ public abstract class BaseTarget : MonoBehaviour, ITarget
     {
         table = DynamicTable.Create(targetTable);
         tag = Table.Rows[0].Field<string>("Tag");
-		range = Table.Rows[0].Field<float>("Range");
+		range = Table.Rows[0].Field<float>("Range")/10;
 		maxTargets = Table.Rows[0].Field<int>("MaxTargets");
     }
 
     public void Upgrade(int level)
     {
-        range = Table.Rows[level-1].Field<float>("Range");
-        maxTargets = Table.Rows[level-1].Field<int>("MaxTargets");
+        range = Table.Rows[level].Field<float>("Range")/10;
+        maxTargets = Table.Rows[level].Field<int>("MaxTargets");
     }
 
-    public void Downgrade()
+    public void Reset()
     {
         tag = Table.Rows[0].Field<string>("Tag");
-		range = Table.Rows[0].Field<float>("Range");
+		range = Table.Rows[0].Field<float>("Range")/10;
 		maxTargets = Table.Rows[0].Field<int>("MaxTargets");
     }
 

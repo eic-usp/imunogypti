@@ -1,5 +1,5 @@
 Level;Tag;Range;MaxTargets
 int;string;float;int
-1;Enemy;3;10
-2;Enemy;3;10
-3;Enemy;3;10
+1;Enemy;30;10
+2;Enemy;30;10
+3;Enemy;30;10

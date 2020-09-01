@@ -71,9 +71,10 @@ MonoBehaviour:
   active: 1
   upgradeCost: 0
   cost: 0
+  targets: []
   rangeCircle: {fileID: 434542225537745018}
   drawRange: 0
-  costTable: {fileID: 4900000, guid: 8569c843c0cd85f41a01e438feac2e29, type: 3}
+  costTable: {fileID: 4900000, guid: 42789a9dd369da84b8b21d04ece3b1a3, type: 3}
 --- !u!114 &8961170889320015583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,12 +87,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf45f96ad1f02bd45bab96fa5d26fc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSpeed: 1
+  damage: 1
+  attackTable: {fileID: 4900000, guid: eacee2350feaadf4d96f77e3a49c2720, type: 3}
   firePoint: {fileID: 7351990128425848009}
   bulletPrefab: {fileID: 7926088877875659735, guid: 70aa45e2fdd00c248a012f514fb55f49,
     type: 3}
-  attackSpeed: 1
   buffAttackSpeed: 1
-  damage: 1
   buffDamage: 1
 --- !u!54 &4919869538386259354
 Rigidbody:
@@ -148,16 +150,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1237748439556387552}
     m_Modifications:
-    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
-        type: 3}
-      propertyPath: m_Name
-      value: rangeCircle
-      objectReference: {fileID: 0}
-    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7415355645631449467, guid: b2cce9d4ce7fdd5498936036f2c16386,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -213,6 +205,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
+        type: 3}
+      propertyPath: m_Name
+      value: rangeCircle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7271045595607306559, guid: b2cce9d4ce7fdd5498936036f2c16386,
         type: 3}
       propertyPath: m_SortingOrder
@@ -239,11 +241,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1237748439556387552}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 8faeddc92513e55488880e014acdd4e2,
-        type: 3}
-      propertyPath: m_Name
-      value: celulaMacro
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8faeddc92513e55488880e014acdd4e2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -298,6 +295,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8faeddc92513e55488880e014acdd4e2,
+        type: 3}
+      propertyPath: m_Name
+      value: celulaMacro
       objectReference: {fileID: 0}
     - target: {fileID: -3862147023334189440, guid: 8faeddc92513e55488880e014acdd4e2,
         type: 3}

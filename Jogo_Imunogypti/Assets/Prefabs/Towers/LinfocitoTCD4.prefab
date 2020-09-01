@@ -269,7 +269,7 @@ MonoBehaviour:
   tag: 
   range: 0
   maxTargets: 0
-  targetTable: {fileID: 4900000, guid: 1e25e2b1e975bcb4ab91f60f76b2c876, type: 3}
+  targetTable: {fileID: 4900000, guid: b985f2474de711c4aa15786ec3fa9d04, type: 3}
 --- !u!114 &4084312700644361147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffAttackSpeed: 5
   buffDamage: 0.5
+  buffTable: {fileID: 4900000, guid: a5320e4d05c46ee4398d51a94005c85b, type: 3}
 --- !u!114 &2902032361193593442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,9 +314,10 @@ MonoBehaviour:
   active: 0
   upgradeCost: 0
   cost: 250
+  targets: []
   rangeCircle: {fileID: 7954133902826005275}
   drawRange: 0
-  costTable: {fileID: 4900000, guid: 8569c843c0cd85f41a01e438feac2e29, type: 3}
+  costTable: {fileID: 4900000, guid: 1e680d27d50c12a498486d7c9fca235b, type: 3}
 --- !u!54 &4255235967827008971
 Rigidbody:
   m_ObjectHideFlags: 0

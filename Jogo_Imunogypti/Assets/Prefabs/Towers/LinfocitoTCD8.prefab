@@ -55,7 +55,7 @@ MonoBehaviour:
   tag: 
   range: 0
   maxTargets: 0
-  targetTable: {fileID: 4900000, guid: e4f6a84a1fc1e1e4194d9804dfd4f452, type: 3}
+  targetTable: {fileID: 4900000, guid: 718118ea97b747644871bdf65931cef7, type: 3}
 --- !u!114 &4426207686400044365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,11 +81,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f85d420c16e1084fa26fece48d04110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSpeed: 0
+  damage: 0
+  attackTable: {fileID: 4900000, guid: 066c389fbc42f4a4dac4341bb3a9b0e7, type: 3}
   firePoint: {fileID: 614005883287271719}
   lineRenderer: {fileID: 2165922076141081770}
-  multiplierIncreaseRate: 1
-  initialDamage: 0.3
   multiplier: 1
+  buffDamage: 1
 --- !u!114 &6591991958249012197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,10 +104,11 @@ MonoBehaviour:
   level: 1
   active: 0
   upgradeCost: 0
-  cost: 360
+  cost: 300
+  targets: []
   rangeCircle: {fileID: 2634232327138577525}
   drawRange: 0
-  costTable: {fileID: 4900000, guid: 8569c843c0cd85f41a01e438feac2e29, type: 3}
+  costTable: {fileID: 4900000, guid: 27001c1bfd83d614ab69b7d9525a5c9d, type: 3}
 --- !u!120 &2165922076141081770
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -345,16 +348,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7941079387172320717}
     m_Modifications:
-    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
-        type: 3}
-      propertyPath: m_Name
-      value: rangeCircle
-      objectReference: {fileID: 0}
-    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7415355645631449467, guid: b2cce9d4ce7fdd5498936036f2c16386,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -424,6 +417,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
+        type: 3}
+      propertyPath: m_Name
+      value: rangeCircle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627808927365207926, guid: b2cce9d4ce7fdd5498936036f2c16386,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7271045595607306559, guid: b2cce9d4ce7fdd5498936036f2c16386,
         type: 3}
