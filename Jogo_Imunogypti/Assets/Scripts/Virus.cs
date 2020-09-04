@@ -37,7 +37,7 @@ public class Virus : MonoBehaviour
         if(target==null)
         		Debug.Log("Error: Target null");
 
-        hpI = hp;
+        hp = hpI;
         Anim = gameObject.GetComponent<Animator>(); //Pega animator vinculado ao GameObject do virus
         Anim.SetFloat("Offset", Random.Range(0.0f, 1.0f));
        

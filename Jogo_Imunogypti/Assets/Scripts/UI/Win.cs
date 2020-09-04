@@ -10,12 +10,13 @@ public class Win : MonoBehaviour
 {
     public int fHP=1;// numero total de inimigos mortos
     public int iHP=2;// numero total de inimigos
-    float R; //razao
+    int R;
     public List<GameObject> Stars; //Estrelas
     [SerializeField] private GameObject StarBonus;
     float h; //Altura total do fluido dourado
     float K;
     float RBonus;
+    private int sceneIndex;
 
 
     int c=0;
@@ -34,7 +35,13 @@ public class Win : MonoBehaviour
         //Debug.Log(((float)iHP/fHP).ToString());
         fHP = LifeManager.instance.getHP();
         iHP = LifeManager.instance.getIHP();
-        R = (((float)fHP/(float)iHP));
+        R = (int) Mathf.Round(((float)fHP/(float)iHP)*3);
+        
+        sceneIndex = (SceneManager.GetActiveScene()).buildIndex;
+        SaveLoader.saveFile.stagesWon[sceneIndex-3] = true;
+        SaveLoader.saveFile.stars[sceneIndex-3] = R;
+        SaveLoader.SaveGame();
+        
         DoLittleStars(R);
         RBonus = (ImmunityManager.instance.getImmunity())/200f;
     }
@@ -107,7 +114,7 @@ public class Win : MonoBehaviour
 
     }*/
 
-    public void DoLittleStars(float Q){
+    public void DoLittleStars(int Q){
         
         if(Q==null){
             return;
@@ -115,7 +122,7 @@ public class Win : MonoBehaviour
 
         Debug.Log("Q:"+Q);
 
-        for(int i=0;i<Mathf.Round(Q*3);i++){
+        for(int i=0;i<Q;i++){
             Stars[i].transform.GetComponent<SVGImage>().sprite = goldStar;
             Stars[i].transform.GetComponent<LittleStars>().filled = true;
         }
