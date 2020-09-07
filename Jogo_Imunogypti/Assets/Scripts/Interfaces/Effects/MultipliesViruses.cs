@@ -11,9 +11,10 @@ public class MultipliesViruses : MonoBehaviour, IEffect
     private List<Color> StandardColors = new List<Color>();//Lista com cores padrão da torre
     Animator Anim; //Animator da celula
 
-    void start()
+    void Start()
     {
         Anim = gameObject.GetComponent<Animator>();
+        Debug.Log("test");
         // var t = this.gameObject.GetComponent<Tower>();
         foreach(Renderer r in this.gameObject.GetComponentsInChildren<Renderer>())
             StandardColors.Add(r.material.color);
@@ -27,7 +28,7 @@ public class MultipliesViruses : MonoBehaviour, IEffect
             //se a célula já deve ser reparada
             if(HordeManager.instance.waveNumber == waveToRespawn)
             {
-                //Anim.SetTrigger("Revive");
+                Anim.SetTrigger("Revive");
                 changeTurretColor(Color.white);
                 destroyed = false;
                 progression = 0;
@@ -58,15 +59,14 @@ public class MultipliesViruses : MonoBehaviour, IEffect
             {
                 enemy.stop = true;
                 progression++;
-                //Anim.SetBool("IsGettingAttacked", true);
+                Anim.SetTrigger("IsGettingAttacked");
             }
         }
 
         if(progression == 10)
         {
             destroyed = true;
-            //Anim.SetBool("IsGettingAttacked", false);
-            //Anim.SetTrigger("Death");
+            Anim.SetTrigger("Death");
             StartCoroutine(Multiply());
         }
     }

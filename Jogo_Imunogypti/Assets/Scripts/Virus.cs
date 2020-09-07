@@ -49,7 +49,7 @@ public class Virus : MonoBehaviour
         if(stop)
             return;
         //Se a distancia entre o virus e o target é muito pequena, chame o método pra mudar de target
-        if(Vector3.Distance(transform.position,target.position) <= 0.25f)
+        if(Vector3.Distance(this.transform.position,target.position) <= 0.25f)
         {
         	GetNextWayPoint();
             actualDirection = -this.transform.position + target.position;
@@ -100,7 +100,7 @@ public class Virus : MonoBehaviour
         Shopping.instance.EarnGold(goldValue);
         stop = true;
         Anim.SetTrigger("Death");
-        Destroy(this.gameObject, 3);
+        Destroy(this.gameObject, 1.5f);
     }
 
     private void OnDestroy() 
