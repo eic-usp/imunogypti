@@ -154,6 +154,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Neutrofilo2
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 0867cf9382717864a8dff82e92219c42,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0867cf9382717864a8dff82e92219c42,
         type: 3}
       propertyPath: m_LocalPosition.x

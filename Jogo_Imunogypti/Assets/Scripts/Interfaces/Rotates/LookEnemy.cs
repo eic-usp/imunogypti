@@ -8,9 +8,9 @@ public class LookEnemy : MonoBehaviour, IRotate
     // Rigidbody rb;
 
 
-    // void Start(){
-    //     rb = GetComponent<Rigidbody>();
-    // }
+    void Start(){
+        partToRotate.transform.rotation = Quaternion.Euler(0, 180f, 0);
+    }
 
     public void LookAt(Transform target, Transform tower)
     {
