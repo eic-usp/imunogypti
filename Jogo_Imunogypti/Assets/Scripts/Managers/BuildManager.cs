@@ -9,7 +9,7 @@ public class BuildManager : MonoBehaviour
     public Tower turretToBuild; //Torre a ser instanciada
     private List<Color> StandardColors = new List<Color>();//Lista com cores padrão da torre
     public bool canDrag = false; //Booleano que indica quando a torre pode ser arrastada pelo mapa
-
+    [SerializeField] Transform pistaDePouso;
 	public static BuildManager instance; //Classe estática
 
 	void Awake()
@@ -78,6 +78,20 @@ public class BuildManager : MonoBehaviour
             turretToBuild.transform.position = t.position;
             //Rotação de acordo com a rotação escolhida para o mapa
             turretToBuild.transform.rotation = Quaternion.Euler(-90f,0f,0f);
+        }
+    }
+
+    public void SetNaturalKiller(Tower tower){
+        if(turretToBuild!=null)
+        {
+            Vector3 pos = new Vector3(pistaDePouso.position.x,pistaDePouso.position.y,pistaDePouso.position.z - 10f);
+            turretToBuild.transform.position = pos;
+            Tower nK = turretToBuild.GetComponent<Tower>();
+            nK.Activate();
+            nK.targets.Add(tower.gameObject);
+
+            //Rotação de acordo com a rotação escolhida para o mapa
+            //turretToBuild.transform.rotation = Quaternion.Euler(-90f,0f,0f);
         }
     }
 
