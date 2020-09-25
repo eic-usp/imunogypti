@@ -18,6 +18,7 @@ public class Virus : MonoBehaviour
     public bool stop = false;
     public bool invader = false;
     Animator Anim; //Animator do virus
+    AudioSource Audio;
 
     private Vector3 actualDirection; //Direção na qual o virus está se movendo
     private Vector3 previousDirection; //direção anterior do virus
@@ -61,6 +62,7 @@ public class Virus : MonoBehaviour
         //this.transform.LookAt(Camera.main.transform.position);
         //Move o virus na direção com uma velocidade 'speed' em relação ao World
         this.transform.Translate(actualDirection.normalized * speed * Time.deltaTime,Space.World);
+        Audio = this.GetComponent<AudioSource>();
     }
 
     //funcao que pega o ponto para onde o virus deve ir
@@ -100,6 +102,7 @@ public class Virus : MonoBehaviour
         Shopping.instance.EarnGold(goldValue);
         stop = true;
         Anim.SetTrigger("Death");
+        FindObjectOfType<AudioManager>().Play("oof");
         Destroy(this.gameObject, 1.5f);
     }
 
@@ -122,7 +125,8 @@ public class Virus : MonoBehaviour
     {
         actualDirection = -this.transform.position + cell.position;
         invader = true;
-        Anim.SetBool("Attack", true);        
+        Anim.SetBool("Attack", true);
+        Audio.Pause();        
     }
     
     public void Evacuate()
@@ -130,5 +134,6 @@ public class Virus : MonoBehaviour
         actualDirection = -this.transform.position + target.position;
         stop = false;
         Anim.SetBool("Attack", false);
+        Audio.Play();
     }
 }

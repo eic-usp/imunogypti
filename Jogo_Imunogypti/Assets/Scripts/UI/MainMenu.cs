@@ -19,6 +19,6 @@ public class MainMenu : MonoBehaviour
     public void LoadScene(int i)
     {
         if(i == 1 || SaveLoader.saveFile.stagesWon[i-1])
-            SceneManager.LoadScene(i+3);
+            SceneManager.LoadScene(i);
     }
 }
