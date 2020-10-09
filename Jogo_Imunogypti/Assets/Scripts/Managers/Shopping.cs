@@ -73,4 +73,8 @@ public class Shopping : MonoBehaviour
         if(ShellOut(TowerSelection.instance.selected.tower.upgradeCost))
             TowerSelection.instance.selected.tower.Upgrade();
     }
+
+    public int getGold() {
+        return gold;
+    }
 }
