@@ -1,0 +1,415 @@
+fileFormatVersion: 2
+guid: 6f42563346750e75b8dfa0279c13c55f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9206191258490090216
+    second: TilesFix_0
+  - first:
+      213: 8772900696308974978
+    second: TilesFix_1
+  - first:
+      213: 7709382062412390407
+    second: TilesFix_2
+  - first:
+      213: -788999658365170470
+    second: TilesFix_3
+  - first:
+      213: -3592255762510626642
+    second: TilesFix_4
+  - first:
+      213: 596642093681611414
+    second: TilesFix_5
+  - first:
+      213: 5339921688621679649
+    second: TilesFix_6
+  - first:
+      213: 7470251982111194084
+    second: TilesFix_7
+  - first:
+      213: -3268693317312311729
+    second: TilesFix_8
+  - first:
+      213: -3099584398657907151
+    second: TilesFix_9
+  - first:
+      213: -1460545381439597601
+    second: TilesFix_10
+  - first:
+      213: 6488783016602956317
+    second: TilesFix_11
+  - first:
+      213: 229300794178614768
+    second: TilesFix_12
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 81
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TilesFix_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 81
+        width: 81.28571
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d63733b8b8f211739cfa1cd05ffa253
+      internalID: -9206191258490090216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesFix_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 81
+        width: 81.28571
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ed1af35f63099d0b5b762d31005d0b
+      internalID: 8772900696308974978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesFix_2
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 81
+        width: 81.28571
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5591b1830c3ec9dfbedde63925902e2
+      internalID: 7709382062412390407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesFix_3
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 81
+        width: 81.28571
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dee6332790e0bb88b9c6f3d2378559f
+      internalID: -788999658365170470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesFix_4
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 81
+        width: 81.28571
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 096818d6fe7693169b9d7e400c2aed15
+      internalID: -3592255762510626642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesFix_5
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 81
+        width: 81.28571
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b1a003c9406aa90aa20b0a4d45cd40
+      internalID: 596642093681611414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesFix_6
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 81
+        width: 81.28571
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 156fd6464ac954ec6aa418fe639dd190
+      internalID: 5339921688621679649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesFix_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 81.28571
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3979c20b756b80e6b5d8b50e186b82e
+      internalID: 7470251982111194084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesFix_8
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0
+        width: 81.28571
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cddd2cba265d9d01aa5ad03dd0cef7a6
+      internalID: -3268693317312311729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesFix_9
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 0
+        width: 81.28571
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a0fee7d9fd52490e8b8ed7bcb604522
+      internalID: -3099584398657907151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesFix_10
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 0
+        width: 81.28571
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db18f928289a9299291caead59d59085
+      internalID: -1460545381439597601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesFix_11
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 0
+        width: 81.28571
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04da5e627a57452feacde3e7983c9cc6
+      internalID: 6488783016602956317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesFix_12
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 0
+        width: 81.28571
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfced476ef455e630a122beb478654c9
+      internalID: 229300794178614768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 9f32dc6439fd89e98bad13a754c27aad
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
