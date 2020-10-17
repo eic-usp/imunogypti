@@ -1,9 +1,9 @@
 Level;Tag;Range;MaxTargets
 int;string;float;int
-1;Ground;5;0
-2;Ground;10;0
-3;Ground;15;0
-4;Ground;20;0
+1;Ground;10;0
+2;Ground;15;0
+3;Ground;20;0
+4;Ground;25;0
 5;Ground;30;0
 6;Ground;45;0
 7;Ground;65;0
