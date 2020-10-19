@@ -23,9 +23,8 @@ public class Ground : MonoBehaviour
     void Start()
     {
         //Cor padrão é a cor inicial do prefab
-        originalColor = rend.material.color;
-        defaultColor = rend.material.color;
-
+        rend.material.color = defaultColor;
+        
         //Cria o vetor entre o pivot do tile e a main Camera
         cameraToPivot =  transform.position - Camera.main.transform.position;
         //Toma as coordenadas do vetor anterior
@@ -37,7 +36,7 @@ public class Ground : MonoBehaviour
     void OnMouseOver()
     {
         //Muda a cor do tile
-    	rend.material.color = new Color(255,255,255);
+    	rend.material.color = Color.white;
         //Se o mouse não estiver pressionado (Torre não está sendo arrastada) e a torre a ser construida pelo buildManager for diferente de null 
         //(Alguma possivelmente torre foi instanciada recentemente)
         if(BuildManager.instance.turretToBuild!=null && Input.GetMouseButton(0)==false)

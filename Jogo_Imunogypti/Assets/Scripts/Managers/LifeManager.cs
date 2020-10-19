@@ -27,6 +27,8 @@ public class LifeManager : MonoBehaviour
 
     public GameObject EndScreen;
 
+    private AudioManager audioM;
+
     private GameObject[] Linfocitos;
 
     [SerializeField] private Slider HidratationBar;
@@ -54,7 +56,7 @@ public class LifeManager : MonoBehaviour
     {
         //hpIni = hp;
         immunityManager = ImmunityManager.instance;
-
+        audioM = FindObjectOfType<AudioManager>();
         //Ajustes iniciais na vignette
         volume = pProcessing.GetComponent<PostProcessVolume>();
         volume.profile.TryGetSettings(out _vignette);
@@ -156,6 +158,10 @@ public class LifeManager : MonoBehaviour
         maxActualHidratation+= 0.05f*maxActualHidratation;
         if(maxActualHidratation>0.4)
             isDehydrated = false;
+    }
+
+    void StartMusic() {
+        
     }
 
 }

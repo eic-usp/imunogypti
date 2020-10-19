@@ -17,6 +17,8 @@ public class Virus : MonoBehaviour
     public int wavePointIndex=0; //É adicionada de 1 a cada target alcançado
     public bool stop = false;
     public bool invader = false;
+    Animator Anim; //Animator do virus
+    AudioSource Audio;
 
     private Vector3 actualDirection; //Direção na qual o virus está se movendo
     private Vector3 previousDirection; //direção anterior do virus
@@ -37,6 +39,8 @@ public class Virus : MonoBehaviour
         		Debug.Log("Error: Target null");
 
         hp = hpI;
+        Anim = gameObject.GetComponent<Animator>(); //Pega animator vinculado ao GameObject do virus
+        Anim.SetFloat("Offset", Random.Range(0.0f, 1.0f));
        
     }
 
@@ -46,7 +50,7 @@ public class Virus : MonoBehaviour
         if(stop)
             return;
         //Se a distancia entre o virus e o target é muito pequena, chame o método pra mudar de target
-        if(Vector3.Distance(transform.position,target.position) <= 0.25f)
+        if(Vector3.Distance(this.transform.position,target.position) <= 0.25f)
         {
         	GetNextWayPoint();
             actualDirection = -this.transform.position + target.position;
@@ -58,6 +62,7 @@ public class Virus : MonoBehaviour
         //this.transform.LookAt(Camera.main.transform.position);
         //Move o virus na direção com uma velocidade 'speed' em relação ao World
         this.transform.Translate(actualDirection.normalized * speed * Time.deltaTime,Space.World);
+        Audio = this.GetComponent<AudioSource>();
     }
 
     //funcao que pega o ponto para onde o virus deve ir
@@ -95,7 +100,10 @@ public class Virus : MonoBehaviour
     public void Killed()
     {
         Shopping.instance.EarnGold(goldValue);
-        Destroy(this.gameObject);
+        stop = true;
+        Anim.SetTrigger("Death");
+        FindObjectOfType<AudioManager>().Play("oof");
+        Destroy(this.gameObject, 1.5f);
     }
 
     private void OnDestroy() 
@@ -117,11 +125,15 @@ public class Virus : MonoBehaviour
     {
         actualDirection = -this.transform.position + cell.position;
         invader = true;
+        Anim.SetBool("Attack", true);
+        Audio.Pause();        
     }
     
     public void Evacuate()
     {
         actualDirection = -this.transform.position + target.position;
         stop = false;
+        Anim.SetBool("Attack", false);
+        Audio.Play();
     }
 }
