@@ -27,9 +27,9 @@ public class LifeManager : MonoBehaviour
 
     public GameObject EndScreen;
 
-    private AudioManager audioM;
-
     private GameObject[] Linfocitos;
+
+    public AudioManager audioM;
 
     [SerializeField] private Slider HidratationBar;
     private float elapsedTime = 0f;
@@ -160,8 +160,9 @@ public class LifeManager : MonoBehaviour
             isDehydrated = false;
     }
 
-    void StartMusic() {
-        
+    void PlayMusic() {
+        if(audioM == null) FindObjectOfType<AudioManager>();
+        audioM.Play("Stage1");
     }
 
 }
