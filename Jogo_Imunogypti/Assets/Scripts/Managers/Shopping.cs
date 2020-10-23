@@ -30,9 +30,9 @@ public class Shopping : MonoBehaviour
     {
         goldText.text = gold.ToString();
 
-        for(int i=0;i<sales.Length;i++){
-            priceText[i].text = "$" + sales[i].cost.ToString();
-        }
+        // for(int i=0;i<sales.Length;i++){
+        //     priceText[i].text = "$" + sales[i].cost.ToString();
+        // }
     }
 
     //funcao que adiciona dinheiro ao jogador
@@ -63,8 +63,8 @@ public class Shopping : MonoBehaviour
 
     public void Sell()
     {
-        TowerSelection.instance.UninstallSelected();
         EarnGold(SalePrice(TowerSelection.instance.selected.tower));
+        TowerSelection.instance.UninstallSelected();
     }
 
     public void Upgrade()

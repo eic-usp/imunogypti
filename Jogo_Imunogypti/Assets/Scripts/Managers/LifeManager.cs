@@ -151,7 +151,7 @@ public class LifeManager : MonoBehaviour
         FeverScreen.SetActive(true);
 
         foreach(Tower tower in Shopping.instance.sales){
-            if(tower.tag == "Linfocito"){
+            if(tower.gameObject.tag == "Linfocito"){
                 tower.cost += 50;          
             }
         }

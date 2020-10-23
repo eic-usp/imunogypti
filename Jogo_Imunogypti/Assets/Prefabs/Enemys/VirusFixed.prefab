@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 15
-  hpI: 0
+  hpI: 15
   damage: 1
   speed: 3
   goldValue: 50
