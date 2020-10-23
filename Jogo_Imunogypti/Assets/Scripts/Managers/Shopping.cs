@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 //Classe estática que faz a compra das torres
 public class Shopping : MonoBehaviour
@@ -11,8 +12,8 @@ public class Shopping : MonoBehaviour
     [SerializeField] private Text goldText; //mostrar pro jogador quanto dinheiro ele tem
     private float returnPercentageGold = 0.5f;
     public static Shopping instance; //Classe estática
-    [SerializeField] public GameObject[] sales; //Torres que serão vendidas
-    [SerializeField] private Text[] priceText;
+    [SerializeField] public Tower[] sales; //Torres que serão vendidas
+    [SerializeField] private TextMeshProUGUI[] priceText;
 
     void Awake()
     {
@@ -30,9 +31,7 @@ public class Shopping : MonoBehaviour
         goldText.text = gold.ToString();
 
         for(int i=0;i<sales.Length;i++){
-            Tower tower = sales[i].GetComponent<Tower>();
-            if(tower!=null)
-            priceText[i].text = "$" + tower.cost.ToString();
+            priceText[i].text = "$" + sales[i].cost.ToString();
         }
     }
 

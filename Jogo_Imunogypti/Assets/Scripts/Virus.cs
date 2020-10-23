@@ -13,7 +13,7 @@ public class Virus : MonoBehaviour
     [SerializeField] private int goldValue; //dinheiro que o inimigo da ao jogador quando eh destruido
     //[SerializeField] private Color color; // cor/sprite do inimigo
     public SpawnPoint spawnPoint; //ponto de onde o inimigo saiu, guarda a trajetoria do virus até a base
-    private Transform target; //Dita a direção do movimento do virus
+    [SerializeField] private Transform target; //Dita a direção do movimento do virus
     public int wavePointIndex=0; //É adicionada de 1 a cada target alcançado
     public bool stop = false;
     public bool invader = false;
@@ -77,6 +77,7 @@ public class Virus : MonoBehaviour
     	}
     	//se não o inimigo chegou na base, destroi ele
     	else{
+            LifeManager.instance.TakeDamage(damage);
     		Destroy(this.gameObject);
     	}
     }

@@ -55,6 +55,7 @@ MonoBehaviour:
   speed: 3
   goldValue: 50
   spawnPoint: {fileID: 0}
+  target: {fileID: 0}
   wavePointIndex: 0
   stop: 0
   invader: 0
@@ -378,6 +379,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6432617340520425369, guid: 4c3c3bf7fd1f4ca4da1256b75174d63f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3315892202427799712, guid: 4c3c3bf7fd1f4ca4da1256b75174d63f,
         type: 3}
       propertyPath: m_Enabled
@@ -414,7 +420,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5679976803634484349, guid: d058d11cc8eef0740992b3cf11b93824,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6432617340520425369, guid: 4c3c3bf7fd1f4ca4da1256b75174d63f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4c3c3bf7fd1f4ca4da1256b75174d63f, type: 3}
 --- !u!4 &1488222614200881561 stripped
 Transform:

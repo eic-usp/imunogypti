@@ -54,7 +54,7 @@ public class LifeManager : MonoBehaviour
 
     void Start()
     {
-        //hpIni = hp;
+        hp = hpIni;
         immunityManager = ImmunityManager.instance;
         audioM = FindObjectOfType<AudioManager>();
         //Ajustes iniciais na vignette
@@ -98,7 +98,10 @@ public class LifeManager : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        // Debug.Log("Chamo take damge no manager");
+        // Debug.Log("hp antes: " + hp);
         hp -= damage;
+        // Debug.Log(" - " + damage + " = hp agora: " + hp);
 
         if(hp <= 0)
             Defeat();
@@ -144,9 +147,8 @@ public class LifeManager : MonoBehaviour
         isWithFever = true;
         FeverScreen.SetActive(true);
 
-        foreach(GameObject sale in Shopping.instance.sales){
-            if(sale.tag == "Linfocito"){
-                Tower tower = sale.GetComponent<Tower>();
+        foreach(Tower tower in Shopping.instance.sales){
+            if(tower.tag == "Linfocito"){
                 tower.cost += 50;          
             }
         }
