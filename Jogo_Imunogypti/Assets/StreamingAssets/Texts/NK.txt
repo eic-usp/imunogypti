@@ -1,0 +1,1 @@
+Quando uma célula é infectada por um vírus, eles podem se multiplicar muitas vezes e se tornarem um grande problema, é ai que entra o Natural Killer, induzindo a apoptose na célula infectada e impedindo a proliferação dos vírus

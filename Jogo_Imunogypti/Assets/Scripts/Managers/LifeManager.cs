@@ -27,9 +27,9 @@ public class LifeManager : MonoBehaviour
 
     public GameObject EndScreen;
 
-    private AudioManager audioM;
-
     private GameObject[] Linfocitos;
+
+    public AudioManager audioM;
 
     [SerializeField] private Slider HidratationBar;
     private float elapsedTime = 0f;
@@ -50,18 +50,18 @@ public class LifeManager : MonoBehaviour
         }
 
         instance = this;
+        audioM = FindObjectOfType<AudioManager>();//por algum motivo ele nao consegue pegar no awake
     }
 
     void Start()
     {
         hp = hpIni;
         immunityManager = ImmunityManager.instance;
-        audioM = FindObjectOfType<AudioManager>();
         //Ajustes iniciais na vignette
         volume = pProcessing.GetComponent<PostProcessVolume>();
         volume.profile.TryGetSettings(out _vignette);
         _vignette.intensity.value = 0f;
-
+        PlayMusic();
     }
 
     void Update()
@@ -93,7 +93,10 @@ public class LifeManager : MonoBehaviour
             AttackAttributesManager.instance.buffMacrofago(-0.5f,-0.5f);
             isDehydrated = true;
         }
-
+        if(audioM == null) {//caso nao tenha conseguido achar o manager no awake e no start, ele pega por aqui
+            audioM = FindObjectOfType<AudioManager>();
+            PlayMusic();
+        }
     }
 
     public void TakeDamage(int damage)
@@ -162,8 +165,9 @@ public class LifeManager : MonoBehaviour
             isDehydrated = false;
     }
 
-    void StartMusic() {
-        
+    void PlayMusic() {
+        if(audioM == null) audioM = FindObjectOfType<AudioManager>();
+        audioM.Play("Stage1");
     }
 
 }
