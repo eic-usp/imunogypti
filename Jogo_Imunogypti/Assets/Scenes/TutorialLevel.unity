@@ -13722,7 +13722,7 @@ MonoBehaviour:
   button: {fileID: 1186949367}
   block: {fileID: 1188440452}
   shop: {fileID: 498840708}
-  levelNumber: 0
+  levelNumber: 1
 --- !u!1 &374115566
 GameObject:
   m_ObjectHideFlags: 0
