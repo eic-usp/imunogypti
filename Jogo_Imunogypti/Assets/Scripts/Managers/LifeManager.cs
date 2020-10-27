@@ -35,6 +35,7 @@ public class LifeManager : MonoBehaviour
     private float elapsedTime = 0f;
     private float timeForDecrease = 2f;
     private float maxActualHidratation=1f;
+    [SerializeField] private float currentHidratation=1f;
     private bool isDehydrated = false;
 
 
@@ -55,7 +56,6 @@ public class LifeManager : MonoBehaviour
 
     void Start()
     {
-        hp = hpIni;
         immunityManager = ImmunityManager.instance;
         //Ajustes iniciais na vignette
         volume = pProcessing.GetComponent<PostProcessVolume>();
@@ -78,13 +78,13 @@ public class LifeManager : MonoBehaviour
         }
 
         if(elapsedTime<timeForDecrease){
-            HidratationBar.value = Mathf.Lerp(maxActualHidratation,maxActualHidratation - 0.02f*maxActualHidratation,(elapsedTime/timeForDecrease));
+            HidratationBar.value = Mathf.Lerp(currentHidratation,currentHidratation - 0.02f*maxActualHidratation,(elapsedTime/timeForDecrease));
             elapsedTime+=Time.deltaTime;
             //Debug.Log(elapsedTime);
         }
         else{
             elapsedTime = 0f;
-            maxActualHidratation = HidratationBar.value;
+            currentHidratation = HidratationBar.value;
         }
 
         if(HidratationBar.value < 0.4 && isDehydrated==false){
@@ -160,8 +160,8 @@ public class LifeManager : MonoBehaviour
     }
 
     public void Hidratate(){
-        maxActualHidratation+= 0.05f*maxActualHidratation;
-        if(maxActualHidratation>0.4)
+        currentHidratation += 0.05f*maxActualHidratation;
+        if(currentHidratation>0.4)
             isDehydrated = false;
     }
 

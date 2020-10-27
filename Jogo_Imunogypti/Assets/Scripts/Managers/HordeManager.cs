@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 using UnityEngine.UI;
+using TMPro;
 
 public class HordeManager:MonoBehaviour
 {
     [SerializeField] private int wavesRemaning; //marca quanntas ondas de inimigos faltam para o jogador vencer
+    private int totalWaves;
     public int waveNumber; //marca qual a onda que o jogador esta enfrentando atualmente
     [SerializeField] private float timeBetweenWaves = 10f; //tempo entre as ondas de inimigos
     [SerializeField] private float countdown = 7f; //marca tempo ate a proxima onda de ininmigos chegar
@@ -17,10 +19,10 @@ public class HordeManager:MonoBehaviour
     public int activeViruses = 0; //marca quantos virus ainda estao ativos
     [SerializeField] private SpawnPoint[] spawnPoints;
     [SerializeField] private Virus[] virusPrefab;
-    [SerializeField] private Text wavesRemaningText;
-    [SerializeField] private Text timeRemaningNextWaveText;
+    [SerializeField] private TextMeshProUGUI wavesRemaningText;
+    [SerializeField] private TextMeshProUGUI timeRemaningNextWaveText;
 
-    [SerializeField] private Text ImmunityRewardText;
+    [SerializeField] private TextMeshProUGUI ImmunityRewardText;
     [SerializeField] private float ImmunityReward;
     [SerializeField] private float maxImmunityReward;
     private bool ShowImmunityReward = false;
@@ -61,8 +63,10 @@ public class HordeManager:MonoBehaviour
         table = DynamicTable.Create(hordeTable);
         //seta o num de hordas
         wavesRemaning = Table.Rows[0].Field<int>("TotalWaves");
+        totalWaves = Table.Rows[0].Field<int>("TotalWaves");
         //seta o num de SpawnPoint
         totalSpawnPoints = Table.Rows[0].Field<int>("TotalSpawnPoints");
+        countdown = timeBetweenWaves;
     }
 
     void Start()
@@ -74,8 +78,12 @@ public class HordeManager:MonoBehaviour
 
     void Update()
     {
-        wavesRemaningText.text = wavesRemaning.ToString(); 
-        timeRemaningNextWaveText.text = Mathf.FloorToInt(countdown).ToString(); 
+        wavesRemaningText.text = waveNumber.ToString() + "/" + totalWaves.ToString(); 
+        if(wavesRemaning > 0) {
+            timeRemaningNextWaveText.text = Mathf.FloorToInt(countdown).ToString(); 
+        }else {
+            timeRemaningNextWaveText.text = "fim";
+        }
 
         //condicao de vitoria
         if(wavesRemaning <= 0 && activeViruses <= 0)
@@ -108,7 +116,7 @@ public class HordeManager:MonoBehaviour
 
         if(elapsedTime<timeForDecrease){
             ImmunityReward = Mathf.Lerp(maxImmunityReward,0,(elapsedTime/timeForDecrease));
-            ImmunityRewardText.text = ((int)ImmunityReward).ToString();
+            //ImmunityRewardText.text = ((int)ImmunityReward).ToString();
             elapsedTime+=Time.deltaTime;
             //Debug.Log(elapsedTime);
         }
@@ -160,7 +168,7 @@ public class HordeManager:MonoBehaviour
 
         ImmunityManager.instance.Increase(ImmunityReward);
         ImmunityReward = 0;
-        ImmunityRewardText.text = ((int)ImmunityReward).ToString();
+        //ImmunityRewardText.text = ((int)ImmunityReward).ToString();
         elapsedTime = 10f;
     }
 

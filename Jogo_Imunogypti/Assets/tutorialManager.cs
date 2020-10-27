@@ -8,6 +8,7 @@ public class tutorialManager : MonoBehaviour {
     public GameObject button;
     public GameObject block;
     public Shopping shop;
+    public int levelNumber;
 
     // Start is called before the first frame update
     void Start() {
@@ -18,7 +19,7 @@ public class tutorialManager : MonoBehaviour {
         if(shop.getGold() == 0) {
             button.SetActive(true);
         }
-        if(current == 6 && shop.getGold() > 300) {
+        if(current == 6 && shop.getGold() > 300 && levelNumber == 1) {
             block.SetActive(false);
             loadNext();
         }

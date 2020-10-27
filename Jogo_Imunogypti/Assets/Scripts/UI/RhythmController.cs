@@ -7,15 +7,18 @@ public class RhythmController : MonoBehaviour
 {
     private float itimeScale = 1;
 
-    public void ChangeRhythm(Text scaleChange)
-    {
-    	float change;
+    public void ChangeRhythm(Text scaleChange) {
+    	float change = 1.0f;;
     	switch(scaleChange.text){
-    		case "2x":
+            case "1x":
     			change = 2.0f;
-                scaleChange.text = "0x";
+                scaleChange.text = "2x";
     			break;
-    		case "0.5x":
+    		case "2x":
+    			change = 1.0f;
+                scaleChange.text = "1x";
+    			break;
+    		/*case "0.5x":
     			change = 0.5f;
                 scaleChange.text = "1.5x";
     			break;
@@ -26,7 +29,7 @@ public class RhythmController : MonoBehaviour
     		case "0x":
     			change = 0.0f;
                 scaleChange.text = "0.5x";
-    			break;
+    			break;*/
             default:
                 change = 1.0f;
                 break;
