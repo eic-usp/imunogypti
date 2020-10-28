@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetNMultipleEnemies : BaseTarget
+public class TargetNMultipleEnemiesForAttack : BaseTarget
 {
 	public override List<GameObject> UpdateTarget(List<GameObject> targets)
    	{
@@ -10,17 +10,11 @@ public class TargetNMultipleEnemies : BaseTarget
 
 		foreach(GameObject enemy in targets)
 		{
-			if(enemy != null)
-			{
-				distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-				
-				//Se o inimigo sair do alcance ele não é mais um alvo
-				if(distanceToEnemy>range)
-					targets.Remove(enemy);
-			}
-			else
+			distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+			
+			//Se o inimigo sair do alcance ele não é mais um alvo
+			if(distanceToEnemy>range)
 				targets.Remove(enemy);
-
 		}
 
 		if(targets.Count == maxTargets)

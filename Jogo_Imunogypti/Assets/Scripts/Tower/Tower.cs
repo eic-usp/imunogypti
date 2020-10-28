@@ -126,6 +126,10 @@ public class Tower : MonoBehaviour
         
     }
 
+    public bool CanUpgrade()
+    {
+        return level != 8;
+    }
 
     public void Reset()
     {

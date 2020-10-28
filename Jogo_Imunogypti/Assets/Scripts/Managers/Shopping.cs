@@ -69,7 +69,7 @@ public class Shopping : MonoBehaviour
 
     public void Upgrade()
     {
-        if(ShellOut(TowerSelection.instance.selected.tower.upgradeCost))
+        if(TowerSelection.instance.selected.tower.CanUpgrade() && ShellOut(TowerSelection.instance.selected.tower.upgradeCost))
             TowerSelection.instance.selected.tower.Upgrade();
     }
 
