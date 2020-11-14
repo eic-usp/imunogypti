@@ -18,6 +18,7 @@ public class MenuPause : MonoBehaviour
     public void GoToMenu(){
     	Time.timeScale = 1f;
         paused = false;
+        FindObjectOfType<AudioManager>().Pause("Stage1");
     	SceneManager.LoadScene("MainMenu");
     }
 

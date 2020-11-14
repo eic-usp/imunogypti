@@ -228,7 +228,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 442.5, y: 0}
+  m_AnchoredPosition: {x: 442.70685, y: 0}
   m_SizeDelta: {x: 885, y: 887.13}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &80403430
@@ -1643,8 +1643,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1824246323}
-        m_MethodName: LoadNextScene
+      - m_Target: {fileID: 2751693432826812741}
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2044,12 +2044,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2751693432826812740}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &415451277 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2751693432428270025, guid: f8c84b0936ea6cb518ef97fcca6bdb20,
-    type: 3}
-  m_PrefabInstance: {fileID: 2751693432826812740}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &551442074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2231,8 +2225,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 442.5, y: -312.22894}
-  m_SizeDelta: {x: 885, y: 624.4579}
+  m_AnchoredPosition: {x: 442.70685, y: -311.7674}
+  m_SizeDelta: {x: 885, y: 623.5348}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &778980972
 MonoBehaviour:
@@ -3580,8 +3574,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1327.5, y: -312.22894}
-  m_SizeDelta: {x: 885, y: 624.4579}
+  m_AnchoredPosition: {x: 1328.1206, y: -311.7674}
+  m_SizeDelta: {x: 885, y: 623.5348}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1235344583
 MonoBehaviour:
@@ -3601,8 +3595,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b>Arte:</b>\nLeandro Satoshi de Siqueira\n\n<b>Coordenadora de Educa\xE7\xE3o
-    e Difus\xE3o de Ci\xEAncias:</b>\nLeila M. Beltramini"
+  m_text: "<b>Arte:</b>\nLeandro Satoshi de Siqueira\nAnderson Araujo\nDaniel David
+    de Oliveira\n\n<b>Musicas e Sons:</b>\nBensound.com e freesound.org\n\n<b>Coordenadora
+    de Educa\xE7\xE3o e Difus\xE3o de Ci\xEAncias:</b>\nLeila M. Beltramini"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 42068777632c4c24182e3feb08cadee5, type: 2}
   m_sharedMaterial: {fileID: 1527633355762117094, guid: 42068777632c4c24182e3feb08cadee5,
@@ -3672,12 +3667,12 @@ MonoBehaviour:
   m_margin: {x: 16, y: 16, z: 16, w: 16}
   m_textInfo:
     textComponent: {fileID: 1235344583}
-    characterCount: 102
+    characterCount: 189
     spriteCount: 0
-    spaceCount: 15
-    wordCount: 15
+    spaceCount: 28
+    wordCount: 29
     linkCount: 0
-    lineCount: 6
+    lineCount: 11
     pageCount: 1
     materialCount: 2
   m_isUsingLegacyAnimationComponent: 0
@@ -4469,7 +4464,6 @@ GameObject:
   - component: {fileID: 1824246322}
   - component: {fileID: 1824246321}
   - component: {fileID: 1824246320}
-  - component: {fileID: 1824246323}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4542,20 +4536,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1824246323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824246319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9205e5b4b4ff634e98dfd45b1fee8eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition: {fileID: 415451277}
-  transitionTime: 1
 --- !u!1 &1839656377
 GameObject:
   m_ObjectHideFlags: 0
@@ -4598,7 +4578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1327.5, y: 0}
+  m_AnchoredPosition: {x: 1328.1206, y: 0}
   m_SizeDelta: {x: 885, y: 856.6}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1839656379
@@ -5172,3 +5152,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c84b0936ea6cb518ef97fcca6bdb20, type: 3}
+--- !u!114 &2751693432826812741 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6033665282115877609, guid: f8c84b0936ea6cb518ef97fcca6bdb20,
+    type: 3}
+  m_PrefabInstance: {fileID: 2751693432826812740}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9205e5b4b4ff634e98dfd45b1fee8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

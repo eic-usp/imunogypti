@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+public class SceneLoader : MonoBehaviour
 {
     public Animator transition;
     public float transitionTime = 0.5f;
 
-    public void PlayGame()
-    {
+    public void PlayGame() {
         SceneManager.LoadScene("StageMenu");
-        // SaveLoader.LoadGame();
+        //SaveLoader.LoadGame();
+    }
+
+    public void ReturnToMenu() {
+        FindObjectOfType<AudioManager>().Pause("Stage1");
+        FindObjectOfType<AudioManager>().Play("MainTheme");
+        LoadScene(0);
     }
 
     public void LoadNextScene()
@@ -19,9 +24,9 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
-    public void LoadScene(int i)
+    public void LoadScene(int i)//i é o numero da fase
     {
-        if(i == 1 || SaveLoader.saveFile.stagesWon[i-1])
+        if(i <= 1 || SaveLoader.saveFile.stagesWon[i-1])
             StartCoroutine(LoadLevel(i+1));
     }
 

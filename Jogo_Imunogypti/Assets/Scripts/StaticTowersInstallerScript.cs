@@ -1,4 +1,4 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,4 +19,4 @@ public class StaticTowersInstallerScript : MonoBehaviour
         myGround = GetComponent<Ground>();
         Instantiate(cell,transform.position,Quaternion.Euler(-90f,0f,0f));
     }
-}*/
+}
