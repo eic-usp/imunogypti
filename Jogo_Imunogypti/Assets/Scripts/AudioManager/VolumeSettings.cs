@@ -10,6 +10,7 @@ public class VolumeSettings : MonoBehaviour
     [SerializeField] Slider musicSlider, sfxSlider;
 
     private float sfxVolume, musicVolume;
+    private bool sfxMute, musicMute;
 
     public float SfxVolume
     {
@@ -46,9 +47,14 @@ public class VolumeSettings : MonoBehaviour
             MusicVolume = PlayerPrefs.GetFloat("musicVolume");
         else
             mixer.GetFloat("musicVolume", out musicVolume);
+            
+        if(musicSlider != null) {
+            sfxSlider.value = DecibelToLinear(sfxVolume);
+            musicSlider.value = DecibelToLinear(musicVolume);
+        }
 
-        sfxSlider.value = DecibelToLinear(sfxVolume);
-        musicSlider.value = DecibelToLinear(musicVolume);
+        sfxMute = false;
+        musicMute = false;
     }
 
     private float LinearToDecibel(float linear)
@@ -68,5 +74,19 @@ public class VolumeSettings : MonoBehaviour
          float linear = Mathf.Pow(10.0f, dB/20.0f);
  
          return linear;
+     }
+
+     public void muteMusic() {
+        if(musicMute == true) {
+            mixer.SetFloat("musicVolume", musicVolume);
+            musicMute = false;
+        }else {
+            mixer.SetFloat("musicVolume", -80f);
+            musicMute = true;
+        }
+     }
+
+     public void muteSfx() {
+         
      }
 }
