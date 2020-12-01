@@ -851,7 +851,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a94b915ac14ca844eb9baf62b0f2064a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d8e3889acc26fdff78daea09721a5e47, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2225,8 +2225,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 442.5, y: -312}
-  m_SizeDelta: {x: 885, y: 624}
+  m_AnchoredPosition: {x: 442.5, y: -312.20404}
+  m_SizeDelta: {x: 885, y: 624.4081}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &778980972
 MonoBehaviour:
@@ -2246,11 +2246,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b>Supervis\xE3o Pedag\xF3gica:</b>\nGislaine Gomes da Costa\n\n<b>Consultoria
+  m_text: "<b>Coordenadora de Educa\xE7\xE3o e Difus\xE3o de Ci\xEAncias:</b>\nLeila
+    M. Beltramini\n\n<b>Supervis\xE3o Pedag\xF3gica:</b>\nGislaine Gomes da Costa\n\n<b>Consultoria
     e Coordena\xE7\xE3o de TI:</b>\nSimone Ferreira Souza\n\n<b>Game Design:</b>\nGiuliano
-    Louren\xE7on\nAna Fl\xE1via Silveira de Camargo\n\n<b>Desenvolvimento de Software
-    e Programa\xE7\xE3o:</b>\nGabriel Alfonso Nascimento Salgueiro\nAlisson Vin\xEDcius
-    Gonsales"
+    Louren\xE7on\nAna Fl\xE1via Silveira de Camargo\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 42068777632c4c24182e3feb08cadee5, type: 2}
   m_sharedMaterial: {fileID: 1527633355762117094, guid: 42068777632c4c24182e3feb08cadee5,
@@ -2320,10 +2319,10 @@ MonoBehaviour:
   m_margin: {x: 16, y: 16, z: 16, w: 16}
   m_textInfo:
     textComponent: {fileID: 778980972}
-    characterCount: 273
+    characterCount: 237
     spriteCount: 0
     spaceCount: 37
-    wordCount: 35
+    wordCount: 33
     linkCount: 0
     lineCount: 14
     pageCount: 1
@@ -3603,8 +3602,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1327.5, y: -312}
-  m_SizeDelta: {x: 885, y: 624}
+  m_AnchoredPosition: {x: 1327.5, y: -312.20404}
+  m_SizeDelta: {x: 885, y: 624.4081}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1235344583
 MonoBehaviour:
@@ -3624,9 +3623,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b>Arte:</b>\nLeandro Satoshi de Siqueira\nAnderson Araujo\nDaniel David
-    de Oliveira\n\n<b>Musicas e Sons:</b>\nBensound.com e freesound.org\n\n<b>Coordenadora
-    de Educa\xE7\xE3o e Difus\xE3o de Ci\xEAncias:</b>\nLeila M. Beltramini"
+  m_text: "<b>Desenvolvimento de Software e Programa\xE7\xE3o:</b>\nGabriel Alfonso
+    Nascimento Salgueiro\nAlisson Vin\xEDcius Gonsales\n\n<b>Arte:</b>\nLeandro Satoshi
+    de Siqueira\nAnderson Araujo\nDaniel David de Oliveira\nAntonmoek - Lowpoly city
+    Free pack\n\n<b>Musicas e Sons:</b>\nBensound.com e freesound.org\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 42068777632c4c24182e3feb08cadee5, type: 2}
   m_sharedMaterial: {fileID: 1527633355762117094, guid: 42068777632c4c24182e3feb08cadee5,
@@ -3696,12 +3696,12 @@ MonoBehaviour:
   m_margin: {x: 16, y: 16, z: 16, w: 16}
   m_textInfo:
     textComponent: {fileID: 1235344583}
-    characterCount: 189
+    characterCount: 264
     spriteCount: 0
-    spaceCount: 28
-    wordCount: 29
+    spaceCount: 38
+    wordCount: 37
     linkCount: 0
-    lineCount: 11
+    lineCount: 14
     pageCount: 1
     materialCount: 2
   m_isUsingLegacyAnimationComponent: 0
@@ -5343,16 +5343,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5167973678699823460, guid: f8c84b0936ea6cb518ef97fcca6bdb20,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3542002716861765622, guid: f8c84b0936ea6cb518ef97fcca6bdb20,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.4199829
-      objectReference: {fileID: 0}
     - target: {fileID: 4573739356505617288, guid: f8c84b0936ea6cb518ef97fcca6bdb20,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -5361,11 +5351,6 @@ PrefabInstance:
     - target: {fileID: 4573739356505617288, guid: f8c84b0936ea6cb518ef97fcca6bdb20,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7279779395229734468, guid: f8c84b0936ea6cb518ef97fcca6bdb20,
-        type: 3}
-      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6486650787754292225, guid: f8c84b0936ea6cb518ef97fcca6bdb20,
@@ -5391,6 +5376,21 @@ PrefabInstance:
     - target: {fileID: 6486650787754292225, guid: f8c84b0936ea6cb518ef97fcca6bdb20,
         type: 3}
       propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5167973678699823460, guid: f8c84b0936ea6cb518ef97fcca6bdb20,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542002716861765622, guid: f8c84b0936ea6cb518ef97fcca6bdb20,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.4199829
+      objectReference: {fileID: 0}
+    - target: {fileID: 7279779395229734468, guid: f8c84b0936ea6cb518ef97fcca6bdb20,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

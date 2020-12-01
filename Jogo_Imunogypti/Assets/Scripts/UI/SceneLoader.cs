@@ -30,7 +30,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadScene(int i)//i é o numero da fase
     {
-        if(i <= 1 || SaveLoader.saveFile.stagesWon[i-1])
+        //if(i <= 1 || SaveLoader.saveFile.stagesWon[i-1])
             StartCoroutine(LoadLevel(i+1));
     }
 
