@@ -5,9 +5,9 @@ using UnityEngine;
 public class tutorialManager : MonoBehaviour {
     private int current;
     public GameObject[] scenes;
-    public GameObject button;
-    public GameObject block;
-    public Shopping shop;
+    public GameObject button = null;
+    public GameObject block = null;
+    public Shopping shop = null;
     public int levelNumber;
 
     // Start is called before the first frame update
@@ -16,10 +16,10 @@ public class tutorialManager : MonoBehaviour {
     }
 
     void Update() {
-        if(shop.getGold() == 0) {
+        if(button != null && shop.getGold() == 0) {
             button.SetActive(true);
         }
-        if(current == 6 && shop.getGold() > 300 && levelNumber == 1) {
+        if(current == 6 && shop.getGold() > 300 && levelNumber == 1 && block != null) {
             block.SetActive(false);
             loadNext();
         }

@@ -89,12 +89,18 @@ public class Virus : MonoBehaviour
             lifeBar.gameObject.SetActive(true);
         }
         hp -= damage;
-        Vector3 lScale = lifeBar.transform.GetChild(0).localScale;
-        float deltaL = (damage/hpI);
-        lifeBar.transform.GetChild(0).localScale = new Vector3(lScale.x-deltaL, lScale.y, lScale.z);
-        //mata o  inimigo quando a (nao) vida chega a 0
-        if(hp <= 0)
+        //mata o  inimigo quando a vida chega a 0
+        if(hp <= 0) {
+            Vector3 lScale = lifeBar.transform.GetChild(0).localScale;
+            lifeBar.transform.GetChild(0).localScale = new Vector3(0, lScale.y, lScale.z);
             Killed();
+        }
+        //se ainda estiver vivo, atualiza a barra
+        else {
+            Vector3 lScale = lifeBar.transform.GetChild(0).localScale;
+            float deltaL = (damage/hpI);
+            lifeBar.transform.GetChild(0).localScale = new Vector3(lScale.x+deltaL, lScale.y, lScale.z);
+        }
     }
 
     //funcao de quando o inimigo eh morto

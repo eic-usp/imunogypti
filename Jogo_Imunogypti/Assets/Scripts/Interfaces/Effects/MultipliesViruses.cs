@@ -14,7 +14,6 @@ public class MultipliesViruses : BaseNoAttack
     void Start()
     {
         Anim = gameObject.GetComponent<Animator>();
-        Debug.Log("test");
         // var t = this.gameObject.GetComponent<Tower>();
         foreach(Renderer r in this.gameObject.GetComponentsInChildren<Renderer>())
             StandardColors.Add(r.material.color);
@@ -91,6 +90,7 @@ public class MultipliesViruses : BaseNoAttack
     {
         if(destroyed == false){
             destroyed = true;
+            Anim.SetTrigger("Death");
             waveToRespawn = HordeManager.instance.waveNumber + 2;
             foreach (Virus enemy in enemies)
             {

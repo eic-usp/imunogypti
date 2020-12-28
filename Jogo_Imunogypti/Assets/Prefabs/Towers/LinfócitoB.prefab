@@ -147,7 +147,7 @@ MonoBehaviour:
   level: 1
   active: 0
   upgradeCost: 0
-  cost: 0
+  cost: 1000
   targets: []
   rangeCircle: {fileID: 3747229093004317822}
   drawRange: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1e6ed7a085f5e4283f42db1c011cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tag: 
+  tag: Path
   range: 0
   maxTargets: 0
   targetTable: {fileID: 4900000, guid: 56135316cb87a85419788cec7436c27c, type: 3}
@@ -211,6 +211,8 @@ MonoBehaviour:
   ImunoglobPrefabs:
   - {fileID: 5424870168220508179, guid: ca36a114412affd4c8007049d4466892, type: 3}
   - {fileID: 8747463517801883992, guid: b9a62fc98fd04f947b81e233b283a6be, type: 3}
+  fireCountdown: 0
+  plotRate: 0.5
 --- !u!1 &1106403006701172488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1685,17 +1687,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: e5e5b0f0f9d1d6941a58dfeea4e8b6cc,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e5e5b0f0f9d1d6941a58dfeea4e8b6cc,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.7
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e5e5b0f0f9d1d6941a58dfeea4e8b6cc,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.7
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: e5e5b0f0f9d1d6941a58dfeea4e8b6cc,
         type: 3}

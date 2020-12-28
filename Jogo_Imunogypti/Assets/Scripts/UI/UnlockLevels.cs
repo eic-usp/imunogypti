@@ -8,9 +8,10 @@ public class UnlockLevels : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        for(int i = 0; i < 8; i++) {
+        levels[0].interactable = true;
+        for(int i = 0; i < 7; i++) {
             if(SaveLoader.saveFile.stagesWon[i]) {
-                levels[i].interactable = true;
+                levels[i+1].interactable = true;
             }
         }
     }

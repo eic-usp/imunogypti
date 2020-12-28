@@ -854,7 +854,7 @@ MonoBehaviour:
   hpI: 15
   damage: 1
   speed: 3
-  goldValue: 50
+  goldValue: 15
   spawnPoint: {fileID: 0}
   target: {fileID: 0}
   wavePointIndex: 0

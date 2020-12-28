@@ -52,9 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a901056ebad150d4d952f02761f42dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tag: 
-  range: 0
-  maxTargets: 0
+  tag: Enemy
+  range: 2
+  maxTargets: 1
   targetTable: {fileID: 4900000, guid: 718118ea97b747644871bdf65931cef7, type: 3}
 --- !u!114 &4426207686400044365
 MonoBehaviour:

@@ -16,6 +16,6 @@ public class SpawnPoint : MonoBehaviour
     		points[i] = transform.GetChild(i);
     	}
 
-		b.BaseLocate(points[points.Length-1].position);
+		//b.BaseLocate(points[points.Length-1].position);
     }
 }

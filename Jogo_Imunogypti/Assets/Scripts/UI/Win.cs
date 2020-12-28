@@ -38,8 +38,8 @@ public class Win : MonoBehaviour
         R = (int) Mathf.Round(((float)fHP/(float)iHP)*3);
         
         sceneIndex = (SceneManager.GetActiveScene()).buildIndex;
-        SaveLoader.saveFile.stagesWon[sceneIndex-3] = true;
-        SaveLoader.saveFile.stars[sceneIndex-3] = R;
+        SaveLoader.saveFile.stagesWon[sceneIndex-2] = true;
+        SaveLoader.saveFile.stars[sceneIndex-2] = R;
         SaveLoader.SaveGame();
         
         DoLittleStars(R);

@@ -43,7 +43,7 @@ public class Ground : MonoBehaviour
         {
             if(BuildManager.instance.turretToBuild.name == "NaturalKiller")
             {
-                if(tower.name == "Cell")
+                if(tower != null && tower.name == "Cell")
                 {
                     //Torre não pode mais ser arrastada (impede torre de ser destruida pelo shopping, que seria o caso em que canDrag == true e a torre não nula, mas o mouse
                     //não é pressionado)

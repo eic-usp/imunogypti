@@ -220,7 +220,7 @@ MonoBehaviour:
   level: 1
   active: 0
   upgradeCost: 0
-  cost: 250
+  cost: 300
   targets: []
   rangeCircle: {fileID: 7954133902826005275}
   drawRange: 0

@@ -6,11 +6,11 @@ public class KillCell : BaseNoAttack
 {
 
     Vector3 direction;
-    bool hasReached=false;
-    bool goAway = false;
+    public bool hasReached = false;
+    public bool goAway = false;
     Vector3 startPosition;
-    Vector3 target;
-    MultipliesViruses cell;
+    public Vector3 target;
+    public MultipliesViruses cell;
 
     public void Start(){
         startPosition = this.transform.position;
@@ -18,10 +18,9 @@ public class KillCell : BaseNoAttack
     }
     public override void Apply(List<GameObject> targets)
     {
-        if(targets.Count <= 0)
+        if(targets.Count <= 0) {
             return;
-
-        Debug.Log("not null");
+        }
         cell = targets[0].GetComponent<MultipliesViruses>();
         direction  = targets[0].transform.position - this.transform.position;
         target = targets[0].transform.position;

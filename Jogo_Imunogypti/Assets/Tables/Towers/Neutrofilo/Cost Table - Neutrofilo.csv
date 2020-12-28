@@ -1,10 +1,10 @@
 Level;Cost;Name
 int;int;string
 1;30;Neutrofilo
-2;33;Neutrofilo
-3;42;Neutrofilo
-4;57;Neutrofilo
-5;78;Neutrofilo
-6;105;Neutrofilo
-7;138;Neutrofilo
-8;177;Neutrofilo
+2;65;Neutrofilo
+3;85;Neutrofilo
+4;110;Neutrofilo
+5;144;Neutrofilo
+6;188;Neutrofilo
+7;244;Neutrofilo
+8;318;Neutrofilo

@@ -1,0 +1,5 @@
+TotalWaves;  TotalSpawnPoints;  ImmunityReward;	SP0(spawn point 0)   SP1
+int;	     int;		float;	        string
+					(num de inimigos, tipo de inimigo, intervalo entre spawn)
+12;          1;		        100;            5,0,50		     10,1,50
+

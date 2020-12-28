@@ -151,4 +151,10 @@ public class Tower : MonoBehaviour
         return myTarget.GetRange();
 
     }
+
+    public float GetAtk()
+    {
+        return myTarget.GetRange();
+
+    }
 }

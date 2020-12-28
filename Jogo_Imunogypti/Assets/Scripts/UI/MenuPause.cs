@@ -25,7 +25,7 @@ public class MenuPause : MonoBehaviour
     public void Restart(){
     	Time.timeScale = 1f;
         paused = false;
-    	SceneManager.LoadScene("BaseLevel");
+    	SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void Play(){
     	menu.SetActive(false);

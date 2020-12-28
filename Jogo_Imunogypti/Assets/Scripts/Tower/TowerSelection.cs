@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TowerSelection : MonoBehaviour
 {
     [SerializeField] private GameObject ui;
-    [SerializeField] private Text headText;
-    [SerializeField] private Text rangeText;
-    [SerializeField] private Text upgradeText;
-    [SerializeField] private Text sellText;
+    [SerializeField] private TextMeshProUGUI headText;
+    [SerializeField] private TextMeshProUGUI rangeText;
+    [SerializeField] private TextMeshProUGUI upgradeText;
+    [SerializeField] private TextMeshProUGUI sellText;
     public Ground selected;
 
     public static TowerSelection instance; //Classe estática
@@ -29,11 +30,16 @@ public class TowerSelection : MonoBehaviour
     {
         if(selected == null)
             return;
-
-        headText.text = selected.tower.name + "(nível: " + selected.tower.level.ToString() + ")";
-        rangeText.text = "alcance: " + selected.tower.GetRange().ToString();
-        upgradeText.text = "evoluir: $" + selected.tower.upgradeCost.ToString();
-        sellText.text = "vender: $" + (Shopping.instance.SalePrice(selected.tower)).ToString();
+        if(selected.tower.level == 8) {
+            headText.text = selected.tower.name + "(Nível: MAX)";
+            upgradeText.text = "$ ----" ;
+        }
+        else {
+            headText.text = selected.tower.name + "(Nível: " + selected.tower.level.ToString() + ")";
+            upgradeText.text = "$ " + selected.tower.upgradeCost.ToString();
+        }
+        rangeText.text = "Alcance: " + selected.tower.GetRange().ToString();
+        sellText.text = "$ " + (Shopping.instance.SalePrice(selected.tower)).ToString();
     }
     
     public void Select(Ground g)

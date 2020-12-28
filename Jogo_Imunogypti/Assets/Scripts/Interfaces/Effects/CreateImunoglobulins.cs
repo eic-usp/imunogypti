@@ -6,8 +6,8 @@ public class CreateImunoglobulins : BaseNoAttack
 {
     // Start is called before the first frame update
     [SerializeField] List<GameObject> ImunoglobPrefabs;
-    private float fireCountdown=0f;
-    private float plotRate= 0.5f;
+    [SerializeField] float fireCountdown = 0f;
+    [SerializeField] float plotRate= 0.5f;
 
     public override void Apply(List<GameObject> targets){
         if(targets.Count != 0 && fireCountdown <= 0)
@@ -28,7 +28,8 @@ public class CreateImunoglobulins : BaseNoAttack
             fireCountdown = 1f / plotRate;
         }
 
-        fireCountdown -= Time.deltaTime;
+        if(fireCountdown > 0)
+            fireCountdown -= Time.deltaTime;
     }
 
     public override void Remove(List<GameObject> targets){}

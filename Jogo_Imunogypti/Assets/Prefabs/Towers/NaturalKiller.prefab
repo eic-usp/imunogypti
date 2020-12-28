@@ -79,6 +79,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ca2c48e7483544cae0b87f7fac4fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasReached: 0
+  goAway: 0
+  target: {x: 0, y: 0, z: 0}
+  cell: {fileID: 0}
 --- !u!114 &4308003319703386410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,7 +99,7 @@ MonoBehaviour:
   level: 1
   active: 1
   upgradeCost: 0
-  cost: 50
+  cost: 200
   targets: []
   rangeCircle: {fileID: 7595854426635927060}
   drawRange: 0
@@ -381,11 +385,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFO
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 656e67aca5bf8c549818595220204cb0,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: be34fbf55a6bd7f47a8eebdae9d6aa11, type: 2}
     - target: {fileID: -4216859302048453862, guid: 656e67aca5bf8c549818595220204cb0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -446,6 +445,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 656e67aca5bf8c549818595220204cb0,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: be34fbf55a6bd7f47a8eebdae9d6aa11, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 656e67aca5bf8c549818595220204cb0, type: 3}
 --- !u!4 &2544499888923420280 stripped

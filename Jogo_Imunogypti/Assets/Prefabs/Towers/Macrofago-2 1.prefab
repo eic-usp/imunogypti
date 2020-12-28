@@ -241,6 +241,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7828200331337036387}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 0aa8303c4f0add94c836679bacb21d14,
+        type: 3}
+      propertyPath: m_Name
+      value: cellMacro
+      objectReference: {fileID: 0}
     - target: {fileID: -444521105353760620, guid: 0aa8303c4f0add94c836679bacb21d14,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -254,7 +259,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 0aa8303c4f0add94c836679bacb21d14,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.44
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0aa8303c4f0add94c836679bacb21d14,
         type: 3}
@@ -300,11 +305,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 0aa8303c4f0add94c836679bacb21d14,
-        type: 3}
-      propertyPath: m_Name
-      value: cellMacro
       objectReference: {fileID: 0}
     - target: {fileID: 5574657383665397177, guid: 0aa8303c4f0add94c836679bacb21d14,
         type: 3}
