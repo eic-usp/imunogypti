@@ -11,9 +11,12 @@ public class TargetStrongestEnemy : BaseTarget
    	{
    		if(target.Count != 0 && target[0] != null)
 		{
-			distanceToEnemy = Vector3.Distance(transform.position, target[0].transform.position);
-			if(distanceToEnemy <= range)
-				return target;
+			Virus virus = target[0].GetComponent<Virus>();
+			if(virus.hp > 0) {//verifica se o virus ainda esta vivo
+				distanceToEnemy = Vector3.Distance(transform.position, target[0].transform.position);
+				if(distanceToEnemy <= range)
+					return target;
+			}
 		}
 
 		//Os inimigos são todos com a tag de inimigos

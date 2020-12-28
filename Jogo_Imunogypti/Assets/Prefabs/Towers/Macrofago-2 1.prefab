@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf45f96ad1f02bd45bab96fa5d26fc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 1
+  attackSpeed: 0.7
   damage: 1
   attackTable: {fileID: 4900000, guid: eacee2350feaadf4d96f77e3a49c2720, type: 3}
   firePoint: {fileID: 1190317533170609813}
