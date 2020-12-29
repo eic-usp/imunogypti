@@ -32,6 +32,7 @@ public class LifeManager : MonoBehaviour
     public AudioManager audioM;
 
     [SerializeField] private Slider HidratationBar;
+    [SerializeField] Animator Anim;
     private float elapsedTime = 0f;
     private float timeForDecrease = 2f;
     private float maxActualHidratation=1f;
@@ -92,6 +93,7 @@ public class LifeManager : MonoBehaviour
             AttackAttributesManager.instance.buffNeutrofilo(-0.5f,-0.5f);
             AttackAttributesManager.instance.buffMacrofago(-0.5f,-0.5f);
             isDehydrated = true;
+            Anim.SetBool("isDehydrated",true);
         }
         if(audioM == null) {//caso nao tenha conseguido achar o manager no awake e no start, ele pega por aqui
             audioM = FindObjectOfType<AudioManager>();
@@ -161,8 +163,10 @@ public class LifeManager : MonoBehaviour
 
     public void Hidratate(){
         currentHidratation += 0.05f*maxActualHidratation;
-        if(currentHidratation>0.4)
+        if(currentHidratation>0.4) {
             isDehydrated = false;
+            Anim.SetBool("isDehydrated",false);
+        }
     }
 
     void PlayMusic() {

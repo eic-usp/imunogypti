@@ -28,7 +28,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae710069c583ca24e9e3ad617c521a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSpeed: 0
   damage: 3
+  attackTable: {fileID: 0}
   explosionRange: 5
 --- !u!1001 &3615327359758010699
 PrefabInstance:
@@ -37,16 +39,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -4292153814310509293, guid: ca36a114412affd4c8007049d4466892,
-        type: 3}
-      propertyPath: damage
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -3477736028630085382, guid: ca36a114412affd4c8007049d4466892,
-        type: 3}
-      propertyPath: targetTable
-      value: 
-      objectReference: {fileID: 4900000, guid: 0bb0741b6cbf16049a32301051143f79, type: 3}
     - target: {fileID: 5424870168220508179, guid: ca36a114412affd4c8007049d4466892,
         type: 3}
       propertyPath: m_Name
@@ -60,12 +52,12 @@ PrefabInstance:
     - target: {fileID: 5424870168220508181, guid: ca36a114412affd4c8007049d4466892,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 5424870168220508181, guid: ca36a114412affd4c8007049d4466892,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5424870168220508181, guid: ca36a114412affd4c8007049d4466892,
         type: 3}
@@ -112,12 +104,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3477736028630085382, guid: ca36a114412affd4c8007049d4466892,
+        type: 3}
+      propertyPath: targetTable
+      value: 
+      objectReference: {fileID: 4900000, guid: 0bb0741b6cbf16049a32301051143f79, type: 3}
+    - target: {fileID: -4292153814310509293, guid: ca36a114412affd4c8007049d4466892,
+        type: 3}
+      propertyPath: damage
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5424870169924928534, guid: ca36a114412affd4c8007049d4466892,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 8823598064478147680, guid: 222f82512329a8d4e825064e816a20d5,
-        type: 3}
+      objectReference: {fileID: 2100000, guid: 846952ac9557699d58ccd7804884f4de, type: 2}
     m_RemovedComponents:
     - {fileID: -3477736028630085382, guid: ca36a114412affd4c8007049d4466892, type: 3}
     - {fileID: -4292153814310509293, guid: ca36a114412affd4c8007049d4466892, type: 3}

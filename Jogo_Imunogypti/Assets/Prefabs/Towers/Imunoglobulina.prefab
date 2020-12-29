@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd9cf6d21d931e45b2d612b7fe12e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}
   wavePointIndex: 0
   partToRotate: {fileID: 5424870169924928532}
 --- !u!114 &5644820286958211738
@@ -189,7 +190,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dd5e01f5244e2f94c883b6afdbdf7254, type: 2}
+  - {fileID: 2100000, guid: 846952ac9557699d58ccd7804884f4de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

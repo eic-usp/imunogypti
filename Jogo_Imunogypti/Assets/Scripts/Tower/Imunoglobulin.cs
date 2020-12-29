@@ -20,7 +20,7 @@ public class Imunoglobulin : MonoBehaviour
     // Start is called before the first frame update
 
     void Awake(){
-    	spawnPoint = HordeManager.instance.GetSpawnPoint(UnityEngine.Random.Range(0,HordeManager.instance.getTotalSpawnPoints()-1));
+    	spawnPoint = HordeManager.instance.GetSpawnPoint(UnityEngine.Random.Range(0,HordeManager.instance.getTotalSpawnPoints()));
     }
     void Start()
     {

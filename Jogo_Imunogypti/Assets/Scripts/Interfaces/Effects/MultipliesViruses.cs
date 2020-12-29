@@ -58,14 +58,13 @@ public class MultipliesViruses : BaseNoAttack
             {
                 enemy.stop = true;
                 progression++;
-                Anim.SetTrigger("IsGettingAttacked");
+                Anim.SetBool("IsGettingAttacked", true);
             }
         }
 
         if(progression == 10)
         {
             destroyed = true;
-            Anim.SetTrigger("Death");
             StartCoroutine(Multiply());
         }
     }
@@ -74,6 +73,8 @@ public class MultipliesViruses : BaseNoAttack
 
     IEnumerator Multiply()
     {
+        Anim.SetBool("IsGettingAttacked", false);
+        Anim.SetTrigger("Death");
         foreach (Virus enemy in enemies)
         {
             yield return new WaitForSeconds(0.1f); //tempo entre a instanciacao de cada inimigo
@@ -90,14 +91,15 @@ public class MultipliesViruses : BaseNoAttack
     {
         if(destroyed == false){
             destroyed = true;
-            Anim.SetTrigger("Death");
+            Anim.SetBool("IsGettingAttacked", false);
+            Anim.SetTrigger("NK");
             waveToRespawn = HordeManager.instance.waveNumber + 2;
             foreach (Virus enemy in enemies)
             {
                 Destroy(enemy.gameObject);
             }
             this.gameObject.GetComponent<Tower>().targets.Clear();
-            changeTurretColor(Color.red);
+            changeTurretColor(Color.green);
         }
     }
 
