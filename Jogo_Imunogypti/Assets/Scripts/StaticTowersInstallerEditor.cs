@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-
+/*
 [CustomEditor(typeof(StaticTowersInstallerScript))]
 public class StaticTowersInstallerEditor : Editor
 {
@@ -22,4 +22,4 @@ public class StaticTowersInstallerEditor : Editor
             myScript.InstallCell();
         }
     }
-}
+}*/
