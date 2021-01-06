@@ -1,4 +1,5 @@
-Febre
+FEBRE
+
 A febre é um mecanismo de defesa natural do corpo humano, o organismo aumenta sua temperatura para auxiliar no combate aos patógenos, estimulando a proliferação de linfócitos e aumentando a atividade de macrófagos.
 O modo febre é ativado automaticamente quando a quantidade de pontos de vida da base estão muito baixos. Quando ativado, o preço dos linfócitos é reduzido e o dano dos macrófagos aumentado.
 

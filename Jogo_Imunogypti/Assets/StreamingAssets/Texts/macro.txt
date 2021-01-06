@@ -1,2 +1,5 @@
-Macrófagos também são Leucócitos fagocitários,porém são muito maiores e mais fortes, e por conta disso são capazes de atacar vários alvos ao mesmo tempo
+MACRÓFAGOS
+
+Macrófagos também são Leucócitos fagocitários, e portanto tem um papel similar ao do Neutrófilo, porém são muito maiores, e por conta disso, dentro do jogo são mais fortes e capazes de atacar vários alvos ao mesmo tempo.
+
 

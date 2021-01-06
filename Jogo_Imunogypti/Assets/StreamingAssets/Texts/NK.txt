@@ -1,1 +1,5 @@
-Quando uma célula é infectada por um vírus, eles podem se multiplicar muitas vezes e se tornarem um grande problema, é ai que entra o Natural Killer, induzindo a apoptose na célula infectada e impedindo a proliferação dos vírus
+NATURAL KILLER(NK)
+
+O natural killer, também conhecido como célula exterminadora natural é um tipo de linfócito citotóxico que tem a principal função de destruir células infectadas
+Quando uma célula é atacada por um vírus, eles podem se multiplicar muitas vezes e se tornarem um grande problema, é então que entra o Natural Killer, induzindo a apoptose na célula infectada e impedindo a proliferação dos vírus
+
