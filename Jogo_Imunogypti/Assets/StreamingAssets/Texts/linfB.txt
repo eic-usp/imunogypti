@@ -1,3 +1,11 @@
-Tópico 1
-Subtópico 1
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eros nibh, vehicula non viverra et, tincidunt dictum nibh. Morbi sollicitudin neque in pellentesque facilisis. Curabitur ornare mauris ac nunc vestibulum, vitae tempor lectus consequat. Aliquam eu elit justo. Nam rhoncus est nulla, sed tristique orci venenatis vitae. Fusce bibendum arcu quis tortor placerat egestas. Curabitur pulvinar consequat ligula vitae tristique. Suspendisse potenti. Nulla facilisi. Duis interdum mollis scelerisque. Cras interdum felis sed velit rutrum, at tristique urna efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+LINFÓCITOS B
+
+O linfócito B, também chamado de célula B, também é um tipo de Leucócito e sua principal função é a produção de Imunoglobulinas, mais conhecidas como anticorpos.
+No jogo são produzidos dois tipos de anticorpos por essa célula, a Imunoglobulina G responsǘel pela análise dos antígenos e criação da memória imunológica e também para adquirir pontos de memória ,e a Imunoglobulina M responsável pela neutralização e opsonização dos vírus
+
+- Área de efeito: normal
+- Tipo de alvo: -
+- Tipo de dano: imunoglobulinas
+- Velocidade de ataque: alta
+- Dano: -
+- Efeito adicional: libera imunoglobulinas no caminho inverso ao dos inimigos para se chocarem contra eles e causar os seguintes efeitos: IgM dão dano normal em múltiplos inimigos; IgG (liberadas a partir do nível 2) dão dano baixo em um inimigo único e ganha pontos de memória celular

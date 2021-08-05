@@ -1,5 +1,11 @@
 CÉLULAS DENDRÍTICAS
 
 As células dendríticas são um tipo de leucócito e são responsáveis por capturar o microrganismo invasor e apresentar antígenos para os linfócitos T, dando início à resposta imune contra o agente infeccioso, combatendo a doença.
-Durante o jogo a célula dendrítica gera uma área ao seu redor que ativa os linfócitos para exercerem suas funções. A célula pode ser melhorada para aumentar essa área
+Durante o jogo, a célula dendrítica gera uma área ao seu redor que ativa os linfócitos para exercerem suas funções. A célula pode ser melhorada para aumentar essa área
 
+- Área de efeito: imensa
+- Tipo de alvo: múltiplos linfócitos
+- Tipo de dano: -
+- Velocidade de ataque: -
+- Dano: -
+- Efeito adicional: apenas linfócitos que se localizam dentro de sua área podem exercer suas funções

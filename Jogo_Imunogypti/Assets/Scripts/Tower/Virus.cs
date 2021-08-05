@@ -50,7 +50,7 @@ public class Virus : MonoBehaviour
         if(stop)
             return;
         //Se a distancia entre o virus e o target é muito pequena, chame o método pra mudar de target
-        if(Vector3.Distance(this.transform.position,target.position) <= 0.25f)
+        if(Vector3.Distance(this.transform.position,target.position) <= 0.4f)
         {
         	GetNextWayPoint();
             actualDirection = -this.transform.position + target.position;

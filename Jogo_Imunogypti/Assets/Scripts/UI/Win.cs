@@ -8,8 +8,8 @@ using System;
 
 public class Win : MonoBehaviour
 {
-    public int fHP=1;// numero total de inimigos mortos
-    public int iHP=2;// numero total de inimigos
+    public int fHP=1;// vida final
+    public int iHP=2;// vida inicial
     int R;
     public List<GameObject> Stars; //Estrelas
     [SerializeField] private GameObject StarBonus;

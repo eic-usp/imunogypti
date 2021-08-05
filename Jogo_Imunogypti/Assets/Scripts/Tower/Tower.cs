@@ -147,7 +147,7 @@ public class Tower : MonoBehaviour
 
     public float GetRange()
     {
-        Debug.Log(myTarget.GetRange());
+        //Debug.Log(myTarget.GetRange());
         return myTarget.GetRange();
 
     }

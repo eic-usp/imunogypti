@@ -1,3 +1,12 @@
-Tópico 1
-Subtópico 1
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eros nibh, vehicula non viverra et, tincidunt dictum nibh. Morbi sollicitudin neque in pellentesque facilisis. Curabitur ornare mauris ac nunc vestibulum, vitae tempor lectus consequat. Aliquam eu elit justo. Nam rhoncus est nulla, sed tristique orci venenatis vitae. Fusce bibendum arcu quis tortor placerat egestas. Curabitur pulvinar consequat ligula vitae tristique. Suspendisse potenti. Nulla facilisi. Duis interdum mollis scelerisque. Cras interdum felis sed velit rutrum, at tristique urna efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+LINFÓCITOS T AUXILIAR
+
+O linfócito T auxiliar (CD4) também é um tipo de Leucócito, e tem o papel auxiliar de ativar e estimular outros leucócitos a se multiplicarem e coordenar a função de defesa imunológica contra vírus, bactérias e fungos
+Essa célula tem a capacidade de melhorar da atividade dos macrófagos e linfócitos B que estão posicionados adjacentes a ela
+
+- Área de efeito: muito grande
+- Tipo de alvo: múltiplos macrófagos
+- Tipo de dano: -
+- Velocidade de ataque: -
+- Dano: -
+- Efeito adicional: dano ou velocidade de ataque dos macrófagos dentro da área é aumentado em 25%
+ 	

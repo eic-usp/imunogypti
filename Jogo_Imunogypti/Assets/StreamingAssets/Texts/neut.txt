@@ -1,6 +1,12 @@
 NEUTRÓFILOS
 
 Também conhecidos como Leucócitos fagocitários, os neutrófilos são células essenciais do sistema imune, fazendo parte da primeira resposta de defesa do corpo contra invasores. Estão presentes em grandes quantidades, constituindo de 40% a 70% dos glóbulos brancos. 
-O neutrófilo é um tipo de fagócito, isso quer dizer que ele ataca invasores fazendo a fagocitose, envolvendo os invasores ou partículas estranhas e digerindo-os. Porém o neutrófilo sozinho não é capaz de resolver tudo e precisa de ajuda de outras células do sistema imunológico. 
-Por conta disso, dentro do jogo elas são as tropas com o menor custo e fazem a defesa inicial, através de uma defesa rápida e que custa poucos pontos.
+O neutrófilo é um tipo de fagócito, isso quer dizer que ele ataca invasores fazendo a fagocitose, envolvendo os invasores ou partículas estranhas e digerindo-os. Porém, o neutrófilo sozinho não é capaz de resolver tudo e precisa de ajuda de outras células do sistema imunológico. 
+Por conta disso, dentro do jogo os neutrófilos são as tropas com o menor custo e fazem a defesa inicial através de uma ação rápida e que custa poucos pontos.
 
+- Área de efeito: normal
+- Tipo de alvo: inimigo único
+- Tipo de dano: discreto
+- Velocidade de ataque: normal
+- Dano: baixo
+- Efeito adicional: -

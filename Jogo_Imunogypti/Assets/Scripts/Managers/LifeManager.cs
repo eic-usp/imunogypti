@@ -133,10 +133,12 @@ public class LifeManager : MonoBehaviour
     {
         FeverScreen.SetActive(false);
         if(defeat==false){
-            Debug.Log("ganhou");
+            //Debug.Log("ganhou");
             EndScreen.SetActive(true);
             EndScreen.transform.GetChild(0).gameObject.SetActive(true);
         }
+        // Win.iHP = hpIni;
+        // Win.fHP = hp;
     }
 
     public int getHP(){

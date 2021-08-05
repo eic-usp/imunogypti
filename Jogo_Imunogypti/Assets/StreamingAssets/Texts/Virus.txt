@@ -1,3 +1,6 @@
-Tópico 1
-Subtópico 1
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eros nibh, vehicula non viverra et, tincidunt dictum nibh. Morbi sollicitudin neque in pellentesque facilisis. Curabitur ornare mauris ac nunc vestibulum, vitae tempor lectus consequat. Aliquam eu elit justo. Nam rhoncus est nulla, sed tristique orci venenatis vitae. Fusce bibendum arcu quis tortor placerat egestas. Curabitur pulvinar consequat ligula vitae tristique. Suspendisse potenti. Nulla facilisi. Duis interdum mollis scelerisque. Cras interdum felis sed velit rutrum, at tristique urna efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+VÍRUS DA DENGUE
+
+A dengue é um arbovírus transmitido pelo Aedes aegypti, mais conhecido como “O mosquito da dengue”. Quando ele pica a vítima, o vírus entra no corpo e começa a infectar células e usá-las para se multiplicar e então se espalhar pelo organismo.
+Os primeiros sintomas como febre, dor de cabeça e mal-estar surgem após um período que pode variar de 2-10 dias, esse tempo entre a infecção e o início dos sintomas é chamado de incubação.
+O tratamento da doença é feito através de remédios para controlar os sintomas, além de se manter hidratado e descansar bastante. Porém é muito importante verificar se é um medicamento recomendado e consultar um médico, pois usar um medicamento errado pode piorar ainda mais a doença.
+Existem quatro tipos de vírus da dengue, chamados sorotipos: DENV-1, DENV-2, DENV-3 e DENV-4, e todos podem causar tanto a forma clássica da doença quanto formas mais graves.
