@@ -1,6 +1,5 @@
-VÍRUS DA DENGUE
+OS INIMIGOS
 
-A dengue é um arbovírus transmitido pelo Aedes aegypti, mais conhecido como “O mosquito da dengue”. Quando ele pica a vítima, o vírus entra no corpo e começa a infectar células e usá-las para se multiplicar e então se espalhar pelo organismo.
-Os primeiros sintomas como febre, dor de cabeça e mal-estar surgem após um período que pode variar de 2-10 dias, esse tempo entre a infecção e o início dos sintomas é chamado de incubação.
-O tratamento da doença é feito através de remédios para controlar os sintomas, além de se manter hidratado e descansar bastante. Porém é muito importante verificar se é um medicamento recomendado e consultar um médico, pois usar um medicamento errado pode piorar ainda mais a doença.
-Existem quatro tipos de vírus da dengue, chamados sorotipos: DENV-1, DENV-2, DENV-3 e DENV-4, e todos podem causar tanto a forma clássica da doença quanto formas mais graves.
+O sistema de defesa humano é acionado para todos os tipos de agentes infecciosos (inimigos) que penetram em nosso organismo. Entretanto, nem sempre nossas defesas vencem o “inimigo”, às vezes o inimigo ataca um órgão ou tecido específico muito rápido, e ocasiona os sintomas da doença. Nossas defesas só estarão “de prontidão”, quando existem vacinas para o inimigo.  
+Até hoje não temos vacinas contra os vírus da dengue, zika, chikungunya e outras doenças graves;  enquanto que para outras doenças como os vírus do sarampo, rubéola,  poliomielite e outras graves doenças, os cientistas conseguiram desenvolver vacinas. Entre 2020 e 2021, com a Pandemia do SARs Cov-2, causador da Covid-19, foram desenvolvidas  vários tipos de vacinas, que estão sendo distribuídas em todo mundo. Somente com a vacinação de mais de 70% da população da Terra é que a pandemia será controlada. 
+O jogo abordará o funcionamento do sistema imune, após a entrada de um inimigo, mostrando desde sua  penetração  até a “vitoria”, com a produção dos anticorpos. 
