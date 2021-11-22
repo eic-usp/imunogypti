@@ -52,7 +52,7 @@ public class LifeManager : MonoBehaviour
         }
 
         instance = this;
-        audioM = FindObjectOfType<AudioManager>();//por algum motivo ele nao consegue pegar no awake
+        // audioM = FindObjectOfType<AudioManager>();//por algum motivo ele nao consegue pegar no awake
     }
 
     void Start()
@@ -63,6 +63,8 @@ public class LifeManager : MonoBehaviour
         volume.profile.TryGetSettings(out _vignette);
         _vignette.intensity.value = 0f;
         PlayMusic();
+        audioM = FindObjectOfType<AudioManager>();
+
     }
 
     void Update()
